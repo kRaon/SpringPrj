@@ -22,6 +22,6 @@
 		<mapper class="com.my.biz.mybatis.mapper.UsersMapper"/>
 		<mapper class="com.my.biz.mybatis.mapper.CategoriesMapper"/>
 		<mapper class="com.my.biz.mybatis.mapper.BoardMapper"/>
-		
+		<mapper class="com.my.biz.mybatis.mapper.CommentsMapper"/>
 	</mappers>
 </configuration>

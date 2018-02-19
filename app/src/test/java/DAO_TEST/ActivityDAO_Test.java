@@ -31,7 +31,7 @@ public class ActivityDAO_Test {
 	public void tearDown() throws Exception {
 	}
 
-	//@Test
+	@Test
 	public void insert() {
 		Asset_activityVO vo = new Asset_activityVO();
 		vo.setIndexnumber(2);
@@ -48,7 +48,7 @@ public class ActivityDAO_Test {
 		service.deleteActivity(2);
 	}
 	
-	@Test
+	//@Test
 	public void selectAll() {
 		List<Asset_activityVO> list = service.selectAllActivities();
 		for(Asset_activityVO vo : list) {
