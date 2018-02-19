@@ -27,7 +27,7 @@ public class UserTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	//@Test
 	public void add() {
 		UsersVO vo = new UsersVO();
 		vo.setAge(30);
@@ -38,4 +38,6 @@ public class UserTest {
 		service.insertUsers(vo);
 	}
 
+	/*@Test
+	public void */
 }
