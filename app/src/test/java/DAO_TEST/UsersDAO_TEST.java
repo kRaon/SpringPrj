@@ -33,7 +33,7 @@ public class UsersDAO_TEST {
 	public void insert() {
 		UsersVO vo=new UsersVO();
 	}
-	@Test
+	//@Test
 	public void test() {
 		UsersVO vo=new UsersVO();
 		

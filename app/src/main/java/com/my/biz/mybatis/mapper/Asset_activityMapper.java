@@ -20,7 +20,7 @@ public interface Asset_activityMapper {
 */
 //crud
 	
-	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,FIXED,A_DATE,A_TYPE) VALUES (#{indexnumber},#{id},#{category_num},#{fixed},#{a_date},#{a_type})")
+	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,FIXED,A_DATE,A_TYPE) VALUES (SEQUENCE1.nextval,#{id},#{category_num},#{fixed},#{a_date},#{a_type})")
 	int insertActivity(Asset_activityVO vo);
 	
 	@Delete("DELETE FROM ASSET_ACTIVITY WHERE INDEXNUMBER=#{indexnumber}")

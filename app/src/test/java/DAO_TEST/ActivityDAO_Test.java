@@ -31,15 +31,15 @@ public class ActivityDAO_Test {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	//@Test
 	public void insert() {
 		Asset_activityVO vo = new Asset_activityVO();
-		vo.setIndexnumber(2);
+		//vo.setIndexnumber(2);
 		vo.setId("java01");
 		vo.setCategory_num(1);
 		vo.setA_date(new Date(2018-1900,9,15));
-		vo.setA_type("1");
-		vo.setFixed("1");
+		vo.setA_type("0");
+		vo.setFixed("0");
 		service.insertActivity(vo);
 	}
 	
@@ -48,7 +48,7 @@ public class ActivityDAO_Test {
 		service.deleteActivity(2);
 	}
 	
-	//@Test
+	@Test
 	public void selectAll() {
 		List<Asset_activityVO> list = service.selectAllActivities();
 		for(Asset_activityVO vo : list) {
