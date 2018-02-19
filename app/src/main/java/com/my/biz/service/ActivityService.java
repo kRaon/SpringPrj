@@ -1,4 +1,4 @@
-package com.my.biz.activity.service;
+package com.my.biz.service;
 
 import com.my.biz.vo.activityVO;
 
