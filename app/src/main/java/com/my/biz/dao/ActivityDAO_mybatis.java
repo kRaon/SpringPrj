@@ -1,4 +1,4 @@
-package com.my.biz.activity.dao;
+package com.my.biz.dao;
 
 import javax.annotation.PostConstruct;
 

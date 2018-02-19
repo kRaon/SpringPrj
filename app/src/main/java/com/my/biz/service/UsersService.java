@@ -1,4 +1,4 @@
-package com.my.biz.users.service;
+package com.my.biz.service;
 
 import java.util.List;
 

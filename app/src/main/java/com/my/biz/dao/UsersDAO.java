@@ -1,4 +1,4 @@
-package com.my.biz.users.dao;
+package com.my.biz.dao;
 
 import java.util.List;
 

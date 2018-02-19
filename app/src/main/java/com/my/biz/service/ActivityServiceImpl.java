@@ -1,10 +1,10 @@
-package com.my.biz.activity.service;
+package com.my.biz.service;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.my.biz.activity.dao.ActivityDAO;
+import com.my.biz.dao.ActivityDAO;
 import com.my.biz.vo.activityVO;
 
 @Service("ActivityService")

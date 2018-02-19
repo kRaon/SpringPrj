@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.my.biz.activity.dao.ActivityDAO;
-import com.my.biz.activity.service.ActivityService;
+import com.my.biz.dao.ActivityDAO;
+import com.my.biz.service.ActivityService;
 import com.my.biz.vo.activityVO;
 
 

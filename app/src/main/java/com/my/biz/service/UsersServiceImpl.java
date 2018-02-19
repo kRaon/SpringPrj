@@ -1,4 +1,4 @@
-package com.my.biz.users.service;
+package com.my.biz.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.my.biz.users.dao.UsersDAO;
+import com.my.biz.dao.UsersDAO;
 import com.my.biz.vo.usersVO;
 
 @Service("UsersService")

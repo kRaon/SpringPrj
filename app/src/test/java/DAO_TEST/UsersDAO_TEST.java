@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.my.biz.users.service.UsersService;
+import com.my.biz.service.UsersService;
 import com.my.biz.vo.usersVO;
 
 
@@ -33,7 +33,7 @@ public class UsersDAO_TEST {
 	public void test() {
 		usersVO vo=new usersVO();
 		
-		vo.setId("java01");
+		vo.setId("java02");
 		vo.setPw("1234");
 		vo.setAge(23);
 		vo.setGender("male");
