@@ -12,9 +12,9 @@
 	<context:component-scan base-package="com.my.biz.*"></context:component-scan>
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
-		<property name="username" value="SpringPrj" />
-		<property name="password" value="1234" />
+		<property name="url" value="jdbc:oracle:thin:@70.12.109.62:1521:xe" />
+		<property name="username" value="dbdb" />
+		<property name="password" value="db" />
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 	</bean>
 

@@ -19,5 +19,7 @@
 	</environments>
 	<mappers>
 		<mapper class="com.my.biz.mybatis.mapper.ActivityMapper"/>
+		<mapper class="com.my.biz.mybatis.mapper.UsersMapper"/>
+		
 	</mappers>
 </configuration>
