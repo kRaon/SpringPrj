@@ -9,4 +9,5 @@ public interface TargetMapper {
 	int amount;
 	Date deadline;*/
 	
+	
 }
