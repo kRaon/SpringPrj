@@ -12,15 +12,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.my.biz.service.ActivityService;
-import com.my.biz.vo.ActivityVO;
+import com.my.biz.service.Asset_activityService;
+import com.my.biz.vo.Asset_activityVO;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"classpath:applicationContext.xml"})
-public class ActivityTest {
+public class ActivityDAO_Test {
 	@Autowired 
 	@Qualifier("ActivityService")
-	ActivityService service;
+	Asset_activityService service;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -30,9 +31,9 @@ public class ActivityTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	//@Test
 	public void insert() {
-		ActivityVO vo = new ActivityVO();
+		Asset_activityVO vo = new Asset_activityVO();
 		vo.setIndexnumber(2);
 		vo.setId("java01");
 		vo.setCategory_num(1);
@@ -41,29 +42,28 @@ public class ActivityTest {
 		vo.setFixed("1");
 		service.insertActivity(vo);
 	}
-
-	/*@Override
-	public int deleteActivity(ActivityVO vo) {
-		// TODO Auto-generated method stub
-		return mapper.deleteActivity(vo);
+	
+	//@Test
+	public void delete() {
+		service.deleteActivity(2);
 	}
-
-	@Override
-	public int updateActivity(ActivityVO vo) {
-		// TODO Auto-generated method stub
-		return mapper.updateActivity(vo);
-	}
-
-	@Override
-	public List<ActivityVO> selectAllActivities() {
-		// TODO Auto-generated method stub
-		return mapper.selectAllActivities();
-	}
-
 	
 	@Test
-	public void test() {
-		service.
-	}*/
-
+	public void selectAll() {
+		List<Asset_activityVO> list = service.selectAllActivities();
+		for(Asset_activityVO vo : list) {
+			System.out.println(vo);
+		}
+	}
+	
+	//@Test
+	public void update() {
+		Asset_activityVO vo = new Asset_activityVO();
+		vo.setCategory_num(1);
+		vo.setFixed("고정");
+		vo.setA_date(new Date(2018-1900,9,15));
+		vo.setA_type("지출");
+		vo.setIndexnumber(2);
+		service.updateActivity(vo);
+	}
 }

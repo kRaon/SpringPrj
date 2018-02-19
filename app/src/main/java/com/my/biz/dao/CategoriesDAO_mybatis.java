@@ -9,18 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.my.biz.mybatis.mapper.UsersMapper;
-import com.my.biz.vo.UsersVO;
+import com.my.biz.mybatis.mapper.CategoriesMapper;
+import com.my.biz.vo.CategoriesVO;
 
-@Repository("Users_mybatis")
-public class UsersDAO_mybatis implements UsersDAO{
+@Repository("Categories_mybatis")
+public class CategoriesDAO_mybatis implements CategoriesDAO{
 
 	@Autowired
 	@Qualifier("sqlSession")
 	SqlSession mybatis;
-	
-	UsersMapper mapper;
-	
+	CategoriesMapper mapper;
 	
 	
 	
@@ -32,44 +30,45 @@ public class UsersDAO_mybatis implements UsersDAO{
 		this.mybatis = mybatis;
 	}
 
-	public UsersMapper getMapper() {
+	public CategoriesMapper getMapper() {
 		return mapper;
 	}
 
-	public void setMapper(UsersMapper mapper) {
+	public void setMapper(CategoriesMapper mapper) {
 		this.mapper = mapper;
 	}
 
-	public UsersDAO_mybatis(SqlSession mybatis, UsersMapper mapper) {
+	public CategoriesDAO_mybatis(SqlSession mybatis, CategoriesMapper mapper) {
 		super();
 		this.mybatis = mybatis;
 		this.mapper = mapper;
 	}
 
-	public UsersDAO_mybatis() {
+	public CategoriesDAO_mybatis() {
 		super();
 	}
 	@PostConstruct
 	void init() {
-		mapper = mybatis.getMapper(UsersMapper.class);
+		mapper = mybatis.getMapper(CategoriesMapper.class);
 		
 	}
 	
 	@Override
-	public int insertUsers(UsersVO vo) {
-		return mapper.insertUsers(vo);
+	public int insertCategories(CategoriesVO vo) {
+		// TODO Auto-generated method stub
+		return mapper.insertCategories(vo);
 	}
 
 	@Override
-	public int deleteUsers(String id) {
+	public int deleteCategories(int category_num) {
 		// TODO Auto-generated method stub
-		return mapper.deleteUsers(id);
+		return mapper.deleteCategories(category_num);
 	}
 
 	@Override
-	public List<UsersVO> selectAllUsers() {
+	public List<CategoriesVO> selectAllcategories() {
 		// TODO Auto-generated method stub
-		return mapper.selectAllUsers();
+		return mapper.selectAllcategories();
 	}
 
 }

@@ -9,15 +9,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.my.biz.service.UsersService;
-import com.my.biz.vo.UsersVO;
+import com.my.biz.service.CategoriesService;
+import com.my.biz.vo.CategoriesVO;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"classpath:applicationContext.xml"})
-public class UserTest {
+public class CategoriesDAO_TEST {
+
 	@Autowired
-	@Qualifier("UsersService")
-	UsersService service;
+	@Qualifier("CategoriesService")
+	CategoriesService service;
+		
 	
 	@Before
 	public void setUp() throws Exception {
@@ -28,16 +31,25 @@ public class UserTest {
 	}
 
 	//@Test
-	public void add() {
-		UsersVO vo = new UsersVO();
-		vo.setAge(30);
-		vo.setGender("female");
-		vo.setId("java02");
-		vo.setJob("회사원");
-		vo.setPw("1234");		
-		service.insertUsers(vo);
+	public void insert() {
+		CategoriesVO vo = new CategoriesVO();
+		
+		vo.setCategory_num(2);
+		vo.setCategory_name("subway");
+		service.insertCategories(vo);
+		
 	}
-
-	/*@Test
-	public void */
+	@Test
+		public void list() {
+			for(CategoriesVO data  :service.selectAllcategories()) {
+				System.out.println(data);
+		}
+		}
+	//@Test
+		public void delete() {
+		     int row =service.deleteCategories(2);
+		     if(row == 0) {
+		    	 System.out.println("subway삭제");
+		     }
+		}
 }

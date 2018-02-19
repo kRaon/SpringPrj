@@ -23,7 +23,7 @@ public class LoginController {
 		return "redirect:login.html";
 	}
 	
-	@RequestMapping("/login.do")
+	/*@RequestMapping("/login.do")
 	public String loginProcess(UsersVO vo, HttpServletRequest req) {
 		UsersVO user = service.login(vo.getId(), vo.getPw());
 		if(user != null) {
@@ -32,7 +32,7 @@ public class LoginController {
 		}else {
 			return "redirect:index.html";
 		}
-	}
+	}*/
 	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {

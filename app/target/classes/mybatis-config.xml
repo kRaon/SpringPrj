@@ -18,8 +18,10 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper class="com.my.biz.mybatis.mapper.ActivityMapper"/>
+		<mapper class="com.my.biz.mybatis.mapper.Asset_activityMapper"/>
 		<mapper class="com.my.biz.mybatis.mapper.UsersMapper"/>
+		<mapper class="com.my.biz.mybatis.mapper.CategoriesMapper"/>
+		<mapper class="com.my.biz.mybatis.mapper.BoardMapper"/>
 		
 	</mappers>
 </configuration>

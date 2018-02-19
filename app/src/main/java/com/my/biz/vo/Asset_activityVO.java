@@ -2,7 +2,7 @@ package com.my.biz.vo;
 
 import java.sql.Date;
 
-public class ActivityVO {
+public class Asset_activityVO {
 
 	/*
 	 * CREATE TABLE ASSET_ACTIVITY( INDEXNUMBER NUMBER(10) NULL , ID VARCHAR2(30)
@@ -17,11 +17,11 @@ public class ActivityVO {
 	Date a_date;
 	String a_type;
 
-	public ActivityVO() {
+	public Asset_activityVO() {
 		super();
 	}
 
-	public ActivityVO(int indexnumber, String id, int category_num, String fixed, Date a_date, String a_type) {
+	public Asset_activityVO(int indexnumber, String id, int category_num, String fixed, Date a_date, String a_type) {
 		super();
 		this.indexnumber = indexnumber;
 		this.id = id;
