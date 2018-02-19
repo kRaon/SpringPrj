@@ -1,12 +1,15 @@
 package com.my.biz.service;
 
+import java.util.List;
+
 import com.my.biz.vo.activityVO;
 
 public interface ActivityService {
-	public int activityInsert(activityVO vo);
-//	public int activityDelete(int seq);
-//	public int activityUpdate(BoardVO vo);
-//	public List<BoardVO> activitySelectAll();
-//	public BoardVO activityFind(int seq);
-	//public List<BoardVO> activityBoard(String condition, String keyword);
+	public int insertActivity(activityVO vo);
+
+	public int deleteActivity(activityVO vo);
+	
+	public int updateActivity(activityVO vo);
+	
+	public List<activityVO> selectAllActivities();
 }

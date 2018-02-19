@@ -1,5 +1,7 @@
 package com.my.biz.dao;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.apache.ibatis.session.SqlSession;
@@ -51,8 +53,27 @@ public class ActivityDAO_mybatis implements ActivityDAO{
 	}
 
 	@Override
-	public int activityInsert(activityVO vo) {
+	public int insertActivity(activityVO vo) {
 		return mapper.insertActivity(vo);
 	}
+
+	@Override
+	public int deleteActivity(activityVO vo) {
+		// TODO Auto-generated method stub
+		return mapper.deleteActivity(vo);
+	}
+
+	@Override
+	public int updateActivity(activityVO vo) {
+		// TODO Auto-generated method stub
+		return mapper.updateActivity(vo);
+	}
+
+	@Override
+	public List<activityVO> selectAllActivities() {
+		// TODO Auto-generated method stub
+		return mapper.selectAllActivities();
+	}
+
 	
 }
