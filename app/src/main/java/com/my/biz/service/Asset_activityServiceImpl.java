@@ -15,7 +15,7 @@ import com.my.biz.vo.Asset_activityVO;
 public class Asset_activityServiceImpl implements Asset_activityService{
 	
 	@Autowired
-	@Qualifier("Activity_mybatis")
+	@Qualifier("Asset_activity_mybatis")
 	Asset_activityDAO dao=null;
 
 	@Override
