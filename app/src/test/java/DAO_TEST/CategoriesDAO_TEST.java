@@ -49,7 +49,7 @@ public class CategoriesDAO_TEST {
 		public void delete() {
 		     int row =service.deleteCategories(2);
 		     if(row == 0) {
-		    	 System.out.println("subway삭제");
+		    	 System.out.println("subway");
 		     }
 		}
 }
