@@ -47,7 +47,7 @@ CREATE TABLE BOARD(
 		ID                            		VARCHAR2(30)		 NULL ,
 		CONTENTS                      		VARCHAR2(1000)		 NULL ,
 		REG_DATE                      		DATE		 NULL ,
-		FILESRC                       		VARCHAR2(100)		 NULL 
+		ACTIVITY_NUMBERS                       		VARCHAR2(100)		 NULL 
 );
 
 CREATE TABLE COMMENTS(
@@ -81,3 +81,21 @@ ALTER TABLE COMMENTS ADD CONSTRAINT IDX_COMMENTS_FK0 FOREIGN KEY (BOARD_ID) REFE
 insert into users values('qwq713','1234',28,'man','student',0);
 insert into categories values(1,'식품구매');
 insert into activity values(1,'qwq713',1,sysdate,1,1);
+
+
+
+insert into activity values(1,'qwq713',1,sysdate,1,1); 우리은행 입금
+insert into activity values(2,'qwq713',1,sysdate,1,1); 과자사먹음
+insert into activity values(3,'qwq713',1,sysdate,1,1); 월세 냄
+
+
+insert into board values'bid','qwq713','dfdf',sysdate,'1,3,5');
+
+select * from board where=?;
+
+
+
+
+
+
+
