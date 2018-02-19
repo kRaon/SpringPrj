@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.my.web.controller,com.my.web.comm"></context:component-scan>
+
+	<!-- @ControllerAdvice처리하기위해 쓰인거임 mvc : anno.. -->
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<!-- action-servlet . xml 은 presentation Layer 에 관련된 환경설정정보가 담겨있다. -->
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 파일 업로드 설정 multipartResolver가 stream을 연결해시켜줌 .. 매우편함. -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000" />
+	</bean>
+
+	<!-- Locale정보 스프링에 등록 -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	</bean>
+
+	<!-- <mvc:interceptors>
+		parameter로 lang이 오면 작동할것임 변경만 해주는 interceptor
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang" />
+			parameter로 ?lang=en 으로하면 message_en.properties에서 읽어옴.
+		</bean>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/list*.do" />
+			<bean class="com.my.web.interceptor.AuthenticInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors> -->
+
+</beans>
