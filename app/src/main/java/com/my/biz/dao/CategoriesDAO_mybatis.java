@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.my.biz.mybatis.mapper.CategoriesMapper;
-import com.my.biz.vo.categoriesVO;
+import com.my.biz.vo.CategoriesVO;
 
 @Repository("Categories_mybatis")
 public class CategoriesDAO_mybatis implements CategoriesDAO{
@@ -54,7 +54,7 @@ public class CategoriesDAO_mybatis implements CategoriesDAO{
 	}
 	
 	@Override
-	public int insertCategories(categoriesVO vo) {
+	public int insertCategories(CategoriesVO vo) {
 		// TODO Auto-generated method stub
 		return mapper.insertCategories(vo);
 	}
@@ -66,7 +66,7 @@ public class CategoriesDAO_mybatis implements CategoriesDAO{
 	}
 
 	@Override
-	public List<categoriesVO> selectAllcategories() {
+	public List<CategoriesVO> selectAllcategories() {
 		// TODO Auto-generated method stub
 		return mapper.selectAllcategories();
 	}

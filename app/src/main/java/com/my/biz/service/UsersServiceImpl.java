@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.my.biz.dao.UsersDAO;
-import com.my.biz.vo.usersVO;
+import com.my.biz.vo.UsersVO;
 
 @Service("UsersService")
 public class UsersServiceImpl implements UsersService{
@@ -19,7 +19,7 @@ public class UsersServiceImpl implements UsersService{
 	
 	
 	@Override
-	public int insertUsers(usersVO vo) {
+	public int insertUsers(UsersVO vo) {
 		return dao.insertUsers(vo);
 	}
 
@@ -29,7 +29,7 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public List<usersVO> selectAllUsers() {
+	public List<UsersVO> selectAllUsers() {
 
 		return dao.selectAllUsers();
 	}

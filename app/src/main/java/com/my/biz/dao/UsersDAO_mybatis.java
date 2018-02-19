@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.my.biz.mybatis.mapper.UsersMapper;
-import com.my.biz.vo.usersVO;
+import com.my.biz.vo.UsersVO;
 
 @Repository("Users_mybatis")
 public class UsersDAO_mybatis implements UsersDAO{
@@ -56,7 +56,7 @@ public class UsersDAO_mybatis implements UsersDAO{
 	}
 	
 	@Override
-	public int insertUsers(usersVO vo) {
+	public int insertUsers(UsersVO vo) {
 		
 		
 		return mapper.insertUsers(vo);
@@ -69,7 +69,7 @@ public class UsersDAO_mybatis implements UsersDAO{
 	}
 
 	@Override
-	public List<usersVO> selectAllUsers() {
+	public List<UsersVO> selectAllUsers() {
 		// TODO Auto-generated method stub
 		return mapper.selectAllUsers();
 	}

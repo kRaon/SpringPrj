@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.my.biz.dao.CategoriesDAO;
-import com.my.biz.dao.UsersDAO;
-import com.my.biz.vo.categoriesVO;
-import com.my.biz.vo.usersVO;
+import com.my.biz.vo.CategoriesVO;
 
 @Service("CategoriesService")
 public class CategoriesServiceImpl implements CategoriesService{
@@ -20,7 +18,7 @@ public class CategoriesServiceImpl implements CategoriesService{
 	
 	
 	@Override
-	public int insertCategories(categoriesVO vo) {
+	public int insertCategories(CategoriesVO vo) {
 		// TODO Auto-generated method stub
 		return dao.insertCategories(vo);
 	}
@@ -32,7 +30,7 @@ public class CategoriesServiceImpl implements CategoriesService{
 	}
 
 	@Override
-	public List<categoriesVO> selectAllcategories() {
+	public List<CategoriesVO> selectAllcategories() {
 		// TODO Auto-generated method stub
 		return dao.selectAllcategories();
 	}

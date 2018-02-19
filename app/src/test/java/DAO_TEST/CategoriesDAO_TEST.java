@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.my.biz.service.CategoriesService;
-import com.my.biz.vo.categoriesVO;
+import com.my.biz.vo.CategoriesVO;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -32,16 +32,16 @@ public class CategoriesDAO_TEST {
 
 	//@Test
 	public void insert() {
-		categoriesVO vo = new categoriesVO();
+		CategoriesVO vo = new CategoriesVO();
 		
 		vo.setCategory_num(2);
 		vo.setCategory_name("subway");
 		service.insertCategories(vo);
 		
 	}
-	//@Test
+	@Test
 		public void list() {
-			for(categoriesVO data  :service.selectAllcategories()) {
+			for(CategoriesVO data  :service.selectAllcategories()) {
 				System.out.println(data);
 		}
 		}
