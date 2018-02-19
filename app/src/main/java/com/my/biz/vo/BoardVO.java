@@ -1,36 +1,26 @@
 package com.my.biz.vo;
 
-import java.util.Date;
+import java.sql.Date;
 
-public class commentsVO {
+public class BoardVO {
 
-	int indexnumber;
 	String board_id;
 	String id;
 	String contents;
 	Date reg_date;
-	int accept;
+	String filesrc; // ?ŒŒ?¼ ì²¨ë??•œ?‹¤ë©? ?•´?‹¹ ?ŒŒ?¼?˜ ì£¼ì†Œ
 
-	public commentsVO() {
+	public BoardVO() {
 		super();
 	}
 
-	public commentsVO(int indexnumber, String board_id, String id, String contents, Date reg_date, int accept) {
+	public BoardVO(String board_id, String id, String contents, Date reg_date, String filesrc) {
 		super();
-		this.indexnumber = indexnumber;
 		this.board_id = board_id;
 		this.id = id;
 		this.contents = contents;
 		this.reg_date = reg_date;
-		this.accept = accept;
-	}
-
-	public int getIndexnumber() {
-		return indexnumber;
-	}
-
-	public void setIndexnumber(int indexnumber) {
-		this.indexnumber = indexnumber;
+		this.filesrc = filesrc;
 	}
 
 	public String getBoard_id() {
@@ -65,20 +55,18 @@ public class commentsVO {
 		this.reg_date = reg_date;
 	}
 
-	public int getAccept() {
-		return accept;
+	public String getFilesrc() {
+		return filesrc;
 	}
 
-	public void setAccept(int accept) {
-		this.accept = accept;
+	public void setFilesrc(String filesrc) {
+		this.filesrc = filesrc;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("commentsVO [indexnumber=");
-		builder.append(indexnumber);
-		builder.append(", board_id=");
+		builder.append("boardVO [board_id=");
 		builder.append(board_id);
 		builder.append(", id=");
 		builder.append(id);
@@ -86,8 +74,8 @@ public class commentsVO {
 		builder.append(contents);
 		builder.append(", reg_date=");
 		builder.append(reg_date);
-		builder.append(", accept=");
-		builder.append(accept);
+		builder.append(", filesrc=");
+		builder.append(filesrc);
 		builder.append("]");
 		return builder.toString();
 	}

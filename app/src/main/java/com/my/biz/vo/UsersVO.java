@@ -1,6 +1,6 @@
 package com.my.biz.vo;
 
-public class usersVO {
+public class UsersVO {
 
 	String id;
 	String pw;
@@ -9,11 +9,11 @@ public class usersVO {
 	String job;
 	int point;
 
-	public usersVO() {
+	public UsersVO() {
 		super();
 	}
 
-	public usersVO(String id, String pw, int age, String gender, String job, int point) {
+	public UsersVO(String id, String pw, int age, String gender, String job, int point) {
 		super();
 		this.id = id;
 		this.pw = pw;

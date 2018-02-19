@@ -2,12 +2,15 @@ package com.my.biz.service;
 
 import java.util.List;
 
-import com.my.biz.vo.usersVO;
+import org.springframework.stereotype.Service;
 
+import com.my.biz.vo.UsersVO;
+
+@Service("userService")
 public interface UsersService {
 
-	int insertUsers(usersVO vo);
+	int insertUsers(UsersVO vo);
 	int deleteUsers(String id);
-	List<usersVO> selectAllUsers();
+	List<UsersVO> selectAllUsers();
 		
 }

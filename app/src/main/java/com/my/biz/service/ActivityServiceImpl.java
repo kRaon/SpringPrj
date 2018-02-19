@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.my.biz.dao.ActivityDAO;
-import com.my.biz.vo.activityVO;
+import com.my.biz.vo.ActivityVO;
 
 @Service("ActivityService")
 public class ActivityServiceImpl implements ActivityService{
@@ -16,22 +16,22 @@ public class ActivityServiceImpl implements ActivityService{
 	ActivityDAO dao=null;
 
 	@Override
-	public int insertActivity(activityVO vo) {
+	public int insertActivity(ActivityVO vo) {
 		return dao.insertActivity(vo);
 	}
 
 	@Override
-	public int deleteActivity(activityVO vo) {
+	public int deleteActivity(ActivityVO vo) {
 		return dao.deleteActivity(vo);
 	}
 
 	@Override
-	public int updateActivity(activityVO vo) {
+	public int updateActivity(ActivityVO vo) {
 		return dao.updateActivity(vo);
 	}
 
 	@Override
-	public List<activityVO> selectAllActivities() {
+	public List<ActivityVO> selectAllActivities() {
 		return dao.selectAllActivities();
 	}
 	

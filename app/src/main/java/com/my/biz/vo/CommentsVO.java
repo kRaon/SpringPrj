@@ -1,26 +1,36 @@
 package com.my.biz.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class boardVO {
+public class CommentsVO {
 
+	int indexnumber;
 	String board_id;
 	String id;
 	String contents;
 	Date reg_date;
-	String filesrc; // 파일 첨부한다면 해당 파일의 주소
+	int accept;
 
-	public boardVO() {
+	public CommentsVO() {
 		super();
 	}
 
-	public boardVO(String board_id, String id, String contents, Date reg_date, String filesrc) {
+	public CommentsVO(int indexnumber, String board_id, String id, String contents, Date reg_date, int accept) {
 		super();
+		this.indexnumber = indexnumber;
 		this.board_id = board_id;
 		this.id = id;
 		this.contents = contents;
 		this.reg_date = reg_date;
-		this.filesrc = filesrc;
+		this.accept = accept;
+	}
+
+	public int getIndexnumber() {
+		return indexnumber;
+	}
+
+	public void setIndexnumber(int indexnumber) {
+		this.indexnumber = indexnumber;
 	}
 
 	public String getBoard_id() {
@@ -55,18 +65,20 @@ public class boardVO {
 		this.reg_date = reg_date;
 	}
 
-	public String getFilesrc() {
-		return filesrc;
+	public int getAccept() {
+		return accept;
 	}
 
-	public void setFilesrc(String filesrc) {
-		this.filesrc = filesrc;
+	public void setAccept(int accept) {
+		this.accept = accept;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("boardVO [board_id=");
+		builder.append("commentsVO [indexnumber=");
+		builder.append(indexnumber);
+		builder.append(", board_id=");
 		builder.append(board_id);
 		builder.append(", id=");
 		builder.append(id);
@@ -74,8 +86,8 @@ public class boardVO {
 		builder.append(contents);
 		builder.append(", reg_date=");
 		builder.append(reg_date);
-		builder.append(", filesrc=");
-		builder.append(filesrc);
+		builder.append(", accept=");
+		builder.append(accept);
 		builder.append("]");
 		return builder.toString();
 	}

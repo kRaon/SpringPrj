@@ -2,14 +2,14 @@ package com.my.biz.service;
 
 import java.util.List;
 
-import com.my.biz.vo.activityVO;
+import com.my.biz.vo.ActivityVO;
 
 public interface ActivityService {
-	public int insertActivity(activityVO vo);
+	public int insertActivity(ActivityVO vo);
 
-	public int deleteActivity(activityVO vo);
+	public int deleteActivity(ActivityVO vo);
 	
-	public int updateActivity(activityVO vo);
+	public int updateActivity(ActivityVO vo);
 	
-	public List<activityVO> selectAllActivities();
+	public List<ActivityVO> selectAllActivities();
 }

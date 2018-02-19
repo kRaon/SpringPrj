@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.my.biz.service.UsersService;
-import com.my.biz.vo.usersVO;
+import com.my.biz.vo.UsersVO;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -31,7 +31,7 @@ public class UsersDAO_TEST {
 
 	@Test
 	public void test() {
-		usersVO vo=new usersVO();
+		UsersVO vo=new UsersVO();
 		
 		vo.setId("java02");
 		vo.setPw("1234");

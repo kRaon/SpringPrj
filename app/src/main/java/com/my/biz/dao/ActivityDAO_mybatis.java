@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.my.biz.mybatis.mapper.ActivityMapper;
-import com.my.biz.vo.activityVO;
+import com.my.biz.vo.ActivityVO;
 
 @Repository("Activity_mybatis")
 public class ActivityDAO_mybatis implements ActivityDAO{
@@ -53,24 +53,24 @@ public class ActivityDAO_mybatis implements ActivityDAO{
 	}
 
 	@Override
-	public int insertActivity(activityVO vo) {
+	public int insertActivity(ActivityVO vo) {
 		return mapper.insertActivity(vo);
 	}
 
 	@Override
-	public int deleteActivity(activityVO vo) {
+	public int deleteActivity(ActivityVO vo) {
 		// TODO Auto-generated method stub
 		return mapper.deleteActivity(vo);
 	}
 
 	@Override
-	public int updateActivity(activityVO vo) {
+	public int updateActivity(ActivityVO vo) {
 		// TODO Auto-generated method stub
 		return mapper.updateActivity(vo);
 	}
 
 	@Override
-	public List<activityVO> selectAllActivities() {
+	public List<ActivityVO> selectAllActivities() {
 		// TODO Auto-generated method stub
 		return mapper.selectAllActivities();
 	}

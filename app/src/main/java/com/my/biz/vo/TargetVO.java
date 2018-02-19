@@ -2,16 +2,16 @@ package com.my.biz.vo;
 
 import java.sql.Date;
 
-public class targetVO {
+public class TargetVO {
 	int indexnumber;
 	String id;
 	String reason;
 	int amount;
 	Date deadline;
-	public targetVO() {
+	public TargetVO() {
 		super();
 	}
-	public targetVO(int indexnumber, String id, String reason, int amount, Date deadline) {
+	public TargetVO(int indexnumber, String id, String reason, int amount, Date deadline) {
 		super();
 		this.indexnumber = indexnumber;
 		this.id = id;

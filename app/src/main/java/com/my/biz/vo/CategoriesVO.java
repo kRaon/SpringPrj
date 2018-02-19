@@ -1,14 +1,14 @@
 package com.my.biz.vo;
 
-public class categoriesVO {
-	int category_num; // indexì„ ê±
+public class CategoriesVO {
+	int category_num; // index?„ ê±?
 	String category_name;
 
-	public categoriesVO() {
+	public CategoriesVO() {
 		super();
 	}
 
-	public categoriesVO(int category_num, String category_name) {
+	public CategoriesVO(int category_num, String category_name) {
 		super();
 		this.category_num = category_num;
 		this.category_name = category_name;

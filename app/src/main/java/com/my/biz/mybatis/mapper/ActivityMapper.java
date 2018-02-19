@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.my.biz.vo.activityVO;
+import com.my.biz.vo.ActivityVO;
 
 public interface ActivityMapper {
 	/*int indexnumber;
@@ -21,16 +21,16 @@ public interface ActivityMapper {
 //crud
 	
 	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,FIXED,A_DATE,A_TYPE) VALUES (#{indexnumber},#{id},#{category_num},#{fixed},#{a_date},#{a_type})")
-	int insertActivity(activityVO vo);
+	int insertActivity(ActivityVO vo);
 	
 	@Delete("DELETE FROM ASSET_ACTIVITY WHERE INDEXNUMBER=#{indexnumber}")
-	int deleteActivity(activityVO vo);
+	int deleteActivity(ActivityVO vo);
 	
 	@Update("UPDATE ASSET_ACTIVITY SET CATEGORY_NUM=#{category_num}, FIXED=#{fixed}, A_DATE=#{a_date},A_TYPE=#{a_type} WHERE INDEXNUMBER=#{indexnumber}")
-	int updateActivity(activityVO vo);
+	int updateActivity(ActivityVO vo);
 	
 	@Select("SELECT * FROM ASSET_ACTIVITY")
-	List<activityVO> selectAllActivities();
+	List<ActivityVO> selectAllActivities();
 	
 	//@Select("SELECT * FROM ACTIVITY WHERE ID=#{id}")
 	
