@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.my.biz.vo.UsersVO;
 
-@Service("userService")
+@Service("usersService")
 public interface UsersService {
 
 	int insertUsers(UsersVO vo);
