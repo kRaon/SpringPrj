@@ -72,4 +72,10 @@ public class UsersDAO_mybatis implements UsersDAO{
 		return mapper.selectAllUsers();
 	}
 
+	@Override
+	public UsersVO loginUser(String id, String pw) {
+		// TODO Auto-generated method stub
+		return mapper.loginUser(id,pw);
+	}
+
 }

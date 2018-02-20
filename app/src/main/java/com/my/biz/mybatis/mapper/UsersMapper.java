@@ -25,6 +25,9 @@ public interface UsersMapper {
 	
 	@Select("SELECT * FROM USERS")
 	List<UsersVO> selectAllUsers();
+	
+	@Select("SELECT * FROM USERS WHERE id=#{id} and pw=#{pw}")
+	UsersVO loginUser(String id, String pw);
 		
 	//@Update("UPDATE USERS SET ")
 	
