@@ -1,6 +1,5 @@
 package com.my.biz.mybatis.mapper;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -20,10 +19,11 @@ public interface Asset_activityMapper {
 	String fixed;
 	Date a_date;
 	String a_type;
+	String category_name;
 */
 //crud
-	
-	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE) VALUES (SEQUENCE1.nextval,#{id},#{category_num},#{contents},#{amount},#{fixed},#{a_date},#{a_type})")
+	//indexnumber=0, id=qwq713, category_num=2, contents=11, amount=125555, fixed=yes, a_date=2018-02-21, a_type=expense
+	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE) VALUES ((select MAX(NVL(INDEXNUMBER,0))+1 from ASSET_ACTIVITY),#{id},#{category_num},#{contents},#{amount},#{fixed},#{a_date},#{a_type})")
 	int insertActivity(Asset_activityVO vo);
 	
 	@Delete("DELETE FROM ASSET_ACTIVITY WHERE INDEXNUMBER=#{indexnumber}")
@@ -36,8 +36,13 @@ public interface Asset_activityMapper {
 	@Select("SELECT * FROM ASSET_ACTIVITY")
 	List<Asset_activityVO> selectAllActivities();
 	
+	//@Select("SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM;")
+	//List<Asset_activityVO2> selectAllActivitiesName();
+	
+	
 	@Select("SELECT CATEGORY_NUM FROM ASSET_ACTIVITY WHERE CATEGORY_NAME=#{category_name}")
 	int selectActivityNum(String category_name);
+	
 	
 	
 	//@Select("SELECT * FROM ACTIVITY WHERE ID=#{id}")

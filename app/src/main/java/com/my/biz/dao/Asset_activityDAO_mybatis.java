@@ -79,5 +79,7 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 		return mapper.selectActivityNum(category_name);
 	}
 
+
+
 	
 }
