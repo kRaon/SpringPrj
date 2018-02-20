@@ -2,6 +2,7 @@ package com.my.biz.dao;
 
 import java.util.List;
 
+
 import javax.annotation.PostConstruct;
 
 import org.apache.ibatis.session.SqlSession;
@@ -14,15 +15,12 @@ import com.my.biz.vo.UsersVO;
 
 @Repository("Users_mybatis")
 public class UsersDAO_mybatis implements UsersDAO{
-
+	
 	@Autowired
 	@Qualifier("sqlSession")
 	SqlSession mybatis;
 	
 	UsersMapper mapper;
-	
-	
-	
 	
 	public SqlSession getMybatis() {
 		return mybatis;
@@ -52,7 +50,6 @@ public class UsersDAO_mybatis implements UsersDAO{
 	@PostConstruct
 	void init() {
 		mapper = mybatis.getMapper(UsersMapper.class);
-		
 	}
 	
 	@Override
@@ -72,4 +69,18 @@ public class UsersDAO_mybatis implements UsersDAO{
 		return mapper.selectAllUsers();
 	}
 
+	@Override
+	public UsersVO searchUser(String id) {
+		return mapper.searchUser(id);
+	}
+
+
+	public UsersVO loginUser(String id, String pw) {
+		//System.out.println("UserDAO_mybatis: "+id+pw);
+		UsersVO vo = new UsersVO();
+		vo.setId(id);
+		vo.setPw(pw);
+		return mapper.loginUser(vo);
+	}
 }
+

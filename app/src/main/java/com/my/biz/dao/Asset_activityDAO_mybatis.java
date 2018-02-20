@@ -22,13 +22,11 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	
 	
 	public Asset_activityDAO_mybatis() {
-		super();
 	}
 
 	public Asset_activityDAO_mybatis(SqlSession mybatis, Asset_activityMapper mapper) {
-		super();
 		this.mybatis = mybatis;
-		this.mapper = mapper;
+		//this.mapper = mapper;
 	}
 	
 	@PostConstruct

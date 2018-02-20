@@ -13,14 +13,14 @@ public class UsersVO {
 		super();
 	}
 
-	public UsersVO(String id, String pw, int age, String gender, String job, int point) {
+	public UsersVO(String id, String pw, int age, String gender, String job) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.age = age;
 		this.gender = gender;
 		this.job = job;
-		this.point = point;
+		this.point = 0;
 	}
 
 	public String getId() {

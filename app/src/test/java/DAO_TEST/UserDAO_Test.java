@@ -54,5 +54,11 @@ public class UserDAO_Test {
 			System.out.println(vo);
 		}
 	}
-
+	//@Test
+	public void login() {
+		UsersVO vo = new UsersVO();
+		vo = service.loginUser("java02", "1234");
+		System.out.println(vo);
+		
+	}
 }

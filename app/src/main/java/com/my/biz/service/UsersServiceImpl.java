@@ -15,8 +15,6 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	@Qualifier("Users_mybatis")
 	UsersDAO dao = null;
-
-	
 	
 	@Override
 	public int insertUsers(UsersVO vo) {
@@ -34,5 +32,12 @@ public class UsersServiceImpl implements UsersService{
 		return dao.selectAllUsers();
 	}
 
-	
+	@Override
+	public UsersVO searchUser(String id) {
+		return dao.searchUser(id);
+	}
+
+	public UsersVO loginUser(String id, String pw) {
+		return dao.loginUser(id,pw);
+	}
 }
