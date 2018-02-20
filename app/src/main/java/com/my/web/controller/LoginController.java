@@ -45,6 +45,11 @@ public class LoginController {
 				session.invalidate();
 				return "login";
 	}
+		
+		@RequestMapping("/gomain.do")
+		public String gomain() {
+			return "index";
+		}
 }
 	
 	
