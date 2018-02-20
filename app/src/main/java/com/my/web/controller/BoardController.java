@@ -1,7 +1,6 @@
 package com.my.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,9 +25,14 @@ public class BoardController {
 		return "redirect:board.do";
 	}
 	@RequestMapping(value= {"updateBoard.do"})
-	public String updateBoard(@ModelAttribute("board") BoardVO vo) {
+	public String updateBoard(BoardVO vo) {
 		service.updateBoard(vo);
 		return "redirect:listboard.do";
 	}
+	@RequestMapping(value= {"insertBoard"})
+	public String insertBoard(BoardVO vo) {
+		service.insertBoard(vo);
+		return "redirect: board.do";
+	}
 	
-}
+}	
