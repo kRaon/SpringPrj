@@ -1,6 +1,7 @@
 package com.my.web.controller;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -25,7 +26,6 @@ public class Chart extends HttpServlet {
 		for(int d :nums) {
 			tmp.put(d);
 		}
-		
 		
 		System.out.println(tmp.toList());
 		out.println(tmp.toList());

@@ -1,16 +1,20 @@
 package com.my.web.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.my.biz.service.UsersService;
 import com.my.biz.vo.UsersVO;
+
 
 @Controller
 public class SignUpController {
@@ -32,5 +36,28 @@ public class SignUpController {
 		}else {
 			return "register";
 		}
+	}
+	
+
+	@RequestMapping("/idCompare.do")
+	protected void service(HttpServletRequest request, 
+							HttpServletResponse response) throws IOException
+						{
+		
+		System.out.println("service 진입");
+		
+		boolean req = false;
+		String id = request.getParameter("id");
+		System.out.println(id);
+		req = service.loginIdSearch(id);
+		System.out.println("req: "+req);
+		
+		JSONObject jsonObject = new JSONObject();
+		PrintWriter out = response.getWriter();
+		jsonObject.put("flag", req);
+	
+			out.print(jsonObject.toJSONString());
+			out.flush();
+			out.close();
 	}
 }
