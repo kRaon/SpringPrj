@@ -17,7 +17,7 @@ public interface UsersMapper {
 	String job;
 	int point;*/
 	
-	@Insert("INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES (#{id},#{pw},#{age},#{gender},#{job},#{point})")
+	@Insert("INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES (#{id},#{pw},#{age},#{gender},#{job},0)")
 	int insertUsers(UsersVO vo);
 	
 	@Delete("DELETE FROM USERS WHERE ID=#{id}")
@@ -25,7 +25,9 @@ public interface UsersMapper {
 	
 	@Select("SELECT * FROM USERS")
 	List<UsersVO> selectAllUsers();
-		
+	
+	@Select("SELECT * FROM USERS WHERE ID=#{id}")
+	UsersVO searchUser(String id);
 	//@Update("UPDATE USERS SET ")
 	
 }

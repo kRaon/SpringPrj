@@ -25,7 +25,7 @@ public class LoginController {
 	public String gohome() {
 		return "index";
 	}
-	
+
 	/*@RequestMapping("/login.do")
 	public String loginProcess(UsersVO vo, HttpServletRequest req) {
 		UsersVO user = service.login(vo.getId(), vo.getPw());

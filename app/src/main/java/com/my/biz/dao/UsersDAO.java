@@ -9,5 +9,5 @@ public interface UsersDAO {
 	int insertUsers(UsersVO vo);
 	int deleteUsers(String id);
 	List<UsersVO> selectAllUsers();
-		
+	UsersVO searchUser(String id);
 }

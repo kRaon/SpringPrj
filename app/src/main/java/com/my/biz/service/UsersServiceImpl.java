@@ -34,5 +34,10 @@ public class UsersServiceImpl implements UsersService{
 		return dao.selectAllUsers();
 	}
 
+	@Override
+	public UsersVO searchUser(String id) {
+		return dao.searchUser(id);
+	}
+
 	
 }

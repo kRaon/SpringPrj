@@ -72,4 +72,9 @@ public class UsersDAO_mybatis implements UsersDAO{
 		return mapper.selectAllUsers();
 	}
 
+	@Override
+	public UsersVO searchUser(String id) {
+		return mapper.searchUser(id);
+	}
+
 }
