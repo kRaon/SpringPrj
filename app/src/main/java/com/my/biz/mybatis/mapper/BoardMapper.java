@@ -1,5 +1,6 @@
 package com.my.biz.mybatis.mapper;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -15,10 +16,10 @@ public interface BoardMapper {
 /*	String board_id;
 	String id;
 	String contents;
+	String billscontents;
 	Date reg_date;
-	String activity_numbers; // 영수증 첨부
 */	
-	@Insert("INSERT INTO BOARD (board_id,id,contents,reg_date,activity_numbers) VALUES(#{board_id},#{id},#{contents},SYSDATE,#{activity_numbers})")
+	@Insert("INSERT INTO BOARD (board_id,id,contents,billscontents,reg_date) VALUES(#{board_id},#{id},#{contents},#{billscontents},SYSDATE)")
 	public int insertBoard(BoardVO vo);
 	
 	@Delete("DELETE FROM BOARD WHERE=#{board_id}")
