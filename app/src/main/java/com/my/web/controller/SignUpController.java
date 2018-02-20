@@ -39,7 +39,7 @@ public class SignUpController {
 	}
 	
 
-	@RequestMapping("/idCompare.do")
+	/*@RequestMapping("/idCompare.do")
 	protected void service(HttpServletRequest request, 
 							HttpServletResponse response) throws IOException
 						{
@@ -59,5 +59,5 @@ public class SignUpController {
 			out.print(jsonObject.toJSONString());
 			out.flush();
 			out.close();
-	}
+	}*/
 }
