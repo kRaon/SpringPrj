@@ -17,13 +17,10 @@ import com.my.biz.vo.UsersVO;
 public class LoginController {
 
 	@Autowired
-	@Qualifier("usersService")
+	@Qualifier("UsersService")
 	UsersService service;
 
-	@RequestMapping("/loginForm.do")
-	public String loginForm() {
-		return "redirect:login.html";
-	}
+
 	@RequestMapping("/home.do")
 	public String gohome() {
 		return "index";
