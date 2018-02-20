@@ -82,5 +82,31 @@ public class UsersDAO_mybatis implements UsersDAO{
 		vo.setPw(pw);
 		return mapper.loginUser(vo);
 	}
+
+	/*@Override
+	public boolean loginIdSearch(String id) {
+		String[] ids = mapper.loginIdSearch(id);
+		for(String d :ids) {
+			if(id.equals(d)) {
+				return false;
+			}else {
+				return true;
+			}
+		}
+		return false;
+	}*/
+	
+	@Override
+	public boolean loginIdSearch(String id) {
+		UsersVO vo = mapper.searchUser(id);
+		
+		if(vo!=null) {
+			System.out.println("아이디있다.");
+			return false;
+		}else {
+			System.out.println("없다.");
+			return true;
+		}
+	}
 }
 

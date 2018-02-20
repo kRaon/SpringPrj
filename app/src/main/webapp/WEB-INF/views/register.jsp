@@ -23,16 +23,18 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body" >
-        
-        
-        
+  
         <form method="post" action="./signup.do">
        
         <div class="form-group" style="width: 745px">
          <div class="form-row">
           <div class="col-md-6">
           	<label>ID</label>
-        	<input class="form-control" type="text" name="id" placeholder="Enter your id"/>
+        	<input class="form-control" type="text" id="id" name="id" placeholder="Enter your id"/>
+				 	<div align="right">
+				 	<span id="idcheck" style="font-size:11pt">아이디 중복 체크해주세요</span><br> 
+				 	<input type="button" id="compare" value="아이디 중복 체크"  style="width:100pt;height:20pt" />
+				 	</div>
           </div>
          </div>
           <div class="form-row">
@@ -75,6 +77,22 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+ 
+ 
+ <!--resiter js 추가 -->
+ <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-charts.min2.js"></script>
+ 
+ 
 </body>
 
 </html>

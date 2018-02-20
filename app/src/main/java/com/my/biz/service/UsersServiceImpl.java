@@ -40,4 +40,9 @@ public class UsersServiceImpl implements UsersService{
 	public UsersVO loginUser(String id, String pw) {
 		return dao.loginUser(id,pw);
 	}
+
+	@Override
+	public boolean loginIdSearch(String id) {
+		return dao.loginIdSearch(id);
+	}
 }
