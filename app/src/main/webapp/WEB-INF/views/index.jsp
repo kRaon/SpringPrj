@@ -21,6 +21,7 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Start Bootstrap</a>
@@ -223,6 +224,7 @@
       </ul>
     </div>
   </nav>
+  
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -299,6 +301,7 @@
           </div>
         </div>
       </div>
+      
       <!-- Area Chart Example-->
       <div class="card mb-3">
 		<canvas id="myAreaChart" width="100%" height="20"></canvas>
