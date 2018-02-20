@@ -70,6 +70,11 @@ public class UsersDAO_mybatis implements UsersDAO{
 	}
 
 	@Override
+	public UsersVO searchUser(String id) {
+		return mapper.searchUser(id);
+	}
+
+
 	public UsersVO loginUser(String id, String pw) {
 		//System.out.println("UserDAO_mybatis: "+id+pw);
 		UsersVO vo = new UsersVO();
@@ -78,3 +83,4 @@ public class UsersDAO_mybatis implements UsersDAO{
 		return mapper.loginUser(vo);
 	}
 }
+

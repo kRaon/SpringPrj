@@ -72,6 +72,7 @@
               <a href="loginForm.do">Login Page</a>
             </li>
             <li>
+              <a href="gosignup.do">Registration Page</a>
               <a href="register.jsp">Registration Page</a>
             </li>
             <li>
@@ -1103,7 +1104,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.jsp">Logout</a>
+            <a class="btn btn-primary" href="home.do">Logout</a>
           </div>
         </div>
       </div>

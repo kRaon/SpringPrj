@@ -29,6 +29,20 @@ public class LoginController {
 	/*@RequestMapping("/home.do")
 	public String gohome() {
 		return "index";
+<<<<<<< HEAD
+	}
+
+	/*@RequestMapping("/login.do")
+	public String loginProcess(UsersVO vo, HttpServletRequest req) {
+		UsersVO user = service.login(vo.getId(), vo.getPw());
+		if(user != null) {
+			req.getSession().setAttribute("login", user);
+			return "redirect:index.html";
+		}else {
+			return "redirect:index.html";
+		}
+=======
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
 	}*/
 	
 	@RequestMapping("/login.do")

@@ -19,40 +19,49 @@
 </head>
 
 <body class="bg-dark">
-  <div class="container">
+  <div class="container" style="width: 440px">
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputName">First name</label>
-                <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
-              </div>
-              <div class="col-md-6">
-                <label for="exampleInputLastName">Last name</label>
-                <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
-              </div>
-            </div>
+      <div class="card-body" >
+        
+        
+        
+        <form method="post" action="./signup.do">
+       
+        <div class="form-group" style="width: 745px">
+         <div class="form-row">
+          <div class="col-md-6">
+          	<label>ID</label>
+        	<input class="form-control" type="text" name="id" placeholder="Enter your id"/>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+         </div>
+          <div class="form-row">
+          <div class="col-md-6">
+         	<label>pw</label>
+        	<input class="form-control" type="password" name="pw" placeholder="Enter your password"/>
           </div>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="exampleInputPassword1">Password</label>
-                <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
-              </div>
-              <div class="col-md-6">
-                <label for="exampleConfirmPassword">Confirm password</label>
-                <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">
-              </div>
-            </div>
-          </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
+		</div>
+		 <div class="form-row">
+          <div class="col-md-6">
+         	<label>age</label>
+        	<input class="form-control" type="text" name="age" placeholder="Enter your age"/>
+           </div>
+         </div>
+         <div class="form-row">
+          <div class="col-md-6">
+          	<label>gender</label>       
+        	<input class="form-control" type="text" name="gender" placeholder="Enter your gender"/>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="col-md-6">
+           	<label>job</label>
+        	<input class="form-control" type="text" name="job" placeholder="Enter your job"/>
+           </div>
+         </div>
+        </div>
+        
+       	<input type="submit" class="btn btn-primary btn-block" value="Register"/> 
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="login.html">Login Page</a>

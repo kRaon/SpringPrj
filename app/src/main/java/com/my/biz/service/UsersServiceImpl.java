@@ -33,6 +33,10 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
+	public UsersVO searchUser(String id) {
+		return dao.searchUser(id);
+	}
+
 	public UsersVO loginUser(String id, String pw) {
 		return dao.loginUser(id,pw);
 	}
