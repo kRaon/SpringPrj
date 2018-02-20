@@ -24,8 +24,8 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 	}
 
 	@Override
-	public int deleteActivity(Asset_activityVO vo) {
-		return dao.deleteActivity(vo);
+	public int deleteActivity(int indexnumber) {
+		return dao.deleteActivity(indexnumber);
 	}
 
 	@Override

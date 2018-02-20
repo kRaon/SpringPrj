@@ -7,7 +7,7 @@ import com.my.biz.vo.Asset_activityVO;
 public interface Asset_activityService {
 	public int insertActivity(Asset_activityVO vo);
 
-	public int deleteActivity(Asset_activityVO vo);
+	public int deleteActivity(int indexnumber);
 	
 	public int updateActivity(Asset_activityVO vo);
 	

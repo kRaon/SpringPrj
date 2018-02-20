@@ -24,9 +24,9 @@ public class CommentsServiceImpl implements CommentsService{
 	}
 
 	@Override
-	public int deleteComment(CommentsVO vo) {
+	public int deleteComment(int indexnumber) {
 		// TODO Auto-generated method stub
-		return dao.deleteComment(vo);
+		return dao.deleteComment(indexnumber);
 	}
 
 	@Override

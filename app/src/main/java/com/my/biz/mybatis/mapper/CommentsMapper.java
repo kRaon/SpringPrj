@@ -18,11 +18,11 @@ public interface CommentsMapper {
 	Date reg_date;
 	int accept;*/
 	
-	@Insert("INSERT INTO COMMENTS (INDEXNUMBER,BOARD_ID,ID,CONTENTS,REG_DATE,ACCEPT) VALUES(#{board_id},#{id},#{contents},sysdate,#{accept})")
+	@Insert("INSERT INTO COMMENTS (INDEXNUMBER,BOARD_ID,ID,CONTENTS,REG_DATE,ACCEPT) VALUES(SEQUENCE2.nextval,#{board_id},#{id},#{contents},sysdate,#{accept})")
 	int insertComment(CommentsVO vo);
 
-	@Delete("DELETE FROM COMMENTS WHERE=#{indexnumber}")
-	int deleteComment(CommentsVO vo);
+	@Delete("DELETE FROM COMMENTS WHERE INDEXNUMBER = #{indexnumber}")
+	int deleteComment(int indexnumber);
 
 	@Update("UPDATE COMMENTS SET CONTENTS=#{contents} WHERE INDEXNUMBER=#{indexnumber}")
 	int updateComment(CommentsVO vo);

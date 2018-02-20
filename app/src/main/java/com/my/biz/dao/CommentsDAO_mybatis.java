@@ -43,9 +43,9 @@ public class CommentsDAO_mybatis implements CommentsDAO{
 	}
 
 	@Override
-	public int deleteComment(CommentsVO vo) {
+	public int deleteComment(int indexnumber) {
 		// TODO Auto-generated method stub
-		return mapper.deleteComment(vo);
+		return mapper.deleteComment(indexnumber);
 	}
 
 	@Override

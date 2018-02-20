@@ -8,7 +8,7 @@ import com.my.biz.vo.CommentsVO;
 public interface CommentsService {
 	public int insertComment(CommentsVO vo);
 
-	public int deleteComment(CommentsVO vo);
+	public int deleteComment(int indexnumber);
 
 	public int updateComment(CommentsVO vo);
 

@@ -24,7 +24,8 @@ public interface Asset_activityMapper {
 	int insertActivity(Asset_activityVO vo);
 	
 	@Delete("DELETE FROM ASSET_ACTIVITY WHERE INDEXNUMBER=#{indexnumber}")
-	int deleteActivity(Asset_activityVO vo);
+	//int deleteActivity(Asset_activityVO vo);
+	int deleteActivity(int num);
 	
 	@Update("UPDATE ASSET_ACTIVITY SET CATEGORY_NUM=#{category_num}, FIXED=#{fixed}, A_DATE=#{a_date},A_TYPE=#{a_type} WHERE INDEXNUMBER=#{indexnumber}")
 	int updateActivity(Asset_activityVO vo);

@@ -58,9 +58,9 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	}
 
 	@Override
-	public int deleteActivity(Asset_activityVO vo) {
+	public int deleteActivity(int indexnumber) {
 		// TODO Auto-generated method stub
-		return mapper.deleteActivity(vo);
+		return mapper.deleteActivity(indexnumber);
 	}
 
 	@Override

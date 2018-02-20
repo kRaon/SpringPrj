@@ -57,8 +57,6 @@ public class UsersDAO_mybatis implements UsersDAO{
 	
 	@Override
 	public int insertUsers(UsersVO vo) {
-		
-		
 		return mapper.insertUsers(vo);
 	}
 
