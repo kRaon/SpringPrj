@@ -13,7 +13,7 @@ $(function() {
 			disp(data);
 		},
 		error : function(error, status) {
-			alert(error.name);
+			//alert(error.name);
 		}
 	});
 
