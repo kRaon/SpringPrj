@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="kr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,14 +20,15 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+      
+        <form id="lobinform" action="./login.do" method="post">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1">ID</label>
+            <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <input class="form-control" id="pw" name="pw" type="password" placeholder="Password">
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -36,11 +36,13 @@
                 <input class="form-check-input" type="checkbox"> Remember Password</label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <input class="btn btn-primary btn-block" type="submit" value="Login"/>
+         <!--  <a class="btn btn-primary btn-block" href="login.do">Login</a> -->
         </form>
+        
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Register an Account</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <a class="d-block small mt-3" href="register.do">Register an Account</a>
+          <a class="d-block small" href="forgot-password.do">Forgot Password?</a>
         </div>
       </div>
     </div>
