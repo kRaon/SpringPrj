@@ -37,5 +37,13 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 	public List<Asset_activityVO> selectAllActivities() {
 		return dao.selectAllActivities();
 	}
+
+	@Override
+	public int selectActivityNum(String category_name) {
+		// TODO Auto-generated method stub
+		return dao.selectActivityNum(category_name);
+	}
+
+
 	
 }

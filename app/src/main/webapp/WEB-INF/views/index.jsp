@@ -44,7 +44,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#"><i class="fa fa-fw fa-table"></i> 오늘의 영수증</a>
+              <a href="./gotodayreceipt.do"><i class="fa fa-fw fa-table"></i> 오늘의 영수증</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-fw fa-area-chart"></i> 이달의 영수증</a>
