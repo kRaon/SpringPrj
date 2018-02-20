@@ -10,4 +10,5 @@ public interface UsersDAO {
 	int deleteUsers(String id);
 	List<UsersVO> selectAllUsers();
 	UsersVO searchUser(String id);
+	UsersVO loginUser(String id, String pw);
 }

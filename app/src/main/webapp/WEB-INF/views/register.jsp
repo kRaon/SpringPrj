@@ -38,7 +38,7 @@
           <div class="form-row">
           <div class="col-md-6">
          	<label>pw</label>
-        	<input class="form-control" type="text" name="pw" placeholder="Enter your password"/>
+        	<input class="form-control" type="password" name="pw" placeholder="Enter your password"/>
           </div>
 		</div>
 		 <div class="form-row">
