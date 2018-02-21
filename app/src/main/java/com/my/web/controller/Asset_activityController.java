@@ -1,6 +1,7 @@
 package com.my.web.controller;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -64,9 +65,13 @@ public class Asset_activityController {
 		mav.addObject("list",list);
 		return mav;
 	}
-	//@RequestMapping("/gotodayreceipt.do")
-	//public ModelAndView gotodayreceipt() {
-		//List<Asset_activityVO>
-		//return "tables";
-	//}
+	
+	@RequestMapping("/gotodayreceipt.do")
+	public ModelAndView gotodayreceipt() {
+		ModelAndView mav = new ModelAndView();
+		List<Asset_activityVO> list=service.selectAllActivities();
+		mav.setViewName("tables");
+		mav.addObject("list", list);
+		return mav;
+	}
 }

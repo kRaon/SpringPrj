@@ -203,24 +203,21 @@
 							cellspacing="0">
 							<thead>
 								<tr>
+									<th>Account</th>
+									<th>Period</th>
 									<th>Category</th>
 									<th>Content</th>
 									<th>Date</th>
 									<th>Amount</th>
 								</tr>
 							</thead>
-							<tfoot>
-								<tr>
-									<th>Category</th>
-									<th>Content</th>
-									<th>Date</th>
-									<th>Amount</th>
-								</tr>
-							</tfoot>
+	
 							<tbody>
 							
 							<c:forEach var="item" items="${list}">
 							<tr>
+								<th>${item.a_type}</th>
+								<th>${item.fixed}</th>
 								<th>${item.category_num}</th>
 								<th>${item.contents}</th>
 								<th>${item.a_date}</th>
@@ -237,6 +234,14 @@
 					<button class="btn btn-info" data-target="#expense"
 						data-toggle="modal">지출</button>
 				</div>
+				
+				<div>
+					<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;" placeholder="영수증에 대한 설명을 작성해주세요"></textarea>
+				</div>
+				
+				
+				
+				
 				<!-- 지출-->
 				<div class="modal fade" id="expense" tabindex="-1" role="dialog"
 					aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -249,6 +254,8 @@
 									<span aria-hidden="true">×</span>
 								</button>
 							</div>
+							
+							
 <!-- form -->	<form method="post" action="./insertReceipt.do">
 								<div class="modal-body">
 									<div class="card-body">
@@ -259,10 +266,10 @@
 									<label class="btn btn-info active">
 									 
 <!-- a_type -->			<input type="hidden" name="a_type" value="expense">	
-<!-- fixed -->			<input type="radio" name="fixed" id="fixed" value="yes" autocomplete="off" checked> 정기
+<!-- fixed -->			<input type="radio" name="fixed" id="fixed" value="Regular" autocomplete="off" checked> 정기
 									</label> 
 									<label class="btn btn-info"> 
-			<input type="radio" name="fixed" id="fixed" value="no" autocomplete="off"> 비정기
+						<input type="radio" name="fixed" id="fixed" value="IRRegular" autocomplete="비정기"> 비정기
 									</label>
 												</div>
 												<br> <br>
@@ -333,47 +340,54 @@
 									<span aria-hidden="true">×</span>
 								</button>
 							</div>
-							<form method="get" action="/aaaa.do">
+							
+	<!-- form -->			<form method="post" action="./insertReceipt.do">
+	
 								<div class="modal-body">
 									<div class="card-body">
 										<div class="form-group">
 											<div>
 												<div class="btn-group btn-group-toggle"
 													data-toggle="buttons">
-													<label class="btn btn-info active"> <input
-														type="radio" name="fixed" id="fixed" value="on"
-														autocomplete="off" checked> 정기
-													</label> <label class="btn btn-info"> <input type="radio"
-														name="fixed" id="fixed" value="off" autocomplete="off">
-														비정기
+													<label class="btn btn-info active"> 
+													
+	<!-- a_type -->			<input type="hidden" name="a_type" value="income">	
+	<!-- fixed  -->			<input type="radio" name="fixed" id="fixed" value="Regular" autocomplete="off" checked> 정기
+	
+													</label> <label class="btn btn-info"> 
+													
+							<input type="radio" name="fixed" id="fixed" value="IRRegular" autocomplete="off"> 비정기
+													
 													</label>
 												</div>
 												<br> <br>
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">항 목</label> <select
-												class="custom-select" name="category_num">
-												<option selected="">항목을 선택해 주세요.</option>
-												<option value="1">소고기 사묵겠지</option>
-												<option value="2">돼지고기 사묵겠지</option>
-												<option value="3">치킨치킨 또레오레</option>
+											<label for="exampleInputEmail1">항 목</label> 
+											
+											<select class="custom-select" name="category_num">
+	<!-- category_num  -->						<option selected="">항목을 선택해 주세요.</option>
+												<option value="1">소고기</option>
+												<option value="2">돼지고기</option>
+												<option value="3">양고기</option>
 											</select>
+										
 										</div>
 
 										<div class="form-group">
 											<label for="exampleTextarea">내 용</label>
-											<textarea class="form-control" name="contents" id="contents"
-												rows="3"
-												style="margin-top: 0px; margin-bottom: 0px; height: 110px;"></textarea>
+											
+	<!-- contents -->		<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;">
+							</textarea>
 										</div>
 										<div class="form-group">
 											<label class="control-label">금 액</label>
 											<div class="form-group">
 												<div class="input-group mb-3">
-													<input class="form-control" id="amount" name="amount"
-														type="text" aria-describedby="emailHelp"
-														aria-label="Amount (to the nearest dollar)">
+													
+							<input class="form-control" id="amount" name="amount" type="text" aria-describedby="emailHelp" aria-label="Amount (to the nearest dollar)">
+	<!-- amount -->												
 													<div class="input-group-append">
 														<span class="input-group-text">원</span>
 													</div>
@@ -381,9 +395,10 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="exampleTextarea">날 짜</label> <input
-												class="form-control" id="a_date" name="a_date" type="date"
-												placeholder="">
+											<label for="exampleTextarea">날 짜</label> 
+											
+	<!-- a_date -->			<input class="form-control" id="a_date" name="a_date" type="date" placeholder="">
+										
 										</div>
 									</div>
 								</div>
