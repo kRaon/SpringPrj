@@ -45,14 +45,10 @@ public class SignUpController {
 	protected void service(HttpServletRequest request, 
 							HttpServletResponse response) throws IOException
 						{
-		
-		System.out.println("service 진입");
-		
+				
 		boolean req = false;
 		String id = request.getParameter("id");
-		System.out.println(id);
 		req = service.loginIdSearch(id);
-		System.out.println("req: "+req);
 		//Gson
 		JsonObject jsonObject = new JsonObject();
 		PrintWriter out = response.getWriter();
