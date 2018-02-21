@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.my.biz.dao.Asset_activityDAO;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 @Service("ActivityService")
@@ -42,6 +43,19 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 		return dao.selectActivityNum(category_name);
 	}
 
+	@Override
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories() {
+		return dao.selectAllActivityCatrgories();
+	}
+
+	@Override
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id) {
+		// TODO Auto-generated method stub
+		return dao.selectAllActivityCatrgories_id(id);
+	}
+
+
+	
 	
 
 

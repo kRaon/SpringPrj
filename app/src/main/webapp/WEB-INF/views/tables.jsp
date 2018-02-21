@@ -197,46 +197,75 @@
 				<div class="card-header">
 					<i class="fa fa-table"></i> 오늘의 영수증
 				</div>
+				
 				<div class="card-body">
 					<div class="table-responsive">
+		<form method="post" action="./deleteassetactivities.do">
 						<table class="table table-bordered" id="dataTable" width="100%"
 							cellspacing="0">
 							<thead>
 								<tr>
+									<th>Account</th>
+									<th>Period</th>
 									<th>Category</th>
 									<th>Content</th>
 									<th>Date</th>
 									<th>Amount</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
-							<tfoot>
-								<tr>
-									<th>Category</th>
-									<th>Content</th>
-									<th>Date</th>
-									<th>Amount</th>
-								</tr>
-							</tfoot>
+	
 							<tbody>
-							
 							<c:forEach var="item" items="${list}">
 							<tr>
-								<th>${item.category_num}</th>
+								<th>${item.a_type}</th>
+								<th>${item.fixed}</th>
+								<th>${item.category_name}</th>
 								<th>${item.contents}</th>
 								<th>${item.a_date}</th>
 								<th>${item.amount}</th>
+								<th><input type="checkbox" name="indexnumber" value="${item.indexnumber}"></th>
 							</tr>
 							</c:forEach>
 							</tbody>
 						</table>
+					
+	
+						
+						
+						
 					</div>
 				</div>
-				<div style="padding-left: 3.5%; padding-bottom: 3%;">
+		<div>	
+					<input class="btn btn-info" style="display: inline-block; width:100px; margin-left: 3.5px" type="submit" value="삭제하기" >
+					
+		</form>
+				
+				<div style="padding-left: 3.5%; padding-bottom: 3%; display: inline-block; float: left; ">
 					<button class="btn btn-info" data-target="#income"
 						data-toggle="modal">수입</button>
 					<button class="btn btn-info" data-target="#expense"
 						data-toggle="modal">지출</button>
+				
 				</div>
+		</div>
+				<form method="post" action="./insertBoard.do">
+				
+<!-- billscontents -->	<input type="hidden" name="billscontents" value="${list}">	
+				
+					<!-- boardid(controller에서 생성),id(session),reg_date(sysdate)
+					contents(requestParameter),list정보 담기 
+					댓글처리
+					-->
+					<div>
+						<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 3px; margin-bottom: 5px; height: 110px;" placeholder="영수증에 대한 설명을 작성해주세요"></textarea>
+					</div>
+					<div align="center">
+					<input class="btn btn-primary btn-block" type="submit" value="글 올리기." style="width: 200px; text-align: center;margin-top: 10px; margin-bottom: 10px;"/>
+					</div>
+				</form>
+				
+				
 				<!-- 지출-->
 				<div class="modal fade" id="expense" tabindex="-1" role="dialog"
 					aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -249,6 +278,8 @@
 									<span aria-hidden="true">×</span>
 								</button>
 							</div>
+							
+							
 <!-- form -->	<form method="post" action="./insertReceipt.do">
 								<div class="modal-body">
 									<div class="card-body">
@@ -259,10 +290,10 @@
 									<label class="btn btn-info active">
 									 
 <!-- a_type -->			<input type="hidden" name="a_type" value="expense">	
-<!-- fixed -->			<input type="radio" name="fixed" id="fixed" value="yes" autocomplete="off" checked> 정기
+<!-- fixed -->			<input type="radio" name="fixed" id="fixed" value="Regular" autocomplete="off" checked> 정기
 									</label> 
 									<label class="btn btn-info"> 
-			<input type="radio" name="fixed" id="fixed" value="no" autocomplete="off"> 비정기
+						<input type="radio" name="fixed" id="fixed" value="IRRegular" autocomplete="비정기"> 비정기
 									</label>
 												</div>
 												<br> <br>
@@ -274,9 +305,16 @@
 <!-- category_num -->			<select class="custom-select" name="category_num">
 												
 												<option selected="">항목을 선택해 주세요.</option>
-												<option value="1">소고기</option>
-												<option value="2">돼지고기</option>
-												<option value="3">양고기</option>
+												<option value="1">식비</option>
+												<option value="2">주거/통신</option>
+												<option value="3">생활용품</option>
+												<option value="4">의복/피복</option>
+												<option value="5">건강/문화</option>
+												<option value="6">교육/육아</option>
+												<option value="7">교통/차량</option>
+												<option value="8">경조사/회비</option>
+												<option value="9">세금/이자</option>
+												<option value="10">용돈/기타</option>
 											</select>
 										</div>
 
@@ -333,47 +371,61 @@
 									<span aria-hidden="true">×</span>
 								</button>
 							</div>
-							<form method="get" action="/aaaa.do">
+							
+	<!-- form -->			<form method="post" action="./insertReceipt.do">
+	
 								<div class="modal-body">
 									<div class="card-body">
 										<div class="form-group">
 											<div>
 												<div class="btn-group btn-group-toggle"
 													data-toggle="buttons">
-													<label class="btn btn-info active"> <input
-														type="radio" name="fixed" id="fixed" value="on"
-														autocomplete="off" checked> 정기
-													</label> <label class="btn btn-info"> <input type="radio"
-														name="fixed" id="fixed" value="off" autocomplete="off">
-														비정기
+													<label class="btn btn-info active"> 
+													
+	<!-- a_type -->			<input type="hidden" name="a_type" value="income">	
+	<!-- fixed  -->			<input type="radio" name="fixed" id="fixed" value="Regular" autocomplete="off" checked> 정기
+	
+													</label> <label class="btn btn-info"> 
+													
+							<input type="radio" name="fixed" id="fixed" value="IRRegular" autocomplete="off"> 비정기
+													
 													</label>
 												</div>
 												<br> <br>
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">항 목</label> <select
-												class="custom-select" name="category_num">
-												<option selected="">항목을 선택해 주세요.</option>
-												<option value="1">소고기 사묵겠지</option>
-												<option value="2">돼지고기 사묵겠지</option>
-												<option value="3">치킨치킨 또레오레</option>
+											<label for="exampleInputEmail1">항 목</label> 
+											
+											<select class="custom-select" name="category_num">
+	<!-- category_num  -->						<option selected="">항목을 선택해 주세요.</option>
+												<option value="1">식비</option>
+												<option value="2">주거/통신</option>
+												<option value="3">생활용품</option>
+												<option value="4">의복/피복</option>
+												<option value="5">건강/문화</option>
+												<option value="6">교육/육아</option>
+												<option value="7">교통/차량</option>
+												<option value="8">경조사/회비</option>
+												<option value="9">세금/이자</option>
+												<option value="10">용돈/기타</option>
 											</select>
+										
 										</div>
 
 										<div class="form-group">
 											<label for="exampleTextarea">내 용</label>
-											<textarea class="form-control" name="contents" id="contents"
-												rows="3"
-												style="margin-top: 0px; margin-bottom: 0px; height: 110px;"></textarea>
+											
+	<!-- contents -->		<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;">
+							</textarea>
 										</div>
 										<div class="form-group">
 											<label class="control-label">금 액</label>
 											<div class="form-group">
 												<div class="input-group mb-3">
-													<input class="form-control" id="amount" name="amount"
-														type="text" aria-describedby="emailHelp"
-														aria-label="Amount (to the nearest dollar)">
+													
+							<input class="form-control" id="amount" name="amount" type="text" aria-describedby="emailHelp" aria-label="Amount (to the nearest dollar)">
+	<!-- amount -->												
 													<div class="input-group-append">
 														<span class="input-group-text">원</span>
 													</div>
@@ -381,9 +433,10 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="exampleTextarea">날 짜</label> <input
-												class="form-control" id="a_date" name="a_date" type="date"
-												placeholder="">
+											<label for="exampleTextarea">날 짜</label> 
+											
+	<!-- a_date -->			<input class="form-control" id="a_date" name="a_date" type="date" placeholder="">
+										
 										</div>
 									</div>
 								</div>

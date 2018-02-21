@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.my.biz.service.Asset_activityService;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 @Controller
@@ -55,18 +56,42 @@ public class Asset_activityController {
 		vo.setContents(contents);
 		vo.setFixed(fixed);
 		vo.setId(id);
-		
 		service.insertActivity(vo);
-		
 		System.out.println(vo+"hi1");
-		List<Asset_activityVO> list=service.selectAllActivities();
+		
+		List<ActivityCategoriesVO> list=service.selectAllActivityCatrgories_id(id);
 		mav.setViewName("tables");
 		mav.addObject("list",list);
 		return mav;
 	}
-	//@RequestMapping("/gotodayreceipt.do")
-	//public ModelAndView gotodayreceipt() {
-		//List<Asset_activityVO>
-		//return "tables";
-	//}
+	
+	@RequestMapping("/gotodayreceipt.do")
+	public ModelAndView gotodayreceipt(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView();
+		String id=(String) req.getSession().getAttribute("userid");
+		
+		
+		List<ActivityCategoriesVO> list=service.selectAllActivityCatrgories_id(id);
+		mav.setViewName("tables");
+		mav.addObject("list", list);
+		return mav;
+	}
+	@RequestMapping("/deleteassetactivities.do")
+	public ModelAndView deleteassetactivities(HttpServletRequest req) {
+		
+		ModelAndView mav = new ModelAndView();
+		
+		String[] indexnumbers=req.getParameterValues("indexnumber");
+		
+		for(String data:indexnumbers) {
+			service.deleteActivity(Integer.parseInt(data));
+		}
+		
+		
+		String id=(String) req.getSession().getAttribute("userid");	
+		List<ActivityCategoriesVO> list=service.selectAllActivityCatrgories_id(id);
+		mav.setViewName("tables");
+		mav.addObject("list", list);
+		return mav;
+	}
 }

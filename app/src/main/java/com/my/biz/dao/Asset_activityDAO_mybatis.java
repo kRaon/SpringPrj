@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.my.biz.mybatis.mapper.Asset_activityMapper;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 @Repository("Asset_activity_mybatis")
@@ -80,7 +81,16 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 		return mapper.selectActivityNum(category_name);
 	}
 
+	@Override
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories() {
+		return mapper.selectAllActivityCatrgories();
+	}
 
+	@Override
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id) {
+		// TODO Auto-generated method stub
+		return mapper.selectAllActivityCatrgories_id(id);
+	}
 
 	
 }

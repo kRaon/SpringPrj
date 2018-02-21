@@ -2,6 +2,7 @@ package com.my.biz.dao;
 
 import java.util.List;
 
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 public interface Asset_activityDAO {
@@ -16,5 +17,8 @@ public interface Asset_activityDAO {
 	
 	public int selectActivityNum(String category_name);
 	
-	//public selectIdActivity(String id);
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories();
+
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id);
+
 }

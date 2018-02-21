@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.my.biz.service.Asset_activityService;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 
@@ -40,6 +41,8 @@ public class ActivityDAO_Test {
 		vo.setA_date(new Date(2018-1900,9,15));
 		vo.setA_type("0");
 		vo.setFixed("0");
+		vo.setAmount(10000);
+		vo.setContents("gdgd");
 		service.insertActivity(vo);
 	}
 	
@@ -48,14 +51,29 @@ public class ActivityDAO_Test {
 		service.deleteActivity(2);
 	}
 	
-	@Test
+	//@Test
 	public void selectAll() {
 		List<Asset_activityVO> list = service.selectAllActivities();
 		for(Asset_activityVO vo : list) {
 			System.out.println(vo);
 		}
 	}
+	//	@Test
+		public void selectAllAC() {
+			List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories();
+			for(ActivityCategoriesVO vo : list2) {
+				System.out.println(vo);
+			}
+	}
 	
+	@Test
+	public void selectAllACid() {
+		List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories_id("qwq713");
+		for(ActivityCategoriesVO vo : list2) {
+			System.out.println(vo);
+		}
+}
+		
 	//@Test
 	public void update() {
 		Asset_activityVO vo = new Asset_activityVO();
