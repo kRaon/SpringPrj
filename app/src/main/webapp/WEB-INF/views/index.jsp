@@ -328,11 +328,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 	  	<div class = "container">
 	  		 <div class="card mb-3">
               <a href="#">
-              <pre>${board.board_id} | ${board.reg_date}</pre> 
+              <pre>${board.reg_date}</pre> 
                </a>
               
         	<div class="receipt-container">
-        		
         		<table>
         		<thead>
         		<th>Account</th>
@@ -344,7 +343,6 @@ tr:nth-child(even){background-color: #f2f2f2}
         		</thead>
         		${board.billscontents}
         		</table>
-        	
         	</div>
              <hr class="my-0">
               <div class="card-body">
@@ -357,10 +355,12 @@ tr:nth-child(even){background-color: #f2f2f2}
               <div class="card-body py-2 small">
                 <a class="mr-3 d-inline-block" href="#">
                   <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-                <a class="d-inline-block" href="#">
-                  <i class="fa fa-fw fa-share"></i>Share</a>
+               	<c:set value="${board.board_id}" var="boardid"/>
+                <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}">
+               
+                  <i class="fa fa-fw fa-comment"></i>Comment!!
+                </a>
+
               </div>
                <hr class="my-0">
               <div class="card-footer small text-muted">${board.reg_date}</div>
@@ -369,13 +369,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 	  	
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
-        </div>
-      </div>
-    </footer>
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>

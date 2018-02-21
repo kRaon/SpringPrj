@@ -62,8 +62,6 @@ public class LoginController {
 			HttpSession session,HttpServletResponse response) throws IOException {
 		
 		//Gson
-		
-		
 		JsonObject jsonObject = new JsonObject();
 		PrintWriter out = response.getWriter();
 
