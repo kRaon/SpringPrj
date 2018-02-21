@@ -26,10 +26,10 @@ public class LoginController {
 	public String loginForm() {
 		return "login";
 	}
-	/*@RequestMapping("/home.do")
+	@RequestMapping("/home.do")
 	public String gohome() {
 		return "index";
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 	}
 
 	/*@RequestMapping("/login.do")

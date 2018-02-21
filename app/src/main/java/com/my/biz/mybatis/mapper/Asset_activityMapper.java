@@ -39,6 +39,7 @@ public interface Asset_activityMapper {
 	@Select("SELECT CATEGORY_NUM FROM ASSET_ACTIVITY WHERE CATEGORY_NAME=#{category_name}")
 	int selectActivityNum(String category_name);
 	
+	/*@Select("SELECT A.A_TYPE, A.FIXED, C.CATEGORT_NAME,")*/
 	
 	//@Select("SELECT * FROM ACTIVITY WHERE ID=#{id}")
 	
