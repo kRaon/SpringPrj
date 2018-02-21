@@ -1,6 +1,7 @@
 package com.my.biz.mybatis.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -8,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.my.biz.vo.Asset_activityVO;
+import com.my.biz.vo.ChartVO;
 
 public interface Asset_activityMapper {
 	/*
@@ -43,6 +45,12 @@ public interface Asset_activityMapper {
 	from(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME
 			FROM ASSET_ACTIVITY A,CATEGORIES C
 			WHERE A.CATEGORY_NUM=C.CATEGORY_NUM);*/
+	
+	@Select("select to_char(A_DATE,'mon') as \"month\", SUM(AMOUNT) as \"amount\" from ASSET_ACTIVITY where id = #{id} and A_TYPE = 'expense' and to_char(a_date,'yyyymmdd') BETWEEN #{fromdate} and #{todate} GROUP by to_char(A_DATE,'mon')")
+	List<ChartVO> selectBarChart(Map<String,String> map);
+	
+	@Select("select SUM(AMOUNT) as \"amount\", C.CATEGORY_NAME as \"category_name\" from ASSET_ACTIVITY A, CATEGORIES C where id = #{id} and A.CATEGORY_NUM = C.CATEGORY_NUM and A_TYPE = 'expense' and to_char(A.A_DATE,'YYYYMMDD') BETWEEN #{fromdate} and #{todate} GROUP by C.CATEGORY_NAME")
+	List<ChartVO> selectPieChart(Map<String,String> map);
 	
 	@Select("SELECT CATEGORY_NUM FROM ASSET_ACTIVITY WHERE CATEGORY_NAME=#{category_name}")
 	int selectActivityNum(String category_name);

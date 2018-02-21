@@ -1,6 +1,7 @@
 package com.my.biz.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.my.biz.mybatis.mapper.Asset_activityMapper;
 import com.my.biz.vo.Asset_activityVO;
+import com.my.biz.vo.ChartVO;
 
 @Repository("Asset_activity_mybatis")
 public class Asset_activityDAO_mybatis implements Asset_activityDAO{
@@ -77,6 +79,20 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	public int selectActivityNum(String category_name) {
 		// TODO Auto-generated method stub
 		return mapper.selectActivityNum(category_name);
+	}
+
+
+
+	@Override
+	public List<ChartVO> selectPieChart(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return mapper.selectPieChart(map);
+	}
+
+	@Override
+	public List<ChartVO> selectBarChart(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return mapper.selectBarChart(map);
 	}
 
 
