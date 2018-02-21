@@ -1,11 +1,20 @@
 package com.my.web.controller;
 
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.my.biz.service.Asset_activityService;
 import com.my.biz.service.BoardService;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.BoardVO;
 
 @Controller
@@ -14,11 +23,16 @@ public class BoardController {
 	@Autowired
 	BoardService service;
 	
+	@Autowired
+	@Qualifier("ActivityService")
+	Asset_activityService aservice;
+
+	
 	@RequestMapping(value= { "listboard.do","listBoard.do"})
 	public ModelAndView list() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list", service.selectAllBoard());
-		mav.setViewName("board/boardlist");
+		mav.setViewName("board/index.jsp");
 		return mav;
 	}
 	@RequestMapping(value= { "deleteBoard.do"})
@@ -31,10 +45,42 @@ public class BoardController {
 		service.updateBoard(vo);
 		return "redirect:listboard.do";
 	}
-	@RequestMapping(value= {"insertBoard"})
-	public String insertBoard(BoardVO vo) {
+	
+	@RequestMapping(value= {"/insertBoard.do"})
+	public ModelAndView insertBoard(HttpServletRequest req,HttpServletResponse res) {
+	
+		ModelAndView mav=new ModelAndView();
+		
+		BoardVO vo=new BoardVO();
+		
+		String id=(String) req.getSession().getAttribute("userid");
+		String contents=req.getParameter("contents");
+		String board_id=new Date().toString()+id;
+		String billscontents=req.getParameter("billscontents");
+		
+		System.out.println(id);
+		System.out.println(contents);
+		System.out.println(billscontents);
+		System.out.println();
+		System.out.println(board_id);
+		
+	
+		vo.setBillscontents(billscontents);
+		vo.setBoard_id(board_id);
+		vo.setContents(contents);
+		vo.setId(id);
+		
+		System.out.println("인서트전까지가능");
 		service.insertBoard(vo);
-		return "redirect: board.do";
+		System.out.println("인서트까지가능");
+		
+		
+		List<ActivityCategoriesVO> list=aservice.selectAllActivityCatrgories_id(id);
+		mav.addObject("list", list);
+
+		mav.setViewName("tables");
+		return mav;
+		
 	}
 	
 }	

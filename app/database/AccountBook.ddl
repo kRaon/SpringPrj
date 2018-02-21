@@ -87,7 +87,7 @@ COMMENT ON COLUMN TARGET.DEADLINE is 'DEADLINE_OF_GOAL';
 /* Table Name: BOARD_TABLE */
 /**********************************/
 CREATE TABLE BOARD(
-		BOARD_ID                      		VARCHAR2(30)		 NULL ,
+		BOARD_ID                      		VARCHAR2(100)		 NULL ,
 		ID                            		VARCHAR2(30)		 NULL ,
 		CONTENTS                      		VARCHAR2(1000)		 NULL ,
 		BILLSCONTENTS                 		VARCHAR2(1000)		 NULL ,

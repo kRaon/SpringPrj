@@ -19,6 +19,6 @@ public interface Asset_activityDAO {
 	
 	public List<ActivityCategoriesVO> selectAllActivityCatrgories();
 
-
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id);
 
 }

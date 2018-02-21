@@ -85,5 +85,12 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	public List<ActivityCategoriesVO> selectAllActivityCatrgories() {
 		return mapper.selectAllActivityCatrgories();
 	}
+
+	@Override
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id) {
+		// TODO Auto-generated method stub
+		return mapper.selectAllActivityCatrgories_id(id);
+	}
+
 	
 }
