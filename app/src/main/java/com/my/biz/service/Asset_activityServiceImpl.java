@@ -2,8 +2,6 @@ package com.my.biz.service;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -43,6 +41,8 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 		// TODO Auto-generated method stub
 		return dao.selectActivityNum(category_name);
 	}
+
+	
 
 
 	

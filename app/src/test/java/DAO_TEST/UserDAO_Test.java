@@ -35,7 +35,7 @@ public class UserDAO_Test {
 		vo.setAge(30);
 		vo.setGender("female");
 		vo.setId("java02");
-		vo.setJob("회사원");
+		vo.setJob("kk");
 		vo.setPw("1234");		
 		service.insertUsers(vo);
 	}
@@ -60,5 +60,11 @@ public class UserDAO_Test {
 		vo = service.loginUser("java02", "1234");
 		System.out.println(vo);
 		
+	}
+	
+	//@Test
+	public void idSearch() {
+		boolean flag = service.loginIdSearch("java");
+		System.out.println(flag);
 	}
 }

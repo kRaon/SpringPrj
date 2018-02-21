@@ -3,7 +3,6 @@ package com.my.biz.mybatis.mapper;
 
 import java.util.List;
 
-
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -33,4 +32,11 @@ public interface UsersMapper {
 	@Select("SELECT * FROM USERS WHERE ID=#{id} and PW=#{pw}")
 	//public UsersVO loginUser(String id, String pw); //parameter로 인식하지 못함
 	public UsersVO loginUser(UsersVO vo);
+	
+	/*@Select("SELECT ID FROM USERS")
+	public String[] loginIdSearch(String id);*/
+	
+	@Select("SELECT ID FROM USERS")
+	//select id from users where id='qwq713'
+	public List<String> loginIdSearch(String id);
 }

@@ -14,5 +14,6 @@ public interface Asset_activityService {
 	public List<Asset_activityVO> selectAllActivities();
 
 	public int selectActivityNum(String category_name);
+	
 }
 
