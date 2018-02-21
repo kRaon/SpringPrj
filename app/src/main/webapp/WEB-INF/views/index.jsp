@@ -48,7 +48,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="./gomain.do">
+          <a class="nav-link" href="./indexCard.do">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">메인</span>
           </a>
