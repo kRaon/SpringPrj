@@ -41,6 +41,8 @@ public class ActivityDAO_Test {
 		vo.setA_date(new Date(2018-1900,9,15));
 		vo.setA_type("0");
 		vo.setFixed("0");
+		vo.setAmount(10000);
+		vo.setContents("gdgd");
 		service.insertActivity(vo);
 	}
 	
@@ -56,7 +58,7 @@ public class ActivityDAO_Test {
 			System.out.println(vo);
 		}
 	}
-		@Test
+	//	@Test
 		public void selectAllAC() {
 			List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories();
 			for(ActivityCategoriesVO vo : list2) {
@@ -64,6 +66,14 @@ public class ActivityDAO_Test {
 			}
 	}
 	
+	@Test
+	public void selectAllACid() {
+		List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories_id("qwq713");
+		for(ActivityCategoriesVO vo : list2) {
+			System.out.println(vo);
+		}
+}
+		
 	//@Test
 	public void update() {
 		Asset_activityVO vo = new Asset_activityVO();

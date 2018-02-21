@@ -17,5 +17,7 @@ public interface Asset_activityService {
 	public int selectActivityNum(String category_name);
 
 	public List<ActivityCategoriesVO> selectAllActivityCatrgories();
+	
+	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id);
 }
 

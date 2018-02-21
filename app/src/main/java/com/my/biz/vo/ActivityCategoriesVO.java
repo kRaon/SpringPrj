@@ -96,9 +96,23 @@ public class ActivityCategoriesVO {
 
 	@Override
 	public String toString() {
-		return "ActivityCategoriesVO [indexnumber=" + indexnumber + ", id=" + id + ", category_name=" + category_name
-				+ ", contents=" + contents + ", amount=" + amount + ", fixed=" + fixed + ", a_date=" + a_date
-				+ ", a_type=" + a_type + "]";
+		StringBuilder builder = new StringBuilder();
+	
+		builder.append(category_name);
+		builder.append("	");
+		builder.append(contents);
+		builder.append("	");
+		builder.append(amount);
+		builder.append("	");
+		builder.append(fixed);
+		builder.append("	");
+		builder.append(a_date);
+		builder.append("	");
+		builder.append(a_type);
+		builder.append("\n");
+		return builder.toString();
 	}
+
+
 
 }
