@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.my.biz.service.Asset_activityService;
+import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_activityVO;
 
 
@@ -48,12 +49,19 @@ public class ActivityDAO_Test {
 		service.deleteActivity(2);
 	}
 	
-	@Test
+	//@Test
 	public void selectAll() {
 		List<Asset_activityVO> list = service.selectAllActivities();
 		for(Asset_activityVO vo : list) {
 			System.out.println(vo);
 		}
+	}
+		@Test
+		public void selectAllAC() {
+			List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories();
+			for(ActivityCategoriesVO vo : list2) {
+				System.out.println(vo);
+			}
 	}
 	
 	//@Test
