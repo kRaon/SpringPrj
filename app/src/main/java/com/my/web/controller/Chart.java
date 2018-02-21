@@ -21,7 +21,7 @@ public class Chart extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 
-		int[] nums = {10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451};
+		int[] nums = {10000, 1162, 2263, 8394, 8287, 2682, 3274, 3259, 5849, 4159, 2651, 1984, 8451};
 		JSONArray tmp = new JSONArray();
 		for(int d :nums) {
 			tmp.put(d);
