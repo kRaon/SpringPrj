@@ -22,6 +22,15 @@ public class Asset_activityController {
 	@Qualifier("ActivityService")
 	Asset_activityService service;
 
+	@RequestMapping("/receipt.do")
+	public ModelAndView getReceipt(HttpServletRequest req,HttpServletResponse res) {
+		ModelAndView mav=new ModelAndView();
+		String id=(String) req.getSession().getAttribute("userid");
+		
+		
+		return mav;
+	}
+	
 	@RequestMapping("/insertReceipt.do")
 	public ModelAndView insertReceipt(HttpServletRequest req,HttpServletResponse res) {
 		ModelAndView mav=new ModelAndView();

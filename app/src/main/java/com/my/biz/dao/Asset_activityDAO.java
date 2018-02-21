@@ -16,4 +16,5 @@ public interface Asset_activityDAO {
 	
 	public int selectActivityNum(String category_name);
 	
+	//public selectIdActivity(String id);
 }
