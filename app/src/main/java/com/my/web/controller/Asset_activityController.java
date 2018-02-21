@@ -64,5 +64,9 @@ public class Asset_activityController {
 		mav.addObject("list",list);
 		return mav;
 	}
-	
+	//@RequestMapping("/gotodayreceipt.do")
+	//public ModelAndView gotodayreceipt() {
+		//List<Asset_activityVO>
+		//return "tables";
+	//}
 }

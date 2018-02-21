@@ -6,7 +6,7 @@ public class ActivityCategoriesVO {
 
 	int indexnumber;
 	String id;
-	int category_name;
+	String category_name;
 	String contents;
 	int amount;
 	String fixed;
@@ -17,7 +17,7 @@ public class ActivityCategoriesVO {
 		super();
 	}
 
-	public ActivityCategoriesVO(int indexnumber, String id, int category_name, String contents, int amount,
+	public ActivityCategoriesVO(int indexnumber, String id, String category_name, String contents, int amount,
 			String fixed, Date a_date, String a_type) {
 		super();
 		this.indexnumber = indexnumber;
@@ -46,11 +46,11 @@ public class ActivityCategoriesVO {
 		this.id = id;
 	}
 
-	public int getCategory_name() {
+	public String getCategory_name() {
 		return category_name;
 	}
 
-	public void setCategory_name(int category_name) {
+	public void setCategory_name(String category_name) {
 		this.category_name = category_name;
 	}
 
