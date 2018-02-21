@@ -1,16 +1,13 @@
 package com.my.web.controller;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 
 import java.util.List;
-=======
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
->>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

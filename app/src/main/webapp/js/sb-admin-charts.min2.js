@@ -14,9 +14,7 @@ $(function(){
 					var flag = data["flag"];
 		
 						if (flag===true) {
-							$('#idcheck').html("id valid").css('color','green');
-							$('#idcheck').css("color","green");
-							
+							$('#idcheck').html("id valid");							
 						} else {
 							$('#idcheck').html("<b>check your id</b>");
 						}
