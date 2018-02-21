@@ -197,6 +197,7 @@
 				<div class="card-header">
 					<i class="fa fa-table"></i> 오늘의 영수증
 				</div>
+				
 				<div class="card-body">
 					<div class="table-responsive">
 		<form method="post" action="./deleteassetactivities.do">
@@ -229,22 +230,25 @@
 							</tbody>
 						</table>
 					
-					
-					<input class="btn btn-info" type="submit" value="삭제하기">
-					</form>
+	
 						
 						
 						
 					</div>
 				</div>
-				<div style="padding-left: 3.5%; padding-bottom: 3%;">
+		<div>	
+					<input class="btn btn-info" style="display: inline-block; width:100px; margin-left: 3.5px" type="submit" value="삭제하기" >
+					
+		</form>
+				
+				<div style="padding-left: 3.5%; padding-bottom: 3%; display: inline-block; float: left; ">
 					<button class="btn btn-info" data-target="#income"
 						data-toggle="modal">수입</button>
 					<button class="btn btn-info" data-target="#expense"
 						data-toggle="modal">지출</button>
 				
 				</div>
-				
+		</div>
 				<form method="post" action="./insertBoard.do">
 				
 <!-- billscontents -->	<input type="hidden" name="billscontents" value="${list}">	

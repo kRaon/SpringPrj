@@ -1,8 +1,10 @@
 package com.my.web.controller;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -35,6 +37,25 @@ public class BoardController {
 		mav.setViewName("board/index.jsp");
 		return mav;
 	}
+	
+	@RequestMapping(value= {"indexCard.do"})
+	public ModelAndView indexCard() {
+		ModelAndView mav = new ModelAndView();
+		List<BoardVO> list = new ArrayList<BoardVO>(); 
+		list = service.selectAllBoard();
+		List<BoardVO> list2 = new ArrayList<BoardVO>();
+		
+		int listNum = list.size();
+		
+		for(int i=1;i<7;i++) {
+			list2.add(list.get(listNum-i));
+		}
+
+		mav.addObject("list",list2);
+		mav.setViewName("index");
+		return mav;
+	}
+	
 	@RequestMapping(value= { "deleteBoard.do"})
 	public String deleteBoard(BoardVO vo) {
 		   service.deleteBoard(vo);

@@ -99,15 +99,15 @@ public class ActivityCategoriesVO {
 		StringBuilder builder = new StringBuilder();
 	
 		builder.append(category_name);
-		builder.append("	");
+		builder.append("/");
 		builder.append(contents);
-		builder.append("	");
+		builder.append("/");
 		builder.append(amount);
-		builder.append("	");
+		builder.append("/");
 		builder.append(fixed);
-		builder.append("	");
+		builder.append("/");
 		builder.append(a_date);
-		builder.append("	");
+		builder.append("/");
 		builder.append(a_type);
 		builder.append("\n");
 		return builder.toString();
