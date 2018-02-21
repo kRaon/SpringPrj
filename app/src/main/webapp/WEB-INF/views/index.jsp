@@ -66,7 +66,7 @@
               <a href="#"><i class="fa fa-fw fa-area-chart"></i> 이달의 영수증</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
+              <a href="./showallrecipt.do"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
             </li>
 
           </ul>

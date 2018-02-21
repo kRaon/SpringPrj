@@ -2,9 +2,9 @@ package com.my.web.controller;
 
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Date;
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,6 +29,18 @@ public class BoardController {
 	@Qualifier("ActivityService")
 	Asset_activityService aservice;
 
+	
+	@RequestMapping("/showallrecipt.do")
+	public ModelAndView showallrecipt(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView();
+		String id=(String) req.getSession().getAttribute("userid");
+		
+		List<BoardVO> list=service.selectAllBoard();
+		mav.addObject("list", list);
+		mav.setViewName("tables2");
+		return mav;
+	}
+	
 	
 	@RequestMapping(value= { "listboard.do","listBoard.do"})
 	public ModelAndView list() {
