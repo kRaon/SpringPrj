@@ -14,9 +14,11 @@ $(function(){
 					var flag = data["flag"];
 		
 						if (flag===true) {
-							$('#idcheck').html("id valid");
+							$('#idcheck').html("id valid").css('color','green');
+							$('#idcheck').css("color","green");
+							
 						} else {
-							$('#idcheck').html("check your id");
+							$('#idcheck').html("<b>check your id</b>");
 						}
 				 // }); 
 				},

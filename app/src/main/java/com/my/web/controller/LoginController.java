@@ -31,9 +31,10 @@ public class LoginController {
 									HttpSession session) {
 	
 		UsersVO user = service.loginUser(vo.getId(), vo.getPw());
+		
 			if(user!=null) {
 				req.getSession().setAttribute("userid", user.getId());
-				return "index";
+				return "redirect:indexCard.do";
 			}else {			
 				return "login";
 			}

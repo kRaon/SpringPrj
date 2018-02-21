@@ -13,36 +13,6 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
-  
-  <script type="text/javascript">
-  $(function(){
-	  $('#id').keyup(function() {
-			$.ajax({
-				type : 'POST',
-				url : 'idCompare.do',
-				dataType : 'json',
-				data : {
-					"id" : $('#id').val()
-				},
-				success : function(data) {
-					var flag = data["flag"];
-		
-						if (flag===true) {
-							$('#idcheck').html("");
-						} else {
-							$('#idcheck').html("check your id");
-						}
-				 // }); 
-				},
-				error : function(data) {
-					alert("통신실패 : " + data.message);
-				}
-			}); //end ajax    
-		}); //end on    	   
-  });
- 
-  </script>
 </head>
 
 <body class="bg-dark">
@@ -57,15 +27,6 @@
             <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">
             <span id="idcheck">id check</span>
           </div>
-          
-          
-         <!--  <td class="td1">
-					<input type="text" id="business_id" name="business_id" /><br>
-				 	<span id="idcheck">사업자번호 중복검사를 해주세요...</span><br> 
-				 	<input type="button" id="compare" value="중복검사" />
-				 </td> -->
-          
-          
           
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
