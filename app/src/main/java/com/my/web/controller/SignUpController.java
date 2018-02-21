@@ -6,12 +6,14 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.my.biz.service.UsersService;
 import com.my.biz.vo.UsersVO;
 
@@ -39,7 +41,7 @@ public class SignUpController {
 	}
 	
 
-	/*@RequestMapping("/idCompare.do")
+	@RequestMapping("/idCompare.do")
 	protected void service(HttpServletRequest request, 
 							HttpServletResponse response) throws IOException
 						{
@@ -51,13 +53,13 @@ public class SignUpController {
 		System.out.println(id);
 		req = service.loginIdSearch(id);
 		System.out.println("req: "+req);
-		
-		JSONObject jsonObject = new JSONObject();
+		//Gson
+		JsonObject jsonObject = new JsonObject();
 		PrintWriter out = response.getWriter();
-		jsonObject.put("flag", req);
-	
-			out.print(jsonObject.toJSONString());
+		jsonObject.addProperty("flag", req);
+		
+			out.print(jsonObject.toString());
 			out.flush();
 			out.close();
-	}*/
+	}
 }
