@@ -54,7 +54,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("BoardVO [board_id=");
+		builder.append("board_id=");
 		builder.append(board_id);
 		builder.append(", id=");
 		builder.append(id);
@@ -64,7 +64,7 @@ public class BoardVO {
 		builder.append(billscontents);
 		builder.append(", reg_date=");
 		builder.append(reg_date);
-		builder.append("]");
+		builder.append("");
 		return builder.toString();
 	}
 	

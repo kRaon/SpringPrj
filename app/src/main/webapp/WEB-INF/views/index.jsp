@@ -21,19 +21,29 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  
+
+
   	<style>
 		.user_id {
     	text-align:right;
 		}
-		table, th, td {
-   			 border: 1px solid;
-   			 width:29em;
-   			 height: 1em;
- 		 }
+
  		.container{
  			 position: absolute;
  			 width:50em;
  		}
+ 		table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
 	</style>
 </head>
 
@@ -320,16 +330,28 @@
               <a href="#">
               <pre>${board.board_id} | ${board.reg_date}</pre> 
                </a>
-               <div class="user_id">
-              <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                            
-               </div>
+              
         	<div class="receipt-container">
+        		
+        		<table>
+        		<thead>
+        		<th>Account</th>
+        		<th>Period</th>
+        		<th>Category</th>
+        		<th>Content</th>
+        		<th>Date</th>
+        		<th>Amount</th>
+        		</thead>
         		${board.billscontents}
+        		</table>
+        	
         	</div>
              <hr class="my-0">
               <div class="card-body">
-                <p class="card-text small">
-                ${board.contents}
+                <p class="card-text small">          
+                <div class="user_id" style="float: left; margin-right: 3% ">
+              <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                            
+               </div> ${board.contents}
                 </p>
               </div>
               <div class="card-body py-2 small">

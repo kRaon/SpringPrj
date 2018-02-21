@@ -42,7 +42,7 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Dashboard"><a class="nav-link" href="./gomain.do">
+					title="Dashboard"><a class="nav-link" href="./indexCard.do">
 						<i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">메인</span>
 				</a></li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
@@ -218,13 +218,13 @@
 							<tbody>
 							<c:forEach var="item" items="${list}">
 							<tr>
-								<th>${item.a_type}</th>
-								<th>${item.fixed}</th>
-								<th>${item.category_name}</th>
-								<th>${item.contents}</th>
-								<th>${item.a_date}</th>
-								<th>${item.amount}</th>
-								<th><input type="checkbox" name="indexnumber" value="${item.indexnumber}"></th>
+								<td>${item.a_type}</td>
+								<td>${item.fixed}</td>
+								<td>${item.category_name}</td>
+								<td>${item.contents}</td>
+								<td>${item.a_date}</td>
+								<td>${item.amount}</td>
+								<td><input type="checkbox" name="indexnumber" value="${item.indexnumber}"></td>
 							</tr>
 							</c:forEach>
 							</tbody>
