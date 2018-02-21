@@ -13,35 +13,35 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  -->
-  
-  <script type="text/javascript">
+  <script>
   $(function(){
-	  $('#id').keyup(function() {
-			$.ajax({
+	  $('#loginConfirm').click(function() {
+			 $.ajax({
 				type : 'POST',
-				url : 'idCompare.do',
+				url : 'loginConfirm.do',
 				dataType : 'json',
 				data : {
-					"id" : $('#id').val()
+					"id" : $('#id').val(),
+					"pw" : $('#pw').val()
 				},
 				success : function(data) {
 					var flag = data["flag"];
 		
-						if (flag===true) {
-							$('#idcheck').html("");
-						} else {
-							$('#idcheck').html("check your id");
+						if (flag==="error") {
+							$('#idcheck').html("check your id&pw");							
+						} else if(flag==="pwerror") {
+							$('#pwcheck').html("check your pw");
+						}else{
+							$('#loginform').action("login.do");
 						}
 				 // }); 
 				},
 				error : function(data) {
 					alert("통신실패 : " + data.message);
 				}
-			}); //end ajax    
+			}); //end ajax     
 		}); //end on    	   
-  });
- 
+});
   </script>
 </head>
 
@@ -51,25 +51,17 @@
       <div class="card-header">Login</div>
       <div class="card-body">
       
-        <form id="lobinform" action="./login.do" method="post">
+        <form id="loginform" action="./login.do" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">ID</label>
             <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">
-            <span id="idcheck">id check</span>
+            <span id="idcheck">idcheck</span>
           </div>
-          
-          
-         <!--  <td class="td1">
-					<input type="text" id="business_id" name="business_id" /><br>
-				 	<span id="idcheck">사업자번호 중복검사를 해주세요...</span><br> 
-				 	<input type="button" id="compare" value="중복검사" />
-				 </td> -->
-          
-          
           
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input class="form-control" id="pw" name="pw" type="password" placeholder="Password">
+          	 <span id="pwcheck">pwcheck</span>
           </div>
           <div class="form-group">
             <div class="form-check">
@@ -77,7 +69,7 @@
                 <input class="form-check-input" type="checkbox"> Remember Password</label>
             </div>
           </div>
-          <input class="btn btn-primary btn-block" type="submit" value="Login"/>
+          <input id="loginConfirm" class="btn btn-primary btn-block" type="submit" value="Login"/>
          <!--  <a class="btn btn-primary btn-block" href="login.do">Login</a> -->
         </form>
         
