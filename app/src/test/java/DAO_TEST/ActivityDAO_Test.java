@@ -56,7 +56,7 @@ public class ActivityDAO_Test {
 			System.out.println(vo);
 		}
 	}
-		@Test
+		//@Test
 		public void selectAllAC() {
 			List<ActivityCategoriesVO> list2 = service.selectAllActivityCatrgories();
 			for(ActivityCategoriesVO vo : list2) {
