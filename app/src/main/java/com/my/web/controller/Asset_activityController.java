@@ -60,9 +60,11 @@ public class Asset_activityController {
 		vo.setFixed(fixed);
 		vo.setId(id);
 		service.insertActivity(vo);
+
 		System.out.println(vo + "hi1");
 
 		List<ActivityCategoriesVO> list = service.selectAllActivityCatrgories_id(id);
+
 		mav.setViewName("tables");
 		mav.addObject("list", list);
 		return mav;

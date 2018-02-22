@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-    
-    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +74,7 @@ tr:nth-child(even){background-color: #f2f2f2}
               <a href="#"><i class="fa fa-fw fa-area-chart"></i> 이달의 영수증</a>
             </li>
             <li>
-              <a href="./getallboard.do"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
+              <a href="#"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
             </li>
 
           </ul>
@@ -89,7 +87,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="./assetcounselorhome.do">인생 재무설계</a>
+              <a href="navbar.html">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>
@@ -220,73 +218,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
-      <!-- Icon Cards-->
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-comments"></i>
-              </div>
-              <div class="mr-5">26 New Messages!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-warning o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-list"></i>
-              </div>
-              <div class="mr-5">11 New Tasks!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-shopping-cart"></i>
-              </div>
-              <div class="mr-5">123 New Orders!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-3">
-          <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-              <div class="card-body-icon">
-                <i class="fa fa-fw fa-support"></i>
-              </div>
-              <div class="mr-5">13 New Tickets!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-              <span class="float-left">View Details</span>
-              <span class="float-right">
-                <i class="fa fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
+ 
       <!-- Area Chart Example-->
       <div class="card mb-3">
 		<canvas id="myAreaChart" width="0%" height="0%"></canvas>
@@ -294,42 +226,16 @@ tr:nth-child(even){background-color: #f2f2f2}
       <div class="row">
         <div class="col-lg-12">
           <!-- Example Bar Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-bar-chart"></i> 한글 테스트</div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-8 my-auto">
-                  <canvas id="myBarChart" width="100" height="50"></canvas>
-                </div>
-                <div class="col-sm-4 text-center my-auto">
-                  <div class="h4 mb-0 text-primary">$34,693</div>
-                  <div class="small text-muted">YTD Revenue</div>
-                  <hr>
-                  <div class="h4 mb-0 text-warning">$18,474</div>
-                  <div class="small text-muted">YTD Expenses</div>
-                  <hr>
-                  <div class="h4 mb-0 text-success">$16,219</div>
-                  <div class="small text-muted">YTD Margin</div>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
+          
           <!-- Card Columns Example Social Feed-->
           <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
           
-
-	  	<c:forEach var="board" items="${list}" >
 	  	
 	  	<div class = "container">
 	  		 <div class="card mb-3">
-              <a href="#">
-              <pre>${board.reg_date}</pre> 
-               </a>
               
         	<div class="receipt-container">
         		<table>
@@ -365,10 +271,61 @@ tr:nth-child(even){background-color: #f2f2f2}
                <hr class="my-0">
               <div class="card-footer small text-muted">${board.reg_date}</div>
 	  	</div>
-	  	</c:forEach>
+	<form method="post" action="./insertcomments.do">
+	  	<div>
+	  	<!-- boardid --><input type="hidden" name="board_id" value="${boardid}">	
+			<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 3px; margin-bottom: 5px; width:650px; height: 110px; display:inline; float: left;" placeholder="영수증에 대한 댓글을 달아주세요. 욕설 및 비방은 자제하시길 바랍니다."></textarea>
+			<input class="btn btn-primary btn-block" type="submit" value="댓글 달기." style="width: 100px; height: 100px; text-align: center; margin-top: 10px; margin-bottom: 10px; display:inline; float: right;"/>
+		</div>
+	</form>
 	  	
+	  	<!-- 
+	  	<div class = "container">
+	  		 <div class="card mb-3">
+              
+        	<div class="receipt-container">
+        		<table>
+        		<thead>
+        		<th>Account</th>
+        		<th>Period</th>
+        		<th>Category</th>
+        		<th>Content</th>
+        		<th>Date</th>
+        		<th>Amount</th>
+        		</thead>
+        		${board.billscontents}
+        		</table>
+        	</div>
+	  	 -->
+	  	
+
+		<div class="card_mb3">
+		<c:forEach var="item" items="${commentslist}" >
+			<table>
+				<tr>
+				<th><div style="width: 70px">${item.id}</div></th>
+				<td><div style="width: 565px">${item.contents}</div></td>
+				<td>
+				<c:set var="cuser" value="${sessionScope.userid }" />
+				<c:set var="user" value="${item.id }" />
+
+				<c:if test="${cuser eq user}">
+		   			<form method="post" action="./deletecomments.do">
+ 					<input type="hidden" name="board_id" value="${item.board_id}">
+					<input type="hidden" name="comments_index" value="${item.indexnumber}">	
+		   			<input class="btn btn-primary btn-danger" type="submit" value="삭제하기">
+					</form>
+				</c:if>	
+					</td>
+				</tr>
+			</table>
+		</c:forEach>
+		</div>
+	</div>	
+	  
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
+    <br>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

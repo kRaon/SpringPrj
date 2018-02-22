@@ -13,4 +13,6 @@ public interface BoardDAO {
 	public List<BoardVO> selectAllBoard();
 	
 	public BoardVO getBoard(String board_id);
+	
+	public List<BoardVO> getAllBoard(String id); 
 }
