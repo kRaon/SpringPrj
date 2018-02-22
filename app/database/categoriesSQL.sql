@@ -15,3 +15,16 @@ INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_
 
 
 select NVL(INDEXNUMBER,0) from ASSET_ACTIVITY;
+
+
+
+select id,month,round(avg(amount)*12,-4) as amount 
+from (
+select id,to_char(A_DATE,'MM') as MONTH, amount from asset_activity where id = 'qwq713' and a_type = 'income' and to_char(a_date,'yyyy')=to_char(sysdate,'yyyy')
+) group by month,id;
+
+
+select TO_CHAR(birth_date,'YYYY') AS BIRTH_DATE,amount from  (select id,month,round(avg(amount)*12,-4) as amount from (select id,to_char(A_DATE,'MM') as MONTH, amount from asset_activity where id = 'qwq713' and a_type = 'income' and to_char(a_date,'yyyy')=to_char(sysdate,'yyyy') ) group by month,id) N,USERS U WHERE N.id=U.id;
+
+
+

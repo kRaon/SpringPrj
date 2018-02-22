@@ -1,5 +1,7 @@
 package DAO_TEST;
 
+import java.util.Calendar;
+
 public class tax {
 	long income;
 
@@ -36,30 +38,29 @@ public class tax {
 	}
 
 	public static void main(String[] args) {
+		Calendar c = Calendar.getInstance();
 
-		int year = 20;
+		int birth_date = 1992;
+		int amount = 50000000;
+		int year = 30;
 		int savingrate = 40;
 		int interestrate = 5;
-		int increaserate = 10;
+		int increaserate = 5;
 		long assetsum = 0;
-		
-		double test = (increaserate+100)*0.01;
-		double test2 = Math.pow((increaserate+100)*0.01, 2);
-		long income2 = (long)(30000000 * Math.pow((increaserate+100)*0.01, 2));
-		System.out.println("income2 : "+income2);
-		System.out.println("test2 : "+test2);
-		System.out.println("test : "+test);
 
-		for (int i = 1; i <= year; i++) {
-			System.out.println("========= " + i + " 년 =========");
-			long income = (long)(30000000 * Math.pow((increaserate+100)*0.01, i));
+		for (int i = 0; i <= year; i++) {
+			int age = (1 + c.get(Calendar.YEAR) - birth_date + i);
+			long income = (long) (amount * Math.pow((increaserate + 100) * 0.01, i));
 			tax tax = new tax(income);
 			long disposable = tax.income - (long) tax.calctax();
 			long fund = (long) (disposable * (savingrate * 0.01));
 			long asset = (long) (fund * Math.pow((interestrate + 100) * 0.01, i));
 
-				assetsum += asset;
+			assetsum += asset;
 			
+			System.out.println("========= " + i + " 년 =========");
+			System.out.println("나이 : " + (age));
+			System.out.println("소득 : " + income);
 			System.out.println("가처분소득 : " + disposable);
 			System.out.println("자본금 : " + fund);
 			System.out.println("나의 자산 : " + asset);

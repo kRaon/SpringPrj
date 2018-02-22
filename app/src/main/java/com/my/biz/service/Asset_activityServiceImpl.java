@@ -74,6 +74,12 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 		return dao.selectCounselorDataByID(map);
 	}
 
+	@Override
+	public Asset_CounselorVO selectAsset_data(String id) {
+		// TODO Auto-generated method stub
+		return dao.selectAsset_data(id);
+	}
+
 
 	
 	
