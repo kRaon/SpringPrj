@@ -14,7 +14,11 @@
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-charts.min.js"></script>
-    
+    <script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
+</script>
     
  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -253,67 +257,55 @@
         <li class="breadcrumb-item active">Charts</li>
       </ol>
       <!-- Area Chart Example-->
-      
+	  
       <div class="card mb-3">
         <div class="card-header">
-          <input type="text" id="daterange" name="daterange" value="" /><div class="">
-          <canvas id="myAreaChart" width="0" height="0"></canvas>
-        </div></div>
-        
+			<i class="fa fa-calendar"></i> 기간 선택 :<input type="text" class="form-control" id="daterange" name="daterange" value="" style="margin-left:1em; width: 220px;display: inline;" />
+		</div>
+	  </div>
+	   <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-area-chart"></i> 기간별 내역</div>
+        <div class="card-body">
+          <div class="table-responsive">
+								<table class="table table-bordered" id="dataTable" width="100%"
+							cellspacing="0">
+							<thead>
+								<tr>
+									<th>Account</th>
+									<th>Period</th>
+									<th>Category</th>
+									<th>Content</th>
+									<th>Date</th>
+									<th>Amount</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+        </div>
+        <div class="card-footer small text-muted">뭐라고 넣을까</div>
       </div>
       <div class="row">
         <div class="col-lg-8">
           <!-- Example Bar Chart Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+              <i class="fa fa-bar-chart"></i> 월간소비 </div>
             <div class="card-body">
               <canvas id="myBarChart" width="100" height="50"></canvas>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">뭐라고 넣을까</div>
           </div>
         </div>
         <div class="col-lg-4">
           <!-- Example Pie Chart Card-->
           <div class="card mb-3">
-<script type="text/javascript">
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-
-if(dd<10) {
-    dd='0'+dd
-} 
-
-if(mm<10) {
-    mm='0'+mm
-} 
-
-today = mm+'/'+dd+'/'+yyyy+' - '+mm+'/'+dd+'/'+yyyy;
-$(document).ready(function() {
-        $('#daterange').val(today);
-        alert(today);
-});
-$('#daterange').on('apply.daterangepicker', function(ev, picker) {
-	apllyclick(picker.startDate.format('YYYYMMDD'),picker.endDate.format('YYYYMMDD'));
-	});
-</script>
-
-
-
-<script type="text/javascript">
-$(function() {
-    $('input[name="daterange"]').daterangepicker();
-});
-</script>
-
             <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
+              <i class="fa fa-pie-chart"></i> 카테고리별 소비</div>
             <div class="card-body">
-              <canvas id="myPieChart" width="5%" height="5"></canvas>
+              <canvas id="myPieChart" width="100%" height="100"></canvas>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">뭐라고 넣을까</div>
           </div>
         </div>
       </div>
@@ -323,7 +315,7 @@ $(function() {
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright Â© Your Website 2018</small>
+          <small>Copyright © Your Website 2018</small>
         </div>
       </div>
     </footer>
@@ -338,7 +330,7 @@ $(function() {
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">Ã</span>
+              <span aria-hidden="true">×</span>
             </button>
           </div>
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -349,8 +341,7 @@ $(function() {
         </div>
       </div>
     </div>
-    
- 
+   
   </div>
 </body>
 

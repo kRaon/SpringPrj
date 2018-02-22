@@ -4,3 +4,7 @@
 eclipse.preferences.version=1
 encoding//database/AccountBook.ddl=MS949
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
+<<<<<<< HEAD
+=======
+encoding//src/main/webapp/charts.jsp=UTF-8
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git

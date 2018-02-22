@@ -67,6 +67,9 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 	}
 
 	@Override
+	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String, String> map) {
+		return dao.selectDateActivityCatrgories_id(map);
+	}
 	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map) {
 		return dao.selectCounselorDataByID(map);
 	}

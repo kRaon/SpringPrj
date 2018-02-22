@@ -1,6 +1,6 @@
 package com.my.biz.vo;
 
-public class ChartVO {
+public class ChartVO implements Comparable<ChartVO>{
 	String month;
 	int amount;
 	
@@ -44,4 +44,12 @@ public class ChartVO {
 	public String toString() {
 		return "ChartVO [month=" + month + ", amount=" + amount + ", category_name=" + category_name + "]";
 	}
+
+	@Override
+	public int compareTo(ChartVO vo) {
+		
+		
+		return this.getMonth().compareTo(vo.getMonth());
+	}
+	
 }
