@@ -41,7 +41,11 @@ $(function() {
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  
+  <script> 
+    $(function(){
+      $("#nav").load("nav.html"); 
+    });
+    </script> 
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -144,11 +148,7 @@ $(function() {
     </div>
    
   </div>
-    <script> 
-    $(function(){
-      $("#nav").load("nav.html"); 
-    });
-    </script> 
+    
    <div id="nav"></div>
 </body>
 

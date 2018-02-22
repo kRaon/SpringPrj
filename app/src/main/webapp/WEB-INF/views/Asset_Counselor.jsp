@@ -13,7 +13,18 @@
 <meta name="author" content="">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<!-- Bootstrap core JavaScript-->
+			<script src="vendor/jquery/jquery.min.js"></script>
+			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<!-- Core plugin JavaScript-->
+			<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+			<!-- Page level plugin JavaScript-->
+			<script src="vendor/datatables/jquery.dataTables.js"></script>
+			<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+			<!-- Custom scripts for all pages-->
+			<script src="js/sb-admin.min.js"></script>
+			<!-- Custom scripts for this page-->
+			<script src="js/sb-admin-datatables.min.js"></script>
 <title>오늘의 영수증</title>
 <!-- Bootstrap core CSS-->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +41,6 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-
 
 
 	<div class="content-wrapper">
@@ -118,17 +128,12 @@
 			</div>
 			
 		</div>
-
-	</div>
-	
-	  <script> 
+		 <script> 
     $(function(){
       $("#nav").load("nav.html"); 
     });
     </script> 
    <div id="nav"></div>
-	</div>
-
 </body>
 
 </html>
