@@ -100,7 +100,6 @@ public class BoardController {
 				String[] bills = list2.get(i).getBillscontents().split(",");
 				// 한사람의 bill 들을 가져옴
 				String result = "";
-				System.out.println("어디서안되니!");
 				for (int j = 0; j < bills.length; j++) {
 					String[] eachvalues = bills[j].split(":");
 					eachvalues[0] = eachvalues[0].substring(1);// 맨앞의 [ 제거
