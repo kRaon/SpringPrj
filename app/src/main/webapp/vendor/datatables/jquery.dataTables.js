@@ -11576,7 +11576,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Hi _MENU_ Tiger",
+			"sLengthMenu": "Show _MENU_ entries",
 	
 	
 			/**
