@@ -60,7 +60,11 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String loginProcess(UsersVO vo, HttpServletRequest req,
 			HttpSession session,HttpServletResponse response) throws IOException {
-		System.out.println("여기까지되었따");
+		
+		response.setHeader("Content-Type", "application/xml");
+		response.setContentType("text/xml;charset=UTF-8");
+		response.setCharacterEncoding("utf-8"); 
+
 		//Gson
 		JsonObject jsonObject = new JsonObject();
 		PrintWriter out = response.getWriter();
@@ -71,9 +75,10 @@ public class LoginController {
 			req.getSession().setAttribute("userid", user.getId());
 			return "redirect:indexCard.do";
 		}else {			
-			return "login";
+			req.setAttribute("loginid", vo.getId());
+			req.setAttribute("errorMsg", "아이디 비밀번호 확인해주세요.");
 		}
-		
+		return "login";
 	}
 	
 	@RequestMapping("/logout.do")
