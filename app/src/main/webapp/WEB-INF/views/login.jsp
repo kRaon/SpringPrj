@@ -51,7 +51,7 @@
       <div class="card-header">Login</div>
       <div class="card-body">
       
-        <form id="loginform" action="" method="post">
+        <form id="loginform" action="./login.do" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">ID</label>
             <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">

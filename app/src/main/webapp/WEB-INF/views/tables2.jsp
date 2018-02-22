@@ -42,7 +42,7 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Dashboard"><a class="nav-link" href="./gomain.do">
+					title="Dashboard"><a class="nav-link" href="./indexCard.do">
 						<i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">메인</span>
 				</a></li>
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
@@ -188,14 +188,11 @@
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<!-- Breadcrumbs-->
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-				<li class="breadcrumb-item active">Tables</li>
-			</ol>
+			
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 				<div class="card-header">
-					<i class="fa fa-table"></i> 오늘의 영수증
+					<i class="fa fa-table"></i> 나의 영수증 관리
 				</div>
 				
 				<div class="card-body">
@@ -233,33 +230,15 @@
 						
 					</div>
 				</div>
-		<div>	
-					<input class="btn btn-info" style="display: inline-block; width:100px; margin-left: 3.5px" type="submit" value="삭제하기" >
-					
-		</form>
-				
-				<div style="padding-left: 3.5%; padding-bottom: 3%; display: inline-block; float: left; ">
-					<button class="btn btn-info" data-target="#income"
-						data-toggle="modal">수입</button>
-					<button class="btn btn-info" data-target="#expense"
-						data-toggle="modal">지출</button>
-				
-				</div>
-		</div>
+		
 				<form method="post" action="./insertBoard.do">
 				
-<!-- billscontents -->	<input type="hidden" name="billscontents" value="${list}">	
+<!-- billscontents -->	<%-- <input type="hidden" name="billscontents" value="${list}"> --%>	
 				
 					<!-- boardid(controller에서 생성),id(session),reg_date(sysdate)
 					contents(requestParameter),list정보 담기 
 					댓글처리
-					-->
-					<div>
-						<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 3px; margin-bottom: 5px; height: 110px;" placeholder="영수증에 대한 설명을 작성해주세요"></textarea>
-					</div>
-					<div align="center">
-					<input class="btn btn-primary btn-block" type="submit" value="글 올리기." style="width: 200px; text-align: center;margin-top: 10px; margin-bottom: 10px;"/>
-					</div>
+					-->	
 				</form>
 				
 				
@@ -271,71 +250,16 @@
 											<div>
 												<div class="btn-group btn-group-toggle"
 													data-toggle="buttons">
-									<label class="btn btn-info active">
-									 
-<!-- a_type -->			<input type="hidden" name="a_type" value="expense">	
-<!-- fixed -->			<input type="radio" name="fixed" id="fixed" value="Regular" autocomplete="off" checked> 정기
-									</label> 
-									<label class="btn btn-info"> 
-						<input type="radio" name="fixed" id="fixed" value="IRRegular" autocomplete="비정기"> 비정기
-									</label>
+			
 												</div>
 												<br> <br>
 											</div>
 										</div>
-										<div class="form-group">
-											<label for="exampleInputEmail1">항 목</label> 
-											
-<!-- category_num -->			<select class="custom-select" name="category_num">
-												
-												<option selected="">항목을 선택해 주세요.</option>
-												<option value="1">식비</option>
-												<option value="2">주거/통신</option>
-												<option value="3">생활용품</option>
-												<option value="4">의복/피복</option>
-												<option value="5">건강/문화</option>
-												<option value="6">교육/육아</option>
-												<option value="7">교통/차량</option>
-												<option value="8">경조사/회비</option>
-												<option value="9">세금/이자</option>
-												<option value="10">용돈/기타</option>
-											</select>
-										</div>
-
-										<div class="form-group">
-											<label for="exampleTextarea">내 용</label>
-											
-<!-- contents -->			<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;"></textarea>
-										
-										</div>
-										<div class="form-group">
-											<label class="control-label">금 액</label>
-											<div class="form-group">
-												<div class="input-group mb-3">
-			
-<!-- amount -->			<input class="form-control" id="amount" name="amount" type="text" aria-describedby="emailHelp" aria-label="Amount (to the nearest dollar)">
-													
-													<div class="input-group-append">
-														<span class="input-group-text">원</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="exampleTextarea">날 짜</label> 
-											
-<!-- a_date -->			<input class="form-control" id="a_date" name="a_date" type="date" placeholder="">
-			
-										</div>
+							
 									</div>
 								</div>
 
-								<div class="modal-footer">
-									<button class="btn btn-secondary" type="button"
-										data-dismiss="modal">취소</button>
-									<button class="btn btn-primary" type="submit">등록</button>
-
-								</div>
+								
 							</form>
 						</div>
 					</div>
