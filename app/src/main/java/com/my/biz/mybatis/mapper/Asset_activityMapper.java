@@ -62,4 +62,6 @@ public interface Asset_activityMapper {
 	@Select("select month,round(avg(amount)*12,-4) as amount from (select to_char(A_DATE,'MM') as MONTH, amount from asset_activity where id = #{id} and a_type = 'income' and to_char(a_date,'yyyy')=#{date}) group by month")
 	List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map);
 	
+	@Select("select to_char(birth_date,'yyyy') as BIRTH_DATE,amount from  (select id,month,round(avg(amount)*12,-4) as amount from (select id,to_char(A_DATE,'MM') as MONTH, amount from asset_activity where id = #{id} and a_type = 'income' and to_char(a_date,'yyyy')=to_char(sysdate,'yyyy') ) group by month,id) N,USERS U WHERE N.id=U.id")
+	Asset_CounselorVO selectAsset_data(String id);
 }

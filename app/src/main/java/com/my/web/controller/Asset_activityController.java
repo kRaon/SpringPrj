@@ -1,6 +1,8 @@
 package com.my.web.controller;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.my.biz.service.Asset_activityService;
+import com.my.biz.util.tax;
 import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_CounselorVO;
 import com.my.biz.vo.Asset_activityVO;
@@ -26,6 +29,9 @@ public class Asset_activityController {
 	@Qualifier("ActivityService")
 	Asset_activityService service;
 
+	
+	
+	
 	@RequestMapping("/receipt.do")
 	public ModelAndView getReceipt(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mav = new ModelAndView();
@@ -110,29 +116,70 @@ public class Asset_activityController {
 
 		ModelAndView mav = new ModelAndView();
 		String id = (String) req.getSession().getAttribute("userid");
-		String date = (String) req.getParameter("date");
+		Asset_CounselorVO vo=service.selectAsset_data(id);
+		int birth_date=Integer.parseInt(vo.getBirth_date());
 		
+		System.out.println(birth_date);
 		
+		int amount=vo.getAmount();
+		int untilyear=Integer.parseInt(req.getParameter("untilyear"));
+		int increaserate=Integer.parseInt(req.getParameter("increaserate"));
+		int savingrate=Integer.parseInt(req.getParameter("savingrate"));
+		int interestrate=Integer.parseInt(req.getParameter("interestrate"));
 		
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
-		map.put("date", date);
-
-		List<Asset_CounselorVO> list = service.selectCounselorDataByID(map);
+		List<Asset_CounselorVO> list =makedata(birth_date, amount, untilyear, savingrate, interestrate, increaserate);
+		
+		for(Asset_CounselorVO data: list) {
+			System.out.println(data);
+		}
+		
 		mav.setViewName("Asset_Counselor");
 		mav.addObject("list", list);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		return mav;
 	}
 	/*여기까지 인생재무설계 파트 && Asset_Counselor Part End*/
 
+	public double calctax(long income) {
+		double tax = 0;
+		if (income < 0) {
+			System.out.println("Wrong State : income is '-' ");
+			return tax;
+		}
+		if (income <= 12000000) {
+			tax = income * 0.06;
+		} else if (income > 12000000 && income <= 46000000) {
+			tax = (income - 12000000) * 0.15 + 720000;
+		} else if (income > 46000000 && income <= 88000000) {
+			tax = (income - 46000000) * 0.24 + 5820000;
+		} else if (income > 88000000 && income <= 150000000) {
+			tax = (income - 88000000) * 0.35 + 15900000;
+		} else if (income > 150000000 && income <= 300000000) {
+			tax = (income - 150000000) * 0.38 + 37600000;
+		} else if (income > 300000000 && income <= 500000000) {
+			tax = (income - 300000000) * 0.40 + 94600000;
+		} else {
+			tax = (income - 500000000) * 0.42 + 174600000;
+		}
+		return tax;
+	}
+	public static List<Asset_CounselorVO> makedata(int birth_date,int amount,int untilyear,int savingrate,int interestrate,int increaserate)
+	{
+		List<Asset_CounselorVO> list=new ArrayList<Asset_CounselorVO>();
+		Calendar c = Calendar.getInstance();
+
+		long assetsum = 0;
+		for (int i = 0; i <= untilyear; i++) {
+			int age = (1 + c.get(Calendar.YEAR) - birth_date + i);
+			int income = (int) (amount * Math.pow((increaserate + 100) * 0.01, i));
+			double tax = new tax().calctax(income);
+			long disposable = income - (long)tax;
+			long fund = (long) (disposable * (savingrate * 0.01));
+			long asset = (long) (fund * Math.pow((interestrate + 100) * 0.01, i));
+			assetsum += asset;
+			/*String birth_date, int amount, int age, int income, long disposable, long fund,long assetsum)*/
+				
+			list.add(new Asset_CounselorVO(Integer.toString(birth_date),amount,age,income,disposable,fund,assetsum));
+		}
+		return list;	
+	}
 }

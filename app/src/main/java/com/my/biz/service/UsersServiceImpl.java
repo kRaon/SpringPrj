@@ -46,9 +46,4 @@ public class UsersServiceImpl implements UsersService{
 		return dao.loginIdSearch(id);
 	}
 
-	@Override
-	public UsersVO searchUserdate(String id) {
-		// TODO Auto-generated method stub
-		return dao.searchUserdate(id);
-	}
 }

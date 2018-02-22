@@ -89,7 +89,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">인생 재무설계</a>
+              <a href="./assetcounselorhome.do">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>
@@ -334,7 +334,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 			<input type="hidden" name="board_id" value="${board.board_id}">
               ${board.reg_date}
               	 
-                 <input type="submit" value="삭제하기" style="width: 100px">
+                 <input class="btn btn-info"  type="submit" value="삭제하기" style="font-size:14px; margin-left:1em; margin-top:3px; height:30px; width: 90px;float: right;">
                </form>
                </div>
                </a>

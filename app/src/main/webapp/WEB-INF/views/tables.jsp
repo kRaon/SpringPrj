@@ -69,7 +69,7 @@
 							재무설계</span>
 				</a>
 					<ul class="sidenav-second-level collapse" id="collapseComponents">
-						<li><a href="navbar.html">인생 재무설계</a></li>
+						<li><a href="./assetcounselorhome.do">인생 재무설계</a></li>
 						<li><a href="cards.html">금융상품광고</a></li>
 					</ul></li>
 

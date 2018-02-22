@@ -23,6 +23,74 @@ public class Asset_CounselorVO {
 		this.amount = amount;
 	}
 	
+	public Asset_CounselorVO(String birth_date, int amount, int age, int income, long disposable, long fund,
+			long assetsum) {
+		super();
+		this.birth_date = birth_date;
+		this.amount = amount;
+		this.age = age;
+		this.income = income;
+		this.disposable = disposable;
+		this.fund = fund;
+		this.assetsum = assetsum;
+	}
+
+	public String getBirth_date() {
+		return birth_date;
+	}
+
+	public void setBirth_date(String birth_date) {
+		this.birth_date = birth_date;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getIncome() {
+		return income;
+	}
+
+	public void setIncome(int income) {
+		this.income = income;
+	}
+
+	public long getDisposable() {
+		return disposable;
+	}
+
+	public void setDisposable(long disposable) {
+		this.disposable = disposable;
+	}
+
+	public long getFund() {
+		return fund;
+	}
+
+	public void setFund(long fund) {
+		this.fund = fund;
+	}
+
+	public long getAssetsum() {
+		return assetsum;
+	}
+
+	public void setAssetsum(long assetsum) {
+		this.assetsum = assetsum;
+	}
+
 	//controller에서 보낼때 쓸 놈
 	public Asset_CounselorVO(int age, int income, long disposable, long fund, long assetsum) {
 		super();

@@ -109,10 +109,5 @@ public class UsersDAO_mybatis implements UsersDAO{
 		}
 	}
 
-	@Override
-	public UsersVO searchUserdate(String id) {
-		// TODO Auto-generated method stub
-		return mapper.searchUserdate(id);
-	}
 }
 

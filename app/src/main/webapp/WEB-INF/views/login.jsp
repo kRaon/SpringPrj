@@ -69,8 +69,6 @@
         
         <div class="text-center">
           <a class="d-block small mt-3" href="gosignup.do">Register an Account</a>
-          <a class="d-block small mt-3" href="./gosignup.do">Register an Account</a>
-
           <a class="d-block small" href="forgot-password.do">Forgot Password?</a>
         </div>
       </div>
