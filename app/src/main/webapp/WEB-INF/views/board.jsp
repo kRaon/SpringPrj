@@ -48,6 +48,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   
   <!-- Navigation-->
+<<<<<<< HEAD
+  
+=======
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Start Bootstrap</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,7 +90,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">인생 재무설계</a>
+              <a href="./assetcounselorhome.do">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>
@@ -207,6 +210,7 @@ tr:nth-child(even){background-color: #f2f2f2}
       </ul>
     </div>
   </nav>
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
   
   
   <div class="content-wrapper">
@@ -364,6 +368,12 @@ tr:nth-child(even){background-color: #f2f2f2}
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
   </div>
+    <script> 
+    $(function(){
+      $("#nav").load("nav.html"); 
+    });
+    </script> 
+   <div id="nav"></div>
 </body>
 
 </html>

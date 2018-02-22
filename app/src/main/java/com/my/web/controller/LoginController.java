@@ -31,6 +31,8 @@ public class LoginController {
 	public String gohome() {
 		return "index";*/
 
+	
+	
 	@RequestMapping("/loginConfirm.do")
 	public void loginConfirm(UsersVO vo, HttpServletRequest req,
 			HttpSession session,HttpServletResponse response) throws IOException {

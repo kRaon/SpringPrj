@@ -45,4 +45,5 @@ public class UsersServiceImpl implements UsersService{
 	public boolean loginIdSearch(String id) {
 		return dao.loginIdSearch(id);
 	}
+
 }

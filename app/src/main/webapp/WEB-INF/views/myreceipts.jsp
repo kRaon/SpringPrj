@@ -21,7 +21,6 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  
 
 
   	<style>
@@ -43,13 +42,21 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+/* tr:nth-child(even){background-color: #f2f2f2}
+
+	.btn btn-primary btn-xs{
+		width: 70px;
+		height: 60px;
+		font-size: 0.75em;
+	} */
 	</style>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   
   <!-- Navigation-->
+<<<<<<< HEAD
+=======
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.html">Start Bootstrap</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +96,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">인생 재무설계</a>
+              <a href="./assetcounselorhome.do">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>
@@ -209,6 +216,7 @@ tr:nth-child(even){background-color: #f2f2f2}
       </ul>
     </div>
   </nav>
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
   
   
   <div class="content-wrapper">
@@ -318,7 +326,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </div> --%>
           <!-- Card Columns Example Social Feed-->
           <div class="mb-0 mt-4">
-            <i class="fa fa-newspaper-o"></i> News Feed</div>
+            <i class="fa fa-newspaper-o"></i> 나의 영수증 관리</div>
           <hr class="mt-2">
           <div class="card-columns">
           
@@ -334,7 +342,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 			<input type="hidden" name="board_id" value="${board.board_id}">
               ${board.reg_date}
               	 
-                 <input type="submit" value="삭제하기" style="width: 100px">
+<<<<<<< HEAD
+                 <input type="submit" value="삭제하기" class="btn btn-primary btn-sm">
+                 <!-- <input type="submit" value="삭제하기" class="btn btn-primary btn-xs"> -->
+=======
+                 <input class="btn btn-info"  type="submit" value="삭제하기" style="font-size:14px; margin-left:1em; margin-top:3px; height:30px; width: 90px;float: right;">
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
                </form>
                </div>
                </a>
@@ -414,6 +427,12 @@ tr:nth-child(even){background-color: #f2f2f2}
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
+    <script> 
+    $(function(){
+      $("#nav").load("nav.html"); 
+    });
+    </script> 
+   <div id="nav"></div>
   </div>
 </body>
 

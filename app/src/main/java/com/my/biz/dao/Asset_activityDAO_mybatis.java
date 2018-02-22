@@ -108,6 +108,12 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 		return mapper.selectCounselorDataByID(map);
 	}
 
+	@Override
+	public Asset_CounselorVO selectAsset_data(String id) {
+		// TODO Auto-generated method stub
+		return mapper.selectAsset_data(id);
+	}
+
 
 
 	

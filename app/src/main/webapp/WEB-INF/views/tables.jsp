@@ -29,6 +29,9 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
 
+<<<<<<< HEAD
+	
+=======
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
 		id="mainNav">
@@ -69,7 +72,7 @@
 							재무설계</span>
 				</a>
 					<ul class="sidenav-second-level collapse" id="collapseComponents">
-						<li><a href="navbar.html">인생 재무설계</a></li>
+						<li><a href="./assetcounselorhome.do">인생 재무설계</a></li>
 						<li><a href="cards.html">금융상품광고</a></li>
 					</ul></li>
 
@@ -185,6 +188,7 @@
 	</nav>
 
 
+>>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<!-- Breadcrumbs-->
@@ -489,6 +493,12 @@
 			<script src="js/sb-admin.min.js"></script>
 			<!-- Custom scripts for this page-->
 			<script src="js/sb-admin-datatables.min.js"></script>
+			  <script> 
+    $(function(){
+      $("#nav").load("nav.html"); 
+    });
+    </script> 
+   <div id="nav"></div>
 		</div>
 </body>
 
