@@ -17,7 +17,7 @@ public interface UsersMapper {
 	String job;
 	int point;*/
 	
-	@Insert("INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES (#{id},#{pw},#{age},#{gender},#{job},0)")
+	@Insert("INSERT INTO USERS (ID,PW,USER_DATE,GENDER,JOB,POINT) VALUES (#{id},#{pw},#{user_date},#{gender},#{job},0)")
 	int insertUsers(UsersVO vo);
 	
 	@Delete("DELETE FROM USERS WHERE ID=#{id}")

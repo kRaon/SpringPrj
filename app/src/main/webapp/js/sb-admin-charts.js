@@ -4,13 +4,6 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 // -- Area Chart Example
 
-type: “GET”, 
-dataType: “json”,
-url: “http://openapi.xxx.com/path/getapi.do”,
-data: “id=”+id.val()+”&password=”+password.val()+”&name=”+name.val(),
-success: reqGetResponse,
-error: errorNoti
-
 $(function() {
 	$.ajax({
 		url : 'barchart.do',

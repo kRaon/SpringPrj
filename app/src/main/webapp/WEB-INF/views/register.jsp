@@ -45,8 +45,8 @@
 		</div>
 		 <div class="form-row">
           <div class="col-md-6">
-         	<label>age</label>
-        	<input class="form-control" type="text" name="age" placeholder="Enter your age"/>
+         	<label>date</label>
+        	<input class="form-control" type="date" name="user_date" placeholder="Enter your age"/>
            </div>
          </div>
          <div class="form-row">

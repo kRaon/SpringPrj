@@ -8,3 +8,6 @@ insert into CATEGORIES values (7, '교통/차량');
 insert into CATEGORIES values (8, '경조사/회비');
 insert into CATEGORIES values (9, '세금/이자');
 insert into CATEGORIES values (10, '용돈/기타');
+
+
+select * from board;
