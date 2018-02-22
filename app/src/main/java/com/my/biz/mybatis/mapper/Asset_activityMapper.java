@@ -9,22 +9,12 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.my.biz.vo.ActivityCategoriesVO;
+import com.my.biz.vo.Asset_CounselorVO;
 import com.my.biz.vo.Asset_activityVO;
 import com.my.biz.vo.ChartVO;
 
 public interface Asset_activityMapper {
-	/*
-	int indexnumber;
-	String id;
-	int category_num;
-	String contents;
-	int amount;
-	String fixed;
-	Date a_date;
-	String a_type;
-*/
-//crud
-	//indexnumber=0, id=qwq713, category_num=2, contents=11, amount=125555, fixed=yes, a_date=2018-02-21, a_type=expense
+
 	@Insert("INSERT INTO ASSET_ACTIVITY (INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE) VALUES (SEQUENCE1.NEXTVAL,#{id},#{category_num},#{contents},#{amount},#{fixed},#{a_date},#{a_type})")
 	int insertActivity(Asset_activityVO vo);
 	
@@ -67,5 +57,8 @@ public interface Asset_activityMapper {
 	
 	@Select("SELECT INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM AND ID=#{id} and to_char(A.A_DATE,'YYYYMMDD') BETWEEN #{fromdate} and #{todate})")
 	List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String,String> map);
+	
+	@Select("SELECT AGE, sum(AMOUNT) as AMOUNT FROM USERS U, ASSET_ACTIVITY AA WHERE U.ID = AA.ID AND A_TYPE = 'income' AND U.ID = #{id} AND TO_CHAR(AA.A_DATE,'YYYY')=#{date} GROUP BY AGE")
+	List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map);
 	
 }

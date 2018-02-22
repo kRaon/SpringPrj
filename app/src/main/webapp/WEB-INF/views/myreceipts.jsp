@@ -89,7 +89,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="./assetcounselorhome.do">인생 재무설계</a>
+              <a href="navbar.html">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>

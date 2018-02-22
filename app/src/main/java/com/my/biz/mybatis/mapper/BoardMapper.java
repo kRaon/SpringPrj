@@ -13,12 +13,6 @@ import com.my.biz.vo.BoardVO;
 
 public interface BoardMapper {
 
-/*	String board_id;
-	String id;
-	String contents;
-	String billscontents;
-	Date reg_date;
-*/	
 	@Insert("INSERT INTO BOARD (board_id,id,contents,billscontents,reg_date) VALUES(#{board_id},#{id},#{contents},#{billscontents},SYSDATE)")
 	public int insertBoard(BoardVO vo);
 	
@@ -31,11 +25,11 @@ public interface BoardMapper {
 	@Select("SELECT * FROM BOARD")
 	public List<BoardVO> selectAllBoard();
 	
-
+	@Select("SELECT * FROM BOARD WHERE BOARD_ID=#{board_id}")
+	public BoardVO getBoard(String board_id);
 	
-	
-
-	
+	@Select("SELECT * FROM BOARD WHERE id=#{id}")
+	public List<BoardVO> getAllBoard(String id); 
 	
 	
 }

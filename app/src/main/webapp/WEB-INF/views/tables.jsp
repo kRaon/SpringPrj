@@ -56,7 +56,7 @@
 								class="fa fa-fw fa-table"></i> 오늘의 영수증</a></li>
 						<li><a href="#"><i class="fa fa-fw fa-area-chart"></i>
 								이달의 영수증</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-file"></i> 나의 영수증
+						<li><a href="./getallboard.do"><i class="fa fa-fw fa-file"></i> 나의 영수증
 								관리</a></li>
 
 					</ul></li>
@@ -488,7 +488,7 @@
 			<!-- Core plugin JavaScript-->
 			<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 			<!-- Page level plugin JavaScript-->
-			<script src="vendor/datatables/jquery.dataTables.js"></script>
+			<script src="vendor/datatables/jquery.dataTables.js?ver=1"></script>
 			<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 			<!-- Custom scripts for all pages-->
 			<script src="js/sb-admin.min.js"></script>

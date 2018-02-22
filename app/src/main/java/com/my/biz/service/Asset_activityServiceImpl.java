@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.my.biz.dao.Asset_activityDAO;
 import com.my.biz.vo.ActivityCategoriesVO;
+import com.my.biz.vo.Asset_CounselorVO;
 import com.my.biz.vo.Asset_activityVO;
 import com.my.biz.vo.ChartVO;
 
@@ -52,7 +53,6 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 
 	@Override
 	public List<ChartVO> selectBarChart(Map<String, String> map) {
-		// TODO Auto-generated method stub
 		return dao.selectBarChart(map);
 	}
 
@@ -63,14 +63,15 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 
 	@Override
 	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id) {
-		// TODO Auto-generated method stub
 		return dao.selectAllActivityCatrgories_id(id);
 	}
 
 	@Override
 	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String, String> map) {
-		// TODO Auto-generated method stub
 		return dao.selectDateActivityCatrgories_id(map);
+	}
+	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map) {
+		return dao.selectCounselorDataByID(map);
 	}
 
 

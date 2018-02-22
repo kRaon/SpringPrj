@@ -53,10 +53,24 @@ public class BoardDAO_mybatis implements BoardDAO {
 		return mapper.updateBoard(vo);
 	}
 
+	
 	@Override
 	public List<BoardVO> selectAllBoard() {
 		// TODO Auto-generated method stub
 		return mapper.selectAllBoard();
+	}
+
+	
+	@Override
+	public BoardVO getBoard(String board_id) {
+		// TODO Auto-generated method stub
+		return mapper.getBoard(board_id);
+	}
+
+	@Override
+	public List<BoardVO> getAllBoard(String id) {
+		
+		return mapper.getAllBoard(id);
 	}
 
 	

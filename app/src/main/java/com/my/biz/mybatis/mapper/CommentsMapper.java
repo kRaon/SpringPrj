@@ -18,7 +18,7 @@ public interface CommentsMapper {
 	Date reg_date;
 	int accept;*/
 	
-	@Insert("INSERT INTO COMMENTS (INDEXNUMBER,BOARD_ID,ID,CONTENTS,REG_DATE,ACCEPT) VALUES(SEQUENCE2.nextval,#{board_id},#{id},#{contents},sysdate,#{accept})")
+	@Insert("INSERT INTO COMMENTS (INDEXNUMBER,BOARD_ID,ID,CONTENTS,REG_DATE,ACCEPT) VALUES(SEQUENCE3.NEXTVAL,#{board_id},#{id},#{contents},sysdate,#{accept})")
 	int insertComment(CommentsVO vo);
 
 	@Delete("DELETE FROM COMMENTS WHERE INDEXNUMBER = #{indexnumber}")
@@ -30,7 +30,7 @@ public interface CommentsMapper {
 	@Select("SELECT * FROM COMMENTS")
 	List<CommentsVO> selectAllComments();
 	
-	@Select("SELECT * FROM COMMENTS WHERE BOARD_ID=#{board_id}")
+	@Select("SELECT * FROM COMMENTS WHERE BOARD_ID=#{board_id} order by indexnumber desc")
 	List<CommentsVO> selectComments(String board_id);
 	
 	
