@@ -318,7 +318,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </div> --%>
           <!-- Card Columns Example Social Feed-->
           <div class="mb-0 mt-4">
-            <i class="fa fa-newspaper-o"></i> News Feed</div>
+            <i class="fa fa-newspaper-o"></i> 나의 영수증 관리</div>
           <hr class="mt-2">
           <div class="card-columns">
           
