@@ -9,11 +9,12 @@ DROP TABLE USERS CASCADE CONSTRAINTS;
 CREATE TABLE USERS(
 		ID                            		VARCHAR2(30)		 NULL ,
 		PW                            		VARCHAR2(30)		 NULL ,
-		USER_DATE                     		DATE		 NULL ,
+		BIRTH_DATE                    		DATE		 NULL ,
 		GENDER                        		VARCHAR2(10)		 NULL ,
 		JOB                           		VARCHAR2(20)		 NULL ,
 		POINT                         		NUMBER(10)		 DEFAULT 0		 NULL 
 );
+
 
 CREATE TABLE CATEGORIES(
 		CATEGORY_NUM                  		NUMBER(10)		 NULL ,
@@ -41,7 +42,6 @@ CREATE TABLE TARGET(
 		DEADLINE                      		DATE		 NULL 
 );
 
-
 CREATE TABLE BOARD(
 		BOARD_ID                      		VARCHAR2(100)		 NULL ,
 		ID                            		VARCHAR2(30)		 NULL ,
@@ -49,7 +49,6 @@ CREATE TABLE BOARD(
 		BILLSCONTENTS                 		VARCHAR2(1000)		 NULL ,
 		REG_DATE                      		DATE		 NULL 
 );
-
 
 CREATE TABLE COMMENTS(
 		INDEXNUMBER                   		NUMBER(10)		 NULL ,
@@ -59,6 +58,8 @@ CREATE TABLE COMMENTS(
 		REG_DATE                      		DATE		 NULL ,
 		ACCEPT                        		NUMBER(10)		 NULL 
 );
+
+
 
 
 ALTER TABLE USERS ADD CONSTRAINT IDX_USERS_PK PRIMARY KEY (ID);

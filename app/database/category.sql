@@ -11,3 +11,6 @@ insert into CATEGORIES values (10, '용돈/기타');
 
 
 select * from board;
+
+
+"SELECT AGE, sum(AMOUNT) as AMOUNT FROM USERS U, ASSET_ACTIVITY AA WHERE U.ID = AA.ID AND A_TYPE = 'income' AND U.ID = #{id} AND TO_CHAR(AA.A_DATE,'YYYY')=#{date} GROUP BY AGE

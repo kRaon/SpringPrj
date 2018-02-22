@@ -16,7 +16,7 @@ public interface BoardMapper {
 	@Insert("INSERT INTO BOARD (board_id,id,contents,billscontents,reg_date) VALUES(#{board_id},#{id},#{contents},#{billscontents},SYSDATE)")
 	public int insertBoard(BoardVO vo);
 	
-	@Delete("DELETE FROM BOARD WHERE=#{board_id}")
+	@Delete("DELETE FROM BOARD WHERE BOARD_ID=#{board_id}")
 	public int deleteBoard(BoardVO vo);
 
 	@Update("UPDATE BOARD SET CONTENTS=#{contents}, ACTIVITY_NUMBERS=#{activity_numbers} WHERE=#{board_id}")

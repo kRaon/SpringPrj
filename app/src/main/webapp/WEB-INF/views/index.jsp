@@ -323,9 +323,9 @@ tr:nth-child(even){background-color: #f2f2f2}
           <div class="card-columns">
           
 
+	  	<div class = "container">
 	  	<c:forEach var="board" items="${list}" >
 	  	
-	  	<div class = "container">
 	  		 <div class="card mb-3">
               <a href="#">
               <pre>${board.reg_date}</pre> 

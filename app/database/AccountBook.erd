@@ -660,8 +660,8 @@
           <defaultValue></defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
         <net.java.amateras.db.visual.model.ColumnModel>
-          <columnName>USER_DATE</columnName>
-          <logicalName>USER_DATE</logicalName>
+          <columnName>BIRTH_DATE</columnName>
+          <logicalName>BIRTH_DATE</logicalName>
           <columnType class="net.java.amateras.db.dialect.ColumnType">
             <name>DATE</name>
             <logicalName>Date</logicalName>
