@@ -76,7 +76,7 @@ tr:nth-child(even){background-color: #f2f2f2}
               <a href="#"><i class="fa fa-fw fa-area-chart"></i> 이달의 영수증</a>
             </li>
             <li>
-              <a href="./showallreceipt.do"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
+              <a href="./getallboard.do"><i class="fa fa-fw fa-file"></i> 나의 영수증 관리</a>
             </li>
 
           </ul>

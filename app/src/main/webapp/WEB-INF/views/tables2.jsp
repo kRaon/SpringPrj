@@ -56,7 +56,7 @@
 								class="fa fa-fw fa-table"></i> 오늘의 영수증</a></li>
 						<li><a href="#"><i class="fa fa-fw fa-area-chart"></i>
 								이달의 영수증</a></li>
-						<li><a href="./showallreceipt.do"><i class="fa fa-fw fa-file"></i> 나의 영수증
+						<li><a href="./getallboard.do"><i class="fa fa-fw fa-file"></i> 나의 영수증
 								관리</a></li>
 
 					</ul></li>
@@ -197,33 +197,53 @@
 				
 				<div class="card-body">
 					<div class="table-responsive">
-		<form method="post" action="./deleteassetactivities.do">
+		<form method="post" action="deleteBoard.do">
 						<table class="table table-bordered" id="dataTable" width="100%"
 							cellspacing="0">
-							<thead>
-								<tr>
-									<th>Account</th>
-									<th>Period</th>
-									<th>Category</th>
-									<th>Content</th>
-									<th>Date</th>
-									<th>Amount</th>
-									<th>Delete</th>
-								</tr>
-							</thead>
-	
+					
 							<tbody>
-							<c:forEach var="item" items="${list}">
-							<tr>
-								<th>${item.a_type}</th>
-								<th>${item.fixed}</th>
-								<th>${item.category_name}</th>
-								<th>${item.contents}</th>
-								<th>${item.a_date}</th>
-								<th>${item.amount}</th>
-								<th><input type="checkbox" name="indexnumber" value="${item.indexnumber}"></th>
-							</tr>
-							</c:forEach>
+							<c:forEach var="board" items="${list}" >
+	  	<div class = "container">
+	  		 <div class="card mb-3">
+              <a href="#">
+              <pre>${board.reg_date}</pre> 
+               </a>
+              
+        	<div class="receipt-container">
+        		<table>
+        		<thead>
+        		<th>Account</th>
+        		<th>Period</th>
+        		<th>Category</th>
+        		<th>Content</th>
+        		<th>Date</th>
+        		<th>Amount</th>
+        		</thead>
+        		${board.billscontents}
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">          
+                <div class="user_id" style="float: left; margin-right: 3% ">
+              <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                            
+               </div> ${board.contents}
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+               	<c:set value="${board.board_id}" var="boardid"/>
+                <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}">
+               
+                  <i class="fa fa-fw fa-comment"></i>Comment!!
+                </a>
+
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">${board.reg_date}</div>
+	  	</div>
+	  	</c:forEach>
 							</tbody>
 						</table>
 					
@@ -231,15 +251,7 @@
 					</div>
 				</div>
 		
-				<form method="post" action="./insertBoard.do">
-				
-<!-- billscontents -->	<%-- <input type="hidden" name="billscontents" value="${list}"> --%>	
-				
-					<!-- boardid(controller에서 생성),id(session),reg_date(sysdate)
-					contents(requestParameter),list정보 담기 
-					댓글처리
-					-->	
-				</form>
+
 				
 				
 							

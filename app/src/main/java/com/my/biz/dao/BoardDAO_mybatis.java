@@ -67,6 +67,12 @@ public class BoardDAO_mybatis implements BoardDAO {
 		return mapper.getBoard(board_id);
 	}
 
+	@Override
+	public List<BoardVO> getAllBoard(String id) {
+		
+		return mapper.getAllBoard(id);
+	}
+
 	
 
 }

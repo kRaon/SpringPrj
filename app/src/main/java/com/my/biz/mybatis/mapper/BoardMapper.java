@@ -34,11 +34,8 @@ public interface BoardMapper {
 	@Select("SELECT * FROM BOARD WHERE BOARD_ID=#{board_id}")
 	public BoardVO getBoard(String board_id);
 	
-
-	
-	
-
-	
+	@Select("SELECT * FROM BOARD WHERE id=#{id}")
+	public List<BoardVO> getAllBoard(String id); 
 	
 	
 }

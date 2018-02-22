@@ -31,19 +31,18 @@ public class BoardController {
 	@Qualifier("ActivityService")
 	Asset_activityService aservice;
 
-	@RequestMapping("/showallreceipt.do")
-	public ModelAndView showallrecipt(HttpServletRequest req) {
+	
+	@RequestMapping("/getallboard.do")
+	public ModelAndView getAllBoard(HttpServletRequest req,HttpServletResponse res) {
 		ModelAndView mav = new ModelAndView();
 		String id=(String) req.getSession().getAttribute("userid");
-		
-		List<ActivityCategoriesVO> list=aservice.selectAllActivityCatrgories();
-		mav.addObject("list", list);
+		List<BoardVO> list = service.getAllBoard(id);
+		mav.addObject("list",list);
 		mav.setViewName("tables2");
 		return mav;
+		
 	}
-	
-	
-	
+		
 	@Autowired
 	@Qualifier("CommentsService")
 	CommentsService cservice;
@@ -97,7 +96,7 @@ public class BoardController {
 	@RequestMapping(value= { "deleteBoard.do"})
 	public String deleteBoard(BoardVO vo) {
 		   service.deleteBoard(vo);
-		return "redirect:board.do";
+		return "redirect:getallboard.do";
 	}
 	@RequestMapping(value= {"updateBoard.do"})
 	public String updateBoard(BoardVO vo) {
@@ -125,7 +124,7 @@ public class BoardController {
 		
 	}
 
-	
+
 	@RequestMapping("/getboard.do")
 	public ModelAndView getBoard(HttpServletRequest req,HttpServletResponse res) {
 		ModelAndView mav=new ModelAndView();
