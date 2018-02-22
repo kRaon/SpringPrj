@@ -37,10 +37,29 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		String id=(String) req.getSession().getAttribute("userid");
 		List<BoardVO> list = service.getAllBoard(id);
-		mav.addObject("list",list);
-		mav.setViewName("tables2");
-		return mav;
 		
+		for(int i=0;i<list.size();i++) {
+			String[] bills=list.get(i).getBillscontents().split(",");	
+			//한사람의 bill 들을 가져옴
+					String result="";
+			for(int j=0;j<bills.length;j++) {
+					String[] eachvalues=bills[j].split(":");
+					eachvalues[0]=eachvalues[0].substring(1);//맨앞의 [ 제거			
+					eachvalues[5]=eachvalues[5].substring(0,eachvalues[5].length()-1);
+					String temp="<tr><td>"+eachvalues[5]+"</td><td>"+eachvalues[3]+"</td><td>"+eachvalues[0]+"</td><td>"+eachvalues[1]+"</td><td>"+eachvalues[4]+"</td><td>"+eachvalues[2]+"</td> </tr>";				
+					//한사람의 bill의 개수만큼 루프를 돌아서 하나의 계산내역을 항목별로 분리해서 밖아놓음
+					result+=temp;
+				}
+			
+			list.get(i).setBillscontents(result);
+
+			}
+
+		mav.addObject("list",list);
+		
+		mav.setViewName("myreceipts");
+		
+		return mav;		
 	}
 		
 	@Autowired
