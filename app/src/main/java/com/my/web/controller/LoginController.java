@@ -60,7 +60,7 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String loginProcess(UsersVO vo, HttpServletRequest req,
 			HttpSession session,HttpServletResponse response) throws IOException {
-		
+		System.out.println("여기까지되었따");
 		//Gson
 		JsonObject jsonObject = new JsonObject();
 		PrintWriter out = response.getWriter();

@@ -1,5 +1,6 @@
 package DAO_TEST;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.junit.After;
@@ -29,10 +30,10 @@ public class UserDAO_Test {
 	public void tearDown() throws Exception {
 	}
 
-	//@Test
+	@Test
 	public void add() {
 		UsersVO vo = new UsersVO();
-		vo.setAge(30);
+		vo.setUser_date(new Date(0));
 		vo.setGender("female");
 		vo.setId("java02");
 		vo.setJob("kk");

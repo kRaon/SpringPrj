@@ -101,6 +101,9 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	}
 
 	@Override
+	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String, String> map) {
+		return mapper.selectDateActivityCatrgories_id(map);
+	}
 	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map) {
 		return mapper.selectCounselorDataByID(map);
 	}
