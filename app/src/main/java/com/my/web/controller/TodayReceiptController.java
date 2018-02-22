@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.my.biz.service.BoardService;
 import com.my.biz.service.UsersService;
@@ -14,8 +15,5 @@ public class TodayReceiptController {
 	@Qualifier("BoardService")
 	BoardService service;
 	
-	@RequestMapping("/gotodayreceipt.do")
-	public String gotodayreceipt() {
-		return "tables";
-	}
+	
 }

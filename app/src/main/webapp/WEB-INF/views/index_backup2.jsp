@@ -21,29 +21,15 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
-  
-
-
   	<style>
 		.user_id {
     	text-align:right;
 		}
-
- 		.container{
- 			 position: absolute;
- 			 width:50em;
- 		}
- 		table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
+		table, th, td {
+   			 border: 1px solid;
+   			 width:29em;
+   			 height: 1em;
+ 		 }
 	</style>
 </head>
 
@@ -58,7 +44,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="./indexCard.do">
+          <a class="nav-link" href="./gomain.do">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">메인</span>
           </a>
@@ -89,7 +75,7 @@ tr:nth-child(even){background-color: #f2f2f2}
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="./assetcounselorhome.do">인생 재무설계</a>
+              <a href="navbar.html">인생 재무설계</a>
             </li>
             <li>
               <a href="cards.html">금융상품광고</a>
@@ -322,54 +308,222 @@ tr:nth-child(even){background-color: #f2f2f2}
           <hr class="mt-2">
           <div class="card-columns">
           
-
-	  	<c:forEach var="board" items="${list}" >
-	  	
-	  	<div class = "container">
-	  		 <div class="card mb-3">
+          
+            <!--Card1-->
+            <div class="card mb-3">
               <a href="#">
-              <pre>${board.reg_date}</pre> 
+              <pre>board_id | reg_date</pre> 
                </a>
-              
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
         	<div class="receipt-container">
-        		<table>
-        		<thead>
-        		<th>Account</th>
-        		<th>Period</th>
-        		<th>Category</th>
-        		<th>Content</th>
-        		<th>Date</th>
-        		<th>Amount</th>
-        		</thead>
-        		${board.billscontents}
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
         		</table>
         	</div>
              <hr class="my-0">
               <div class="card-body">
-                <p class="card-text small">          
-                <div class="user_id" style="float: left; margin-right: 3% ">
-              <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                            
-               </div> ${board.contents}
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
                 </p>
               </div>
               <div class="card-body py-2 small">
                 <a class="mr-3 d-inline-block" href="#">
                   <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-               	<c:set value="${board.board_id}" var="boardid"/>
-                <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}">
-               
-                  <i class="fa fa-fw fa-comment"></i>Comment!!
-                </a>
-
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
               </div>
                <hr class="my-0">
-              <div class="card-footer small text-muted">${board.reg_date}</div>
-	  	</div>
-	  	</c:forEach>
-	  	
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+              
+              <!--Card2-->
+            <div class="card mb-3">
+              <a href="#">
+              <pre>board_id | reg_date</pre> 
+               </a>
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
+        	<div class="receipt-container">
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+              <!--Card3-->
+            <div class="card mb-3">
+              <a href="#">
+              <pre>board_id | reg_date</pre> 
+               </a>
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
+        	<div class="receipt-container">
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+              <!--Card4-->
+            <div class="card mb-3">
+              <a href="#">
+                <pre>board_id | reg_date</pre> 
+               </a>
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
+        	<div class="receipt-container">
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+              <!--Card5-->
+            <div class="card mb-3">
+              <a href="#">
+               <pre>board_id | reg_date</pre> 
+               </a>
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
+        	<div class="receipt-container">
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+              <!--Card6-->
+            <div class="card mb-3">
+              <a href="#">
+                <pre>board_id | reg_date</pre> 
+               </a>
+               <div class="user_id">
+              <h8 class="card-title mb-1"><a href="#">user_id</a></h8>                            
+               </div>
+        	<div class="receipt-container">
+        		<table class="tb1">
+        		<tr><th>here</th><th>put</th><th>receipt</th></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		<tr><td></td><td></td><td></td></tr>
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-comment"></i>Comment</a>
+                <a class="d-inline-block" href="#">
+                  <i class="fa fa-fw fa-share"></i>Share</a>
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">Posted 32 mins ago</div>
+              
+   
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>

@@ -1,6 +1,7 @@
 package com.my.biz.vo;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class BoardVO {
 
@@ -10,10 +11,6 @@ public class BoardVO {
 	String billscontents;
 	Date reg_date;
 
-	public BoardVO() {
-		super();
-	}
-
 	public BoardVO(String board_id, String id, String contents, String billscontents, Date reg_date) {
 		super();
 		this.board_id = board_id;
@@ -21,6 +18,10 @@ public class BoardVO {
 		this.contents = contents;
 		this.billscontents = billscontents;
 		this.reg_date = reg_date;
+	}
+
+	public BoardVO() {
+		super();
 	}
 
 	public String getBoard_id() {
@@ -66,7 +67,7 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("BoardVO [board_id=");
+		builder.append("board_id=");
 		builder.append(board_id);
 		builder.append(", id=");
 		builder.append(id);
@@ -76,11 +77,10 @@ public class BoardVO {
 		builder.append(billscontents);
 		builder.append(", reg_date=");
 		builder.append(reg_date);
-		builder.append("]");
+		builder.append("");
 		return builder.toString();
 	}
 
-	
-	
+	// String commentsnumbers;
 
 }
