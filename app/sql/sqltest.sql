@@ -10,7 +10,6 @@ INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES ('java03','1234',66,'kk','
 INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES ('java04','1234',66,'kk','kk',0)
 INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES ('java05','1234',66,'kk','kk',0)
 INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES ('java06','1234',66,'kk','kk',0)
-INSERT INTO USERS (ID,PW,AGE,GENDER,JOB,POINT) VALUES ('qwq713','1234',66,'kk','kk',0)
 
 
 select * from board;
@@ -28,6 +27,8 @@ INSERT INTO board (BOARD_ID,ID,CONTENTS,BILLSCONTENTS,REG_DATE)
 VALUES ('05','java05','Lorem Ipsum is simply dummy text of the printing and typesetting industry.','sdfjosddsf',SYSDATE)
 INSERT INTO board (BOARD_ID,ID,CONTENTS,BILLSCONTENTS,REG_DATE) 
 VALUES ('06','java06','Lorem Ipsum is simply dummy text of the printing and typesetting industry.','sdfjosddsf',SYSDATE)
+INSERT INTO board (BOARD_ID,ID,CONTENTS,BILLSCONTENTS,REG_DATE) 
+VALUES ('07','qwq713','Lorem Ipsum is simply dummy text of the printing and typesetting industry.','sdfjosddsf',SYSDATE)
 
 
 SELECT INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME 
