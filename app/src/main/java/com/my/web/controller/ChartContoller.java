@@ -67,7 +67,7 @@ public class ChartContoller {
 		res.setContentType("application/json;charset=UTF-8");
 		String id=(String) req.getSession().getAttribute("userid");
 		Map<String,String> map=new HashMap<String,String>();
-		map.put("id", "qwq713");
+		map.put("id", id);
 		map.put("fromdate",  fromdate);
 		map.put("todate", todate);
 	
@@ -120,7 +120,7 @@ public class ChartContoller {
 		res.setContentType("application/json;charset=UTF-8");
 		String id=(String) req.getSession().getAttribute("userid");
 		Map<String,String> map=new HashMap<String,String>();
-		map.put("id", "qwq713");
+		map.put("id", id);
 		map.put("fromdate",  fromdate);
 		map.put("todate", todate);
 		List<ChartVO> list = service.selectPieChart(map);

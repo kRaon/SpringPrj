@@ -166,9 +166,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 	  	<c:forEach var="board" items="${list}" >
 	  	
 	  		 <div class="card mb-3">
-              <a href="#">
-              <pre>${board.reg_date}</pre> 
-               </a>
+              
+              <pre>${board.reg_date}</pre>
+              
               
         	<div class="receipt-container">
         		<table>
@@ -197,7 +197,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                	<c:set value="${board.board_id}" var="boardid"/>
                 <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}">
                
-                  <i class="fa fa-fw fa-comment"></i>Comment!!
+                  <i class="fa fa-fw fa-comment"></i>Comment!! (${board.count})
                 </a>
 
               </div>

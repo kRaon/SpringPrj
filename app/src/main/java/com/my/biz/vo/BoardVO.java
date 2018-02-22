@@ -10,6 +10,15 @@ public class BoardVO {
 	String contents;
 	String billscontents;
 	Date reg_date;
+	int count; 
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
 
 	public BoardVO(String board_id, String id, String contents, String billscontents, Date reg_date) {
 		super();
@@ -66,20 +75,11 @@ public class BoardVO {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("board_id=");
-		builder.append(board_id);
-		builder.append(", id=");
-		builder.append(id);
-		builder.append(", contents=");
-		builder.append(contents);
-		builder.append(", billscontents=");
-		builder.append(billscontents);
-		builder.append(", reg_date=");
-		builder.append(reg_date);
-		builder.append("");
-		return builder.toString();
+		return "BoardVO [board_id=" + board_id + ", id=" + id + ", contents=" + contents + ", billscontents="
+				+ billscontents + ", reg_date=" + reg_date + ", count=" + count + "]";
 	}
+
+	
 
 	// String commentsnumbers;
 

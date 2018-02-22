@@ -82,8 +82,7 @@ public class BoardController {
 		List<BoardVO> list = new ArrayList<BoardVO>();
 		List<CommentsVO> commentslist = new ArrayList<CommentsVO>();
 		list = service.selectAllBoard();
-		JsonObject obj = new JsonObject();
-		JSONArray arry = new JSONArray();
+		
 		for(BoardVO bovo : list) {
 			commentslist.addAll(cservice.selectComments(bovo.getBoard_id()));
 			int cnt = 0;
@@ -92,12 +91,12 @@ public class BoardController {
 					cnt ++;
 				}
 			}
-			obj.addProperty(bovo.getBoard_id(), cnt);
-			
+			bovo.setCount(cnt);
 		}
-		arry.put(obj);
+		
+		/*arry.put(obj);
 		System.out.println("리턴 결과 : "+arry.toString());
-		mav.addObject("comcount", arry);
+		mav.addObject("list", arry);*/
 		
 		
 		List<BoardVO> list2 = new ArrayList<BoardVO>();
