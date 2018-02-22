@@ -107,7 +107,7 @@ COMMENT ON COLUMN BOARD.REG_DATE is 'BOARD_DATE';
 /**********************************/
 CREATE TABLE COMMENTS(
 		INDEXNUMBER                   		NUMBER(10)		 NULL ,
-		BOARD_ID                      		VARCHAR2(30)		 NULL ,
+		BOARD_ID                      		VARCHAR2(100)		 NULL ,
 		ID                            		VARCHAR2(30)		 NULL ,
 		CONTENTS                      		VARCHAR2(200)		 NULL ,
 		REG_DATE                      		DATE		 NULL ,

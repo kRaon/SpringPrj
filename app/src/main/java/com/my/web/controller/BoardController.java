@@ -81,13 +81,9 @@ public class BoardController {
 			}
 		
 		list2.get(i).setBillscontents(result);
-		System.out.println(result);
+
 		}
-		
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		
+
 		mav.addObject("list",list2);
 		mav.setViewName("index");
 		return mav;
@@ -128,14 +124,12 @@ public class BoardController {
 	@RequestMapping("/getboard.do")
 	public ModelAndView getBoard(HttpServletRequest req,HttpServletResponse res) {
 		ModelAndView mav=new ModelAndView();
+		List<CommentsVO> commentslist=null;
+		
 		mav.setViewName("board");
 		String board_id=req.getParameter("boardid");
 		
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		
-		
+
 		BoardVO board=service.getBoard(board_id);
 		
 		String[] bills=board.getBillscontents().split(",");	
@@ -152,10 +146,10 @@ public class BoardController {
 		board.setBillscontents(result);
 
 		mav.addObject("board", board);
+
+		commentslist=cservice.selectComments(board_id);
 		
-		System.out.println(board);
-		
-		
+		mav.addObject("commentslist", commentslist);
 		
 		return mav;
 		
@@ -164,6 +158,8 @@ public class BoardController {
 	@RequestMapping("/insertcomments.do")
 	public ModelAndView insertcomments(HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView();
+		List<CommentsVO> commentslist=null;
+		
 		mav.setViewName("board");
 		
 		
@@ -190,16 +186,57 @@ public class BoardController {
 		
 		CommentsVO vo=new CommentsVO();
 		vo.setAccept(0);
-		vo.setBoard_id(board_id);
+		vo.setBoard_id(board_id); //이 board_id를 바탕으로 comments들을 불러와보자
 		vo.setContents(contents);
-		vo.setId(id);
-		vo.setIndexnumber(100);
-		System.out.println("진입23");
+		vo.setId(id.trim());
 		
-		//cservice.insertComment(vo);
+		cservice.insertComment(vo);
+		
+		commentslist=cservice.selectComments(board_id);
+		
+		mav.addObject("commentslist", commentslist);
 		
 		return mav;
 	}
+
+	@RequestMapping("/deletecomments.do")
+	public ModelAndView deletecomments(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView();
+		List<CommentsVO> commentslist=null;
+		
+		mav.setViewName("board");
+		
+		
+		String id=(String) req.getSession().getAttribute("userid");
+		String board_id=req.getParameter("board_id");
+		String contents=req.getParameter("contents");
+
+		BoardVO board=service.getBoard(board_id);
+		
+		String[] bills=board.getBillscontents().split(",");	
+		//한사람의 bill 들을 가져옴
+		String result="";
+		for(int j=0;j<bills.length;j++) {
+				String[] eachvalues=bills[j].split(":");
+				eachvalues[0]=eachvalues[0].substring(1);//맨앞의 [ 제거			
+				eachvalues[5]=eachvalues[5].substring(0,eachvalues[5].length()-1);
+				String temp="<tr><td>"+eachvalues[5]+"</td><td>"+eachvalues[3]+"</td><td>"+eachvalues[0]+"</td><td>"+eachvalues[1]+"</td><td>"+eachvalues[4]+"</td><td>"+eachvalues[2]+"</td> </tr>";				
+				//한사람의 bill의 개수만큼 루프를 돌아서 하나의 계산내역을 항목별로 분리해서 밖아놓음
+				result+=temp;
+			}
+		
+		board.setBillscontents(result);
+		mav.addObject("board", board);
+		String comments_index=req.getParameter("comments_index");
+		
+		cservice.deleteComment(Integer.parseInt(comments_index));
 	
+		commentslist=cservice.selectComments(board_id);
+		
+		mav.addObject("commentslist", commentslist);
+		
+		return mav;
+	}
+
 }	
 
