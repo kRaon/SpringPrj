@@ -111,7 +111,9 @@ public class Asset_activityController {
 		ModelAndView mav = new ModelAndView();
 		String id = (String) req.getSession().getAttribute("userid");
 		String date = (String) req.getParameter("date");
-
+		
+		
+		
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("date", date);
@@ -119,6 +121,16 @@ public class Asset_activityController {
 		List<Asset_CounselorVO> list = service.selectCounselorDataByID(map);
 		mav.setViewName("Asset_Counselor");
 		mav.addObject("list", list);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return mav;
 	}
 	/*여기까지 인생재무설계 파트 && Asset_Counselor Part End*/

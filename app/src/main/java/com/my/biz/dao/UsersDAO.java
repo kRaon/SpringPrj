@@ -12,4 +12,5 @@ public interface UsersDAO {
 	UsersVO searchUser(String id);
 	UsersVO loginUser(String id, String pw);
 	boolean loginIdSearch(String id);
+	UsersVO searchUserdate(String id);
 }

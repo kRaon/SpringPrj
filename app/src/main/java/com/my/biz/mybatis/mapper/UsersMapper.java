@@ -29,6 +29,9 @@ public interface UsersMapper {
 	@Select("SELECT * FROM USERS WHERE ID=#{id}")
 	UsersVO searchUser(String id);
 
+	@Select("SELECT birth_date FROM USERS WHERE ID=#{id}")
+	UsersVO searchUserdate(String id);
+	
 	@Select("SELECT * FROM USERS WHERE ID=#{id} and PW=#{pw}")
 	//public UsersVO loginUser(String id, String pw); //parameter로 인식하지 못함
 	public UsersVO loginUser(UsersVO vo);

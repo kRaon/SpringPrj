@@ -28,6 +28,7 @@ public interface Asset_activityMapper {
 	@Select("SELECT * FROM ASSET_ACTIVITY")
 	List<Asset_activityVO> selectAllActivities();
 
+
 	
 
 	
@@ -58,7 +59,7 @@ public interface Asset_activityMapper {
 	@Select("SELECT INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM AND ID=#{id} and to_char(A.A_DATE,'YYYYMMDD') BETWEEN #{fromdate} and #{todate})")
 	List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String,String> map);
 	
-	@Select("SELECT AGE, sum(AMOUNT) as AMOUNT FROM USERS U, ASSET_ACTIVITY AA WHERE U.ID = AA.ID AND A_TYPE = 'income' AND U.ID = #{id} AND TO_CHAR(AA.A_DATE,'YYYY')=#{date} GROUP BY AGE")
+	@Select("select month,round(avg(amount)*12,-4) as amount from (select to_char(A_DATE,'MM') as MONTH, amount from asset_activity where id = #{id} and a_type = 'income' and to_char(a_date,'yyyy')=#{date}) group by month")
 	List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map);
 	
 }

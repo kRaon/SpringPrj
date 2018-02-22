@@ -1,16 +1,19 @@
-package DAO_TEST;
+package com.my.biz.util;
 
 import java.util.Calendar;
 
 public class tax {
 	long income;
 
+	public tax() {
+		super();
+	}
 	public tax(long income) {
 		super();
 		this.income = income;
 	}
 
-	public double calctax() {
+	public double calctax(long income) {
 		double tax = 0;
 
 		if (income < 0) {
@@ -36,7 +39,7 @@ public class tax {
 
 		return tax;
 	}
-
+	
 	public static void main(String[] args) {
 		Calendar c = Calendar.getInstance();
 
@@ -51,8 +54,8 @@ public class tax {
 		for (int i = 0; i <= year; i++) {
 			int age = (1 + c.get(Calendar.YEAR) - birth_date + i);
 			long income = (long) (amount * Math.pow((increaserate + 100) * 0.01, i));
-			tax tax = new tax(income);
-			long disposable = tax.income - (long) tax.calctax();
+			double tax = new tax().calctax(income);
+			long disposable = income - (long)tax;
 			long fund = (long) (disposable * (savingrate * 0.01));
 			long asset = (long) (fund * Math.pow((interestrate + 100) * 0.01, i));
 

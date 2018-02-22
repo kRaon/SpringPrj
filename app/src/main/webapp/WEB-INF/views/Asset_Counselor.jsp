@@ -201,7 +201,7 @@
 				<div class="card-body">
 					<div class="table-responsive">
 						<form method="post" action="./assetcounselor.do">
-							<input>
+							<input type="">
 							<input>
 							<input>
 							<input>
