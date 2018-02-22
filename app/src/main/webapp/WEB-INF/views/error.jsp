@@ -6,7 +6,6 @@
 </head>
 <body>
 <h2>ERROR</h2>
->>>>>>> branch 'master' of https://github.com/kRaon/SpringPrj.git
 <% response.setStatus(200); %>
 예외발생 : <%= exception %>
 </body>
