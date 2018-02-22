@@ -328,7 +328,14 @@ tr:nth-child(even){background-color: #f2f2f2}
 	  	<div class = "container">
 	  		 <div class="card mb-3">
               <a href="#">
-              <pre>${board.reg_date}</pre> 
+              <div>
+               <form action="./deleteBoard.do">
+			<input type="hidden" name="board_id" value="${board.board_id}">
+              ${board.reg_date}
+              	 
+                 <input type="submit" value="삭제하기" style="width: 100px">
+               </form>
+               </div>
                </a>
               
         	<div class="receipt-container">
