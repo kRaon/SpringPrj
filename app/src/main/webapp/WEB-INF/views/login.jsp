@@ -13,35 +13,22 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <style>
+  	#logincheck{
+  		text-align: center;
+  		color:red;
+  		font-size: 0.8em;
+  	}
+  </style>
   <script>
-  $(function(){
-	  $('#loginConfirm').click(function() {
-			 $.ajax({
-				type : 'POST',
-				url : 'loginConfirm.do',
-				dataType : 'json',
-				data : {
-					"id" : $('#id').val(),
-					"pw" : $('#pw').val()
-				},
-				success : function(data) {
-					var flag = data["flag"];
-		
-						if (flag==="error") {
-							$('#idcheck').html("check your id&pw");							
-						} else if(flag==="pwerror") {
-							$('#pwcheck').html("check your pw");
-						}else{
-							$('#loginform').action("login.do");
-						}
-				 // }); 
-				},
-				error : function(data) {
-					alert("통신실패 : " + data.message);
-				}
-			}); //end ajax     
-		}); //end on    	   
-});
+ 	$(function(){
+ 		$('#id').keydown(function(){
+ 			$('#logincheck').html("");
+ 		});
+ 		$('#pw').keydown(function(){
+ 			$('#logincheck').html("");
+ 		});
+ 	});
   </script>
 </head>
 
@@ -49,19 +36,25 @@
   <div class="container">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
+      <div id="logincheck">
+      <!-- errorMsg-->
+				<c:choose>
+					<c:when test="${errorMsg != null }">
+						<p>${errorMsg}</p>
+					</c:when>
+				</c:choose>
+      </div>
       <div class="card-body">
       
         <form id="loginform" action="./login.do" method="post">
           <div class="form-group">
             <label for="exampleInputEmail1">ID</label>
-            <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id">
-            <span id="idcheck">idcheck</span>
+            <input class="form-control" id="id" name="id" aria-describedby="emailHelp" placeholder="Enter id" value="${loginid}"required>
           </div>
           
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="pw" name="pw" type="password" placeholder="Password">
-          	 <span id="pwcheck">pwcheck</span>
+            <input class="form-control" id="pw" name="pw" type="password" placeholder="Password" required>
           </div>
           <div class="form-group">
             <div class="form-check">
