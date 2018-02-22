@@ -289,19 +289,14 @@ tr:nth-child(even){background-color: #f2f2f2}
       </div>
       <!-- Area Chart Example-->
       <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i> Area Chart Example</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+		<canvas id="myAreaChart" width="0%" height="0%"></canvas>
       </div>
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <!-- Example Bar Chart Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> Bar Chart Example</div>
+              <i class="fa fa-bar-chart"></i> 한글 테스트</div>
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-8 my-auto">
@@ -322,145 +317,55 @@ tr:nth-child(even){background-color: #f2f2f2}
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
           <!-- Card Columns Example Social Feed-->
-		  
-		  
           <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
           <hr class="mt-2">
           <div class="card-columns">
-            <!-- Example Social Card-->
-            <div class="card mb-3">
-                //테이블
-              
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">아이디 넣어야함</a></h6>
-                <p class="card-text small">내용
-                  <a href="#">#해쉬테그</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-              </div>
-              <hr class="my-0">
-              
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-			 <div class="card mb-3">
-                //테이블
-              
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">테스트3 넣어야함</a></h6>
-                <p class="card-text small">내용
-                  <a href="#">#해쉬테그</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-              </div>
-              <hr class="my-0">
-              
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-            <div class="card mb-3">
-                //테이블
-              
-              <div class="card-body">
-                <h6 class="card-title mb-1"><a href="#">zzz 넣어야함</a></h6>
-                <p class="card-text small">내용
-                  <a href="#">#해쉬테그</a>
-                </p>
-              </div>
-              <hr class="my-0">
-              <div class="card-body py-2 small">
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
-                <a class="mr-3 d-inline-block" href="#">
-                  <i class="fa fa-fw fa-comment"></i>Comment</a>
-              </div>
-              <hr class="my-0">
-              
-              <div class="card-footer small text-muted">Posted 32 mins ago</div>
-            </div>
-           
-            
-          </div>
-          <!-- /Card Columns-->
-        </div>
-        
-          <!-- Example Pie Chart Card-->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-            <div class="card-body">
-              <canvas id="myPieChart" width="100%" height="100"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-          <!-- Example Notifications Card-->
-          
-        </div>
-      </div>
-      <!-- Example DataTables Card-->
-      
-    </div>
-          <!-- Card Columns Example Social Feed-->
-          <!-- <div class="mb-0 mt-4"> -->
-            <!-- <i class="fa fa-newspaper-o"></i> News Feed</div> -->
-          <!-- <hr class="mt-2"> -->
-          <!-- <div class="card-columns"> -->
           
 
-	  	<!-- <c:forEach var="board" items="${list}" > -->
+	  	<div class = "container">
+	  	<c:forEach var="board" items="${list}" >
 	  	
-	  	<!-- <div class = "container"> -->
-	  		 <!-- <div class="card mb-3"> -->
-              <!-- <a href="#"> -->
-              <!-- <pre>${board.reg_date}</pre>  -->
-               <!-- </a> -->
+	  		 <div class="card mb-3">
+              <a href="#">
+              <pre>${board.reg_date}</pre> 
+               </a>
               
-        	<!-- <div class="receipt-container"> -->
-        		<!-- <table> -->
-        		<!-- <thead> -->
-        		<!-- <th>Account</th> -->
-        		<!-- <th>Period</th> -->
-        		<!-- <th>Category</th> -->
-        		<!-- <th>Content</th> -->
-        		<!-- <th>Date</th> -->
-        		<!-- <th>Amount</th> -->
-        		<!-- </thead> -->
-        		<!-- ${board.billscontents} -->
-        		<!-- </table> -->
-        	<!-- </div> -->
-             <!-- <hr class="my-0"> -->
-              <!-- <div class="card-body"> -->
-                <!-- <p class="card-text small">           -->
-                <!-- <div class="user_id" style="float: left; margin-right: 3% "> -->
-              <!-- <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                             -->
-               <!-- </div> ${board.contents} -->
-                <!-- </p> -->
-              <!-- </div> -->
-              <!-- <div class="card-body py-2 small"> -->
-                <!-- <a class="mr-3 d-inline-block" href="#"> -->
-                  <!-- <i class="fa fa-fw fa-thumbs-up"></i>Like</a> -->
-               	<!-- <c:set value="${board.board_id}" var="boardid"/> -->
-                <!-- <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}"> -->
+        	<div class="receipt-container">
+        		<table>
+        		<thead>
+        		<th>Account</th>
+        		<th>Period</th>
+        		<th>Category</th>
+        		<th>Content</th>
+        		<th>Date</th>
+        		<th>Amount</th>
+        		</thead>
+        		${board.billscontents}
+        		</table>
+        	</div>
+             <hr class="my-0">
+              <div class="card-body">
+                <p class="card-text small">          
+                <div class="user_id" style="float: left; margin-right: 3% ">
+              <h8 class="card-title mb-1"><a href="#">${board.id}</a></h8>                            
+               </div> ${board.contents}
+                </p>
+              </div>
+              <div class="card-body py-2 small">
+                <a class="mr-3 d-inline-block" href="#">
+                  <i class="fa fa-fw fa-thumbs-up"></i>Like</a>
+               	<c:set value="${board.board_id}" var="boardid"/>
+                <a class="mr-3 d-inline-block" href="./getboard.do?boardid=${boardid}">
                
-                  <!-- <i class="fa fa-fw fa-comment"></i>Comment!! -->
-                <!-- </a> -->
+                  <i class="fa fa-fw fa-comment"></i>Comment!!
+                </a>
 
-              <!-- </div> -->
-               <!-- <hr class="my-0"> -->
-              <!-- <div class="card-footer small text-muted">${board.reg_date}</div> -->
-	  	<!-- </div> -->
-	  	<!-- </c:forEach> -->
+              </div>
+               <hr class="my-0">
+              <div class="card-footer small text-muted">${board.reg_date}</div>
+	  	</div>
+	  	</c:forEach>
 	  	
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->

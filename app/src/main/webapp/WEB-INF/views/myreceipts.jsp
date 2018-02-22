@@ -214,15 +214,15 @@ tr:nth-child(even){background-color: #f2f2f2}
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
+<!--       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">My Dashboard</li>
-      </ol>
+      </ol> -->
       <!-- Icon Cards-->
       <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-3">
+  <!--       <div class="col-xl-3 col-sm-6 mb-3">
           <div class="card text-white bg-primary o-hidden h-100">
             <div class="card-body">
               <div class="card-body-icon">
@@ -285,16 +285,16 @@ tr:nth-child(even){background-color: #f2f2f2}
               </span>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- Area Chart Example-->
-      <div class="card mb-3">
+    <%--   <div class="card mb-3">
 		<canvas id="myAreaChart" width="0%" height="0%"></canvas>
-      </div>
+      </div> --%>
       <div class="row">
         <div class="col-lg-12">
           <!-- Example Bar Chart Card-->
-          <div class="card mb-3">
+  <%--         <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-bar-chart"></i> 한글 테스트</div>
             <div class="card-body">
@@ -315,7 +315,7 @@ tr:nth-child(even){background-color: #f2f2f2}
               </div>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
+          </div> --%>
           <!-- Card Columns Example Social Feed-->
           <div class="mb-0 mt-4">
             <i class="fa fa-newspaper-o"></i> News Feed</div>
@@ -323,12 +323,20 @@ tr:nth-child(even){background-color: #f2f2f2}
           <div class="card-columns">
           
 
+	  	<div class = "container">
+	  	
 	  	<c:forEach var="board" items="${list}" >
 	  	
-	  	<div class = "container">
 	  		 <div class="card mb-3">
               <a href="#">
-              <pre>${board.reg_date}</pre> 
+              <div>
+               <form action="./deleteBoard.do">
+			<input type="hidden" name="board_id" value="${board.board_id}">
+              ${board.reg_date}
+              	 
+                 <input type="submit" value="삭제하기" style="width: 100px">
+               </form>
+               </div>
                </a>
               
         	<div class="receipt-container">
