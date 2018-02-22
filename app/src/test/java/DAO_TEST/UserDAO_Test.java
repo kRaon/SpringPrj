@@ -33,9 +33,9 @@ public class UserDAO_Test {
 	@Test
 	public void add() {
 		UsersVO vo = new UsersVO();
-		vo.setUser_date(new Date(0));
+		vo.setBirth_date(new Date(0));
 		vo.setGender("female");
-		vo.setId("java02");
+		vo.setId("java03");
 		vo.setJob("kk");
 		vo.setPw("1234");		
 		service.insertUsers(vo);
