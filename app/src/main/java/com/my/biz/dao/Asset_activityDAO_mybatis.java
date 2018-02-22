@@ -106,6 +106,12 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 		return mapper.selectBarChart(map);
 	}
 
+	@Override
+	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return mapper.selectDateActivityCatrgories_id(map);
+	}
+
 
 
 	
