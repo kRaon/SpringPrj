@@ -88,18 +88,18 @@ $(function() {
 						</table>
 					</div>
         </div>
-        <div class="card-footer small text-muted">뭐라고 넣을까</div>
+        <div class="card-footer small text-muted">household accounts data</div>
       </div>
       <div class="row">
         <div class="col-lg-8">
           <!-- Example Bar Chart Card-->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fa fa-bar-chart"></i> 월간소비 </div>
+              <i class="fa fa-bar-chart"></i>  </div>
             <div class="card-body">
               <canvas id="myBarChart" width="100" height="50"></canvas>
             </div>
-            <div class="card-footer small text-muted">뭐라고 넣을까</div>
+            <div class="card-footer small text-muted">household accounts barchart</div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -110,7 +110,7 @@ $(function() {
             <div class="card-body">
               <canvas id="myPieChart" width="100%" height="100"></canvas>
             </div>
-            <div class="card-footer small text-muted">뭐라고 넣을까</div>
+            <div class="card-footer small text-muted">household accounts piechart</div>
           </div>
         </div>
       </div>
