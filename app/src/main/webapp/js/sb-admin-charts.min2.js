@@ -16,7 +16,7 @@ $(function(){
 						if (flag===true) {
 							$('#idcheck').html("id valid");							
 						} else {
-							$('#idcheck').html("<b>check your id</b>");
+							$('#idcheck').html("<b style=\"color:red\">check your id</b>");
 						}
 				 // }); 
 				},
