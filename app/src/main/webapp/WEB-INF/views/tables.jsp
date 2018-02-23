@@ -3,27 +3,49 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
-
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>오늘의 영수증</title>
-<!-- Bootstrap core CSS-->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom fonts for this template-->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<!-- Page level plugin CSS-->
-<link href="vendor/datatables/dataTables.bootstrap4.css"
-	rel="stylesheet">
-<!-- Custom styles for this template-->
-<link href="css/sb-admin.css" rel="stylesheet">
+<!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/selectdate.js"></script>
+    <script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
+</script>
+    
+ <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
+ 
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
-<link href="css/custombtn.css" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <script> 
+    $(function(){
+      $("#nav").load("nav.html"); 
+    });
+    </script> 
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -40,7 +62,11 @@
 			<!-- Example DataTables Card-->
 			<div class="card mb-3">
 				<div class="card-header">
-					<i class="fa fa-table"></i> 오늘의 영수증
+					<div class="pull-left"><i class="fa fa-table"></i> 오늘의 영수증</div>
+					
+					<div style="display: inline;" class="pull-right">
+					기간선택 : <input type="text" class="form-control" id="daterange" name="daterange" value="" style="margin-left:0.3em; width: 220px; height:30px; display: inline;" />
+					</div>
 				</div>
 				
 				<div class="card-body">
@@ -96,7 +122,7 @@
 		</div>
 				<form method="post" action="./insertBoard.do">
 				
-<!-- billscontents -->	<input type="hidden" name="billscontents" value="${list}">	
+<!-- billscontents -->	<input id="billscontents" type="hidden" name="billscontents" value="${list}">	
 				
 					<!-- boardid(controller에서 생성),id(session),reg_date(sysdate)
 					contents(requestParameter),list정보 담기 
@@ -106,6 +132,9 @@
 						<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 3px; margin-bottom: 5px; height: 110px;" placeholder="영수증에 대한 설명을 작성해주세요"></textarea>
 					</div>
 					<div align="center">
+					
+	<!-- 날짜 선택 기능. -->
+					
 					<input class="btn btn-primary btn-block" type="submit" value="글 올리기." style="width: 200px; text-align: center;margin-top: 10px; margin-bottom: 10px;"/>
 					</div>
 				</form>
@@ -261,8 +290,7 @@
 										<div class="form-group">
 											<label for="exampleTextarea">내 용</label>
 											
-	<!-- contents -->		<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;">
-							</textarea>
+	<!-- contents -->		<textarea class="form-control" name="contents" id="contents" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 110px;"></textarea>
 										</div>
 										<div class="form-group">
 											<label class="control-label">금 액</label>
@@ -327,18 +355,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- Bootstrap core JavaScript-->
-			<script src="vendor/jquery/jquery.min.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-			<!-- Core plugin JavaScript-->
-			<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-			<!-- Page level plugin JavaScript-->
-			<script src="vendor/datatables/jquery.dataTables.js?ver=1"></script>
-			<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-			<!-- Custom scripts for all pages-->
-			<script src="js/sb-admin.min.js"></script>
-			<!-- Custom scripts for this page-->
-			<script src="js/sb-admin-datatables.min.js"></script>
+			
 			  <script> 
     $(function(){
       $("#nav").load("nav.html"); 

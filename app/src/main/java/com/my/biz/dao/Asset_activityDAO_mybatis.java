@@ -104,17 +104,21 @@ public class Asset_activityDAO_mybatis implements Asset_activityDAO{
 	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String, String> map) {
 		return mapper.selectDateActivityCatrgories_id(map);
 	}
+	
+	@Override
 	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map) {
 		return mapper.selectCounselorDataByID(map);
 	}
 
 	@Override
 	public Asset_CounselorVO selectAsset_data(String id) {
-		// TODO Auto-generated method stub
 		return mapper.selectAsset_data(id);
 	}
 
-
+	@Override
+	public List<ActivityCategoriesVO> selectActivityCatrgories_id_Date(Map<String,String> map){
+		return mapper.selectActivityCatrgories_id_Date(map);
+	}
 
 	
 }

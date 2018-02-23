@@ -80,6 +80,12 @@ public class Asset_activityServiceImpl implements Asset_activityService{
 		return dao.selectAsset_data(id);
 	}
 
+	@Override
+	public List<ActivityCategoriesVO> selectActivityCatrgories_id_Date(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.selectActivityCatrgories_id_Date(map);
+	}
+
 
 	
 	
