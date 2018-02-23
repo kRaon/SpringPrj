@@ -34,5 +34,7 @@ public interface Asset_activityDAO {
 	
 	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map);
 	
+	public List<ActivityCategoriesVO> selectActivityCatrgories_id_Date(Map<String,String> map);
+	
 	public Asset_CounselorVO selectAsset_data(String id);
 }

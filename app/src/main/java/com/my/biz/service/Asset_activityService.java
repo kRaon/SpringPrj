@@ -26,7 +26,7 @@ public interface Asset_activityService {
 	public List<ChartVO> selectPieChart(Map<String, String> map);
 	public List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id);
 	public List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String,String> map);
-	
+	public List<ActivityCategoriesVO> selectActivityCatrgories_id_Date(Map<String,String> map);
 	public List<Asset_CounselorVO> selectCounselorDataByID(Map<String, String> map);
 
 	public Asset_CounselorVO selectAsset_data(String id);

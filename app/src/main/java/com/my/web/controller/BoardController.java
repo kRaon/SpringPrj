@@ -2,7 +2,9 @@ package com.my.web.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonObject;
@@ -22,7 +27,7 @@ import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.BoardVO;
 import com.my.biz.vo.CommentsVO;
 
-@Controller
+@RestController
 public class BoardController {
 
 	@Autowired
@@ -32,6 +37,25 @@ public class BoardController {
 	@Qualifier("ActivityService")
 	Asset_activityService aservice;
 
+	@RequestMapping("/selectdate.do")
+	public ResponseEntity<List<ActivityCategoriesVO>> list(String fromdate, String todate, HttpServletRequest req) {
+		ResponseEntity<List<ActivityCategoriesVO>> resEntity = null;
+		String id=(String) req.getSession().getAttribute("userid");
+		Map<String,String> map=new HashMap<String,String>();
+		map.put("id", id);
+		map.put("fromdate",  fromdate);
+		map.put("todate", todate);
+		List<ActivityCategoriesVO> list = aservice.selectActivityCatrgories_id_Date(map);
+		try {
+			resEntity = new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resEntity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		return resEntity;
+	}
+	
+	
 	@RequestMapping("/getallboard.do")
 	public ModelAndView getAllBoard(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mav = new ModelAndView();
@@ -226,6 +250,7 @@ public class BoardController {
 		String[] bills = board.getBillscontents().split(",");
 		// 한사람의 bill 들을 가져옴
 		String result = "";
+		
 		for (int j = 0; j < bills.length; j++) {
 			String[] eachvalues = bills[j].split(":");
 			eachvalues[0] = eachvalues[0].substring(1);// 맨앞의 [ 제거
@@ -236,6 +261,7 @@ public class BoardController {
 			// 한사람의 bill의 개수만큼 루프를 돌아서 하나의 계산내역을 항목별로 분리해서 밖아놓음
 			result += temp;
 		}
+		
 		board.setBillscontents(result);
 
 		mav.addObject("board", board);
