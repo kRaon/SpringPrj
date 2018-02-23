@@ -12,6 +12,17 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<style type="text/css">
+.tbox{
+	width: 110px;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+
+</style>
+
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!-- Bootstrap core JavaScript-->
 			<script src="vendor/jquery/jquery.min.js"></script>
@@ -59,20 +70,18 @@
 				<div class="card-body">
 					<div class="table-responsive">
 						<form method="post" action="./assetcounselor.do">
-							근속년수<input type="number" name="untilyear" placeholder="ex) 30">
-							임금상승률<input type="number" name="increaserate"> 저축률<input
-								type="number" name="savingrate"> 자본수익률<input
-								type="number" name="interestrate"> <input
+							근속년수<input type="number" name="untilyear" placeholder="ex) 30 (years)" class="tbox">
+							임금상승률<input type="number" name="increaserate" placeholder="ex) 5(%)"class="tbox" > 저축률<input
+								type="number" name="savingrate" placeholder="ex) 35(%)" class="tbox"> 자본수익률<input
+								type="number" name="interestrate" placeholder="ex) 3(%)" class="tbox">
+								 <input
 								class="btn btn-info"
-								style="display: inline-block; width: 100px; margin-left: 3.5px"
+								style="display: inline-block; width: 100px; margin-left: 1em"
 								type="submit" value="내 정보 입력">
+								<hr>
 
 						</form>
-
-
-						
-<!-- 여기야 -->
-						
+					
 								<table class="w3-table w3-striped">
 									<thead>
 										<th>연령</th>

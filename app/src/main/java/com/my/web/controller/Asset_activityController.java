@@ -3,9 +3,7 @@ package com.my.web.controller;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +18,7 @@ import com.my.biz.service.Asset_activityService;
 import com.my.biz.util.tax;
 import com.my.biz.vo.ActivityCategoriesVO;
 import com.my.biz.vo.Asset_CounselorVO;
+import com.my.biz.vo.Asset_CounselorVO2;
 import com.my.biz.vo.Asset_activityVO;
 
 @Controller
@@ -127,9 +126,9 @@ public class Asset_activityController {
 		int savingrate=Integer.parseInt(req.getParameter("savingrate"));
 		int interestrate=Integer.parseInt(req.getParameter("interestrate"));
 		
-		List<Asset_CounselorVO> list =makedata(birth_date, amount, untilyear, savingrate, interestrate, increaserate);
+		List<Asset_CounselorVO2> list =makedata(birth_date, amount, untilyear, savingrate, interestrate, increaserate);
 		
-		for(Asset_CounselorVO data: list) {
+		for(Asset_CounselorVO2 data: list) {
 			System.out.println(data);
 		}
 		
@@ -162,9 +161,9 @@ public class Asset_activityController {
 		}
 		return tax;
 	}
-	public static List<Asset_CounselorVO> makedata(int birth_date,int amount,int untilyear,int savingrate,int interestrate,int increaserate)
+	public static List<Asset_CounselorVO2> makedata(int birth_date,int amount,int untilyear,int savingrate,int interestrate,int increaserate)
 	{
-		List<Asset_CounselorVO> list=new ArrayList<Asset_CounselorVO>();
+		List<Asset_CounselorVO2> list=new ArrayList<Asset_CounselorVO2>();
 		Calendar c = Calendar.getInstance();
 
 		long assetsum = 0;
@@ -178,7 +177,7 @@ public class Asset_activityController {
 			assetsum += asset;
 			/*String birth_date, int amount, int age, int income, long disposable, long fund,long assetsum)*/
 				
-			list.add(new Asset_CounselorVO(Integer.toString(birth_date),amount,age,income,disposable,fund,assetsum));
+			list.add(new Asset_CounselorVO2(Integer.toString(birth_date),String.format("%,d", amount),age,String.format("%,d", income),String.format("%,d", disposable),String.format("%,d", fund),String.format("%,d", assetsum)));
 		}
 		return list;	
 	}

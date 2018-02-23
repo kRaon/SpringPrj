@@ -28,10 +28,6 @@ public interface Asset_activityMapper {
 	@Select("SELECT * FROM ASSET_ACTIVITY")
 	List<Asset_activityVO> selectAllActivities();
 
-
-	
-
-	
 	@Select("select to_char(A_DATE,'mon') as \"month\", SUM(AMOUNT) as \"amount\" from ASSET_ACTIVITY where id = #{id} and A_TYPE = 'expense' and to_char(a_date,'yyyymmdd') BETWEEN #{fromdate} and #{todate} GROUP by to_char(A_DATE,'mon') order by 'month' desc")
 	List<ChartVO> selectBarChart(Map<String,String> map);
 	
@@ -55,6 +51,12 @@ public interface Asset_activityMapper {
 			"FROM(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME " + 
 			"FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM AND ID=#{id})")
 	List<ActivityCategoriesVO> selectAllActivityCatrgories_id(String id);
+	
+
+	@Select("SELECT INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME " + 
+			"FROM(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME " + 
+			"FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM AND ID=#{id} and to_char(a_date,'yyyymmdd') BETWEEN #{fromdate} and #{todate})")
+	List<ActivityCategoriesVO> selectActivityCatrgories_id_Date(Map<String,String> map);
 	
 	@Select("SELECT INDEXNUMBER,ID,CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM(SELECT INDEXNUMBER,ID,A.CATEGORY_NUM AS CATEGORY_NUM,CONTENTS,AMOUNT,FIXED,A_DATE,A_TYPE,CATEGORY_NAME FROM ASSET_ACTIVITY A,CATEGORIES C WHERE A.CATEGORY_NUM=C.CATEGORY_NUM AND ID=#{id} and to_char(A.A_DATE,'YYYYMMDD') BETWEEN #{fromdate} and #{todate})")
 	List<ActivityCategoriesVO> selectDateActivityCatrgories_id(Map<String,String> map);
