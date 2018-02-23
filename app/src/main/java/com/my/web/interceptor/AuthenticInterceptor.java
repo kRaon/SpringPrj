@@ -16,11 +16,19 @@ public class AuthenticInterceptor extends HandlerInterceptorAdapter{
 		 	                                                 throws Exception {
          
 		 HttpSession session = request.getSession();
-         if(session.getAttribute("login") != null) {
+		 
+		 String uri=request.getRequestURI();
+		 uri=uri.substring(uri.lastIndexOf("/"));
+		 System.out.println(uri);
+        	 
+		 if(session.getAttribute("userid") != null) {
              return true;        	 
          }else {
+        	 if(uri.equals("/login.do")) {
+        		 return true;
+        	 }
         	 ModelAndView mav = new ModelAndView();
-        	 mav.setViewName("redirect:login.html");
+        	 mav.setViewName("login");
         	 throw new ModelAndViewDefiningException(mav);
          }
 	}

@@ -37,10 +37,11 @@ public class BoardController {
 		ModelAndView mav = new ModelAndView();
 		String id = (String) req.getSession().getAttribute("userid");
 		List<BoardVO> list = service.getAllBoard(id);
-
+		
 		for (int i = 0; i < list.size(); i++) {
 			String[] bills = list.get(i).getBillscontents().split(",");
 			// 한사람의 bill 들을 가져옴
+			
 			String result = "";
 			for (int j = 0; j < bills.length; j++) {
 				String[] eachvalues = bills[j].split(":");

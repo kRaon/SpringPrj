@@ -30,17 +30,17 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 	</bean>
 
-	<!-- <mvc:interceptors>
-		parameter로 lang이 오면 작동할것임 변경만 해주는 interceptor
+	 <mvc:interceptors>
+		<!-- parameter로 lang이 오면 작동할것임 변경만 해주는 interceptor
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="lang" />
 			parameter로 ?lang=en 으로하면 message_en.properties에서 읽어옴.
-		</bean>
+		</bean> -->
 
 		<mvc:interceptor>
-			<mvc:mapping path="/list*.do" />
+			<mvc:mapping path="/*.do" />
 			<bean class="com.my.web.interceptor.AuthenticInterceptor"></bean>
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors> 
 
 </beans>
