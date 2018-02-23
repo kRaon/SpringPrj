@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -34,6 +35,15 @@ public class ChartContoller {
 	@Inject
 	Asset_activityService service;
 
+	@RequestMapping("/getmonthreceipt.do")
+	public ModelAndView gototable() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("charts");
+		return mav;
+	}
+	
+	
+	
 	@RequestMapping("/charttable.do")
 	public ResponseEntity<List<ActivityCategoriesVO>> list(String fromdate, String todate, HttpServletRequest req) {
 		ResponseEntity<List<ActivityCategoriesVO>> resEntity = null;
@@ -42,9 +52,7 @@ public class ChartContoller {
 		map.put("id", id);
 		map.put("fromdate",  fromdate);
 		map.put("todate", todate);
-		System.out.println("from = "+fromdate+" to = "+todate+" id = "+id);
 		List<ActivityCategoriesVO> list = service.selectDateActivityCatrgories_id(map);
-		System.out.println("결과 : "+list);
 		try {
 			resEntity = new ResponseEntity<>(list, HttpStatus.OK);
 		} catch (Exception e) {
@@ -59,7 +67,7 @@ public class ChartContoller {
 		res.setContentType("application/json;charset=UTF-8");
 		String id=(String) req.getSession().getAttribute("userid");
 		Map<String,String> map=new HashMap<String,String>();
-		map.put("id", "qwq713");
+		map.put("id", id);
 		map.put("fromdate",  fromdate);
 		map.put("todate", todate);
 	
@@ -112,7 +120,7 @@ public class ChartContoller {
 		res.setContentType("application/json;charset=UTF-8");
 		String id=(String) req.getSession().getAttribute("userid");
 		Map<String,String> map=new HashMap<String,String>();
-		map.put("id", "qwq713");
+		map.put("id", id);
 		map.put("fromdate",  fromdate);
 		map.put("todate", todate);
 		List<ChartVO> list = service.selectPieChart(map);

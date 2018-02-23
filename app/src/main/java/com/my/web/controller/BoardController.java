@@ -7,12 +7,14 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.JsonObject;
 import com.my.biz.service.Asset_activityService;
 import com.my.biz.service.BoardService;
 import com.my.biz.service.CommentsService;
@@ -78,7 +80,25 @@ public class BoardController {
 	public ModelAndView indexCard() {
 		ModelAndView mav = new ModelAndView();
 		List<BoardVO> list = new ArrayList<BoardVO>();
+		List<CommentsVO> commentslist = new ArrayList<CommentsVO>();
 		list = service.selectAllBoard();
+		
+		for(BoardVO bovo : list) {
+			commentslist.addAll(cservice.selectComments(bovo.getBoard_id()));
+			int cnt = 0;
+			for(CommentsVO covo : commentslist) {
+				if(covo.getBoard_id().equals(bovo.getBoard_id())) {
+					cnt ++;
+				}
+			}
+			bovo.setCount(cnt);
+		}
+		
+		/*arry.put(obj);
+		System.out.println("리턴 결과 : "+arry.toString());
+		mav.addObject("list", arry);*/
+		
+		
 		List<BoardVO> list2 = new ArrayList<BoardVO>();
 
 		

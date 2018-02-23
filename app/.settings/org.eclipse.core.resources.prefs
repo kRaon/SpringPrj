@@ -3,5 +3,6 @@
 >>>>>>>=branch 'master' of https\://github.com/kRaon/SpringPrj.git
 eclipse.preferences.version=1
 encoding//database/AccountBook.ddl=MS949
+encoding//src/main/webapp/WEB-INF/views/charts.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
-encoding//src/main/webapp/charts.jsp=UTF-8
+encoding//src/main/webapp/nav.html=UTF-8
