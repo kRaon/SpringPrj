@@ -32,7 +32,7 @@
           	<label>ID</label>
         	<input class="form-control" type="text" id="id" name="id" placeholder="Enter your id"/>
 				 	<div align="right">
-				 	<span id="idcheck" style="font-size:0.75em">아이디 중복 확인이 필요합니다</span><br> 
+				 	<span id="idcheck" style="font-size:0.85em">아이디 중복 확인이 필요합니다</span><br> 
 				 	<input type="button" id="compare" style="font-size:0.75em" value="아이디 중복 체크"  style="width:100pt;height:20pt" />
 				 	</div>
           </div>

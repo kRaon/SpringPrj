@@ -15,25 +15,46 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+  
+  
+  <!-- slider -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
+<style>
+	#page-top{
+		padding-top:0px;
+	}
+	#myCarousel{
+		width:80%;
+		margin-left: 7em;
+	}
+	#container{
+	width:80%;
+	}
+</style>
+</head>
 <script type="text/javascript">
 	    $(function(){
 	      $("#nav").load("nav.html"); 
 	    });
 </script>
-	   <div id="nav"></div>
+ <div id="nav"></div>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <!-- Navigation 출력 공간-->
-  
+
   <div class="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid" >
    
- <!-- <div class="container"> -->
+<!-- <div class="container">  -->
   <h2>Finance Magazine</h2>  
   <br>
   <br>
@@ -50,7 +71,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
     
-      <div class="item active">
+      <div class="item active" id="item-active">
         <img src="./img/compass.jpg" alt="compass" style="width:100%;">
       </div>
 
@@ -81,7 +102,7 @@
  </div> 
    
       </div>
-   <!--  </div> -->
+    <!-- </div> -->
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -113,14 +134,8 @@
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
   </div>
+ 
 </body>
-
+ 
 </html>

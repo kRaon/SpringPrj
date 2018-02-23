@@ -1,5 +1,6 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif', Chart.defaults.global.defaultFontColor = "#292b2c";
 
+/*$('#id').onclick($('#idcheck').html(""));*/
 
 $(function(){
 	  $('#compare').click(function() {
@@ -14,9 +15,10 @@ $(function(){
 					var flag = data["flag"];
 		
 						if (flag===true) {
-							$('#idcheck').html("id valid");							
+							$('#idcheck').html("<font color=\"green\">id valid</font>");			
 						} else {
-							$('#idcheck').html("<b style=\"color:red\">check your id</b>");
+							$('#idcheck').html("<font color=\"red\">check your id</font>");
+							
 						}
 				 // }); 
 				},
@@ -24,6 +26,7 @@ $(function(){
 					alert("통신실패 : " + data.message);
 				}
 			}); //end ajax     
-		}); //end on    	   
+		}); //end on    	
 });
+
 
